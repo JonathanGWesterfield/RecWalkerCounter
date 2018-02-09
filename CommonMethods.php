@@ -6,7 +6,7 @@
  * Time: 4:20 PM
  */
 
-class Common
+class Common implements CommonInterface
 {
     var $conn;
     var $debug;
@@ -42,7 +42,7 @@ class Common
 
     function executeQuery($sql, $filename) // execute query
     {
-        if($this->debug == true) { echo("$sql <br>\n"); }
+        if($this->debug == true) { echo("<br>$sql <br>\n"); }
         $rs = $this->conn->query($sql) or die("Could not execute query '$sql' in $filename");
         return $rs;
     }
