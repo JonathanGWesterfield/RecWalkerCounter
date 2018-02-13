@@ -14,11 +14,11 @@ interface DBInterface
     public function __destruct();
     public function printEntireDB();
     public function getTotalNumWalkers();
-    //public function getNumWalkersToday();
-    //public function getNumWalkersThisWeek();
+    public function getNumWalkersToday();
+    public function getNumWalkersThisWeek();
     //public function getHotTimes(); // gets the hours of day with peak traffic
     //public function getHotDays(); // gets the days with peak traffic for a week
-    //public function getTrafficByYear($year); // Returns an array containing total number of walkers for each month.
+    public function getTrafficByYear($year); // Returns an array containing total number of walkers for each month.
     //public function getTrafficByMonth($year, $month); // Returns an array containing total number of walkers for each day.
     //public function getTrafficByDay($year, $month, $day); // Returns an array containing total number of walkers for each hour
 }

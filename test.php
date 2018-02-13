@@ -23,5 +23,6 @@ echo("Created the DBAPI object<br>");
 
 $test->printEntireDB();
 $test->getTotalNumWalkers();
+$test->getNumWalkersToday();
 
 ?>
