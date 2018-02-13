@@ -15,6 +15,7 @@ class DBAPI implements DBInterface
     private $currentDate;
     private $currentDateTime;
     private $currentWeekDay;
+    private $tomorrowDate;
 
     public function __construct($db)
     {
@@ -23,10 +24,12 @@ class DBAPI implements DBInterface
         $this->currentDate = date("Y-m-d");
         $this->currentDateTime = date("Y-m-d H:i:s");
         $this->currentWeekDay = date('w');
+        $this->tomorrowDate = date('Y-m-d', strtotime('+1 day'));
 
         echo("Current Date: " . $this->currentDate . "<br>");
         echo("Current DateTime: " . $this->currentDateTime . "<br>");
-        echo("Current weekday numberically: " . $this->currentWeekDay . "<br>");
+        echo("Current weekday numerically: " . $this->currentWeekDay . "<br>");
+        echo("Tomorrow's Date: " . $this->tomorrowDate . "<br>");
 
 
     }
@@ -83,10 +86,8 @@ class DBAPI implements DBInterface
      */
     public function getNumWalkersToday()
     {
-        $tomorrow = date('Y-m-d', strtotime('+1 day'));
-        echo("Tomorrows date: " . $tomorrow . "<br>");
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $this->currentDate . "\" AND \""
-            . $tomorrow . "\"";
+            . $this->tomorrowDate . "\"";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -97,9 +98,27 @@ class DBAPI implements DBInterface
         return (int)$row['COUNT(WalkerNumber)'];
     }
 
+    /**
+     * @return int
+     *
+     * Gets the number of walkers in the last week starting from today
+     */
     public function getNumWalkersThisWeek()
     {
-        // TODO: Implement getNumWalkersThisWeek() method.
+        $lastWeek = date('Y-m-d', strtotime('-1 week'));
+
+        echo("Last weeks date: " . $lastWeek . "<br>");
+
+        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $lastWeek . "\" AND \""
+            . $this->tomorrowDate . "\"";
+
+        $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+
+        $row = $rs->fetch(PDO::FETCH_ASSOC);
+
+        echo("Total Num Walkers is: " . $row['COUNT(WalkerNumber)'] . "<br>");
+
+        return (int)$row['COUNT(WalkerNumber)'];
     }
 
     public function getTrafficByYear($year)
