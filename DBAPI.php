@@ -16,6 +16,8 @@ class DBAPI implements DBInterface
     private $currentDateTime;
     private $currentWeekDay;
     private $tomorrowDate;
+    private $currentYear;
+    private $currentMonth;
 
     public function __construct($db)
     {
@@ -25,13 +27,16 @@ class DBAPI implements DBInterface
         $this->currentDateTime = date("Y-m-d H:i:s");
         $this->currentWeekDay = date('w');
         $this->tomorrowDate = date('Y-m-d', strtotime('+1 day'));
+        $this->currentYear = date("Y");
+        $this->currentMonth = date("m");
 
         echo("Current Date: " . $this->currentDate . "<br>");
         echo("Current DateTime: " . $this->currentDateTime . "<br>");
         echo("Current weekday numerically: " . $this->currentWeekDay . "<br>");
         echo("Tomorrow's Date: " . $this->tomorrowDate . "<br>");
-
-
+        echo("The current year is: " . $this->currentYear . "<br>");
+        echo("The current month is: " . $this->currentMonth . "<br>");
+        echo("<br><br>");
     }
 
     public function __destruct()
@@ -41,6 +46,9 @@ class DBAPI implements DBInterface
         echo("DESTROYING EVERTYING<br>");
     }
 
+    /**
+     * Prints out a table of the entire database
+     */
     public function printEntireDB()
     {
         $sql = "SELECT * FROM WalkerData ORDER BY WalkerNumber";
@@ -86,8 +94,8 @@ class DBAPI implements DBInterface
      */
     public function getNumWalkersToday()
     {
-        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $this->currentDate . "\" AND \""
-            . $this->tomorrowDate . "\"";
+        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $this->currentDate . "%\" AND \""
+            . $this->tomorrowDate . "%\"";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -109,8 +117,8 @@ class DBAPI implements DBInterface
 
         echo("Last weeks date: " . $lastWeek . "<br>");
 
-        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $lastWeek . "\" AND \""
-            . $this->tomorrowDate . "\"";
+        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $lastWeek . "%\" AND \""
+            . $this->tomorrowDate . "%\"";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -121,9 +129,34 @@ class DBAPI implements DBInterface
         return (int)$row['COUNT(WalkerNumber)'];
     }
 
+    public function getCurrentYearTraffic()
+    {
+        // TODO: Implement getCurrentYearTraffic() method.
+    }
+
     public function getTrafficByYear($year)
     {
         // TODO: Implement getTrafficByYear() method.
+    }
+
+    public function getCurrentMonthTraffic()
+    {
+        // TODO: Implement getCurrentMonthTraffic() method.
+    }
+
+    public function getTrafficByMonth($year, $month)
+    {
+        // TODO: Implement getTrafficByMonth() method.
+    }
+
+    public function getCurrentDayTraffic()
+    {
+        // TODO: Implement getCurrentDayTraffic() method.
+    }
+
+    public function getTrafficByDay($year, $month, $day)
+    {
+        // TODO: Implement getTrafficByDay() method.
     }
 }
 
