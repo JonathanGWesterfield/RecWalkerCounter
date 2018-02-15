@@ -143,34 +143,29 @@ class DBAPI implements DBInterface
 
         $monthArray = []; // array for the numbers for the months
 
-        for($i = 0; $i < 12; $i++)
+        for($i = 0; $i < 12; $i++) // get numbers for each month
         {
             $lookMonth = clone $prevMonth;
-            $prevMonth->modify('-1 month');
+            $prevMonth->modify('-1 month'); // decrement month
             echo $prevMonth->format('Y-m-d');
 
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth->format('Y-m-d') . "%\" AND \"" .
                 $lookMonth->format('Y-m-d') . "%\"";
 
-            echo($sql . "<br>");
-
-            echo("We got it <br>");
-
             $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-
             $row = $rs->fetch(PDO::FETCH_ASSOC);
 
-            array_push($monthArray, $row['COUNT(WalkerNumber)']);
+            array_push($monthArray, $row['COUNT(WalkerNumber)']); // add the result to the month array
 
-            echo("The numbers for the last year: ");
+            echo("The numbers for this year starting from the end of the year: ");
         }
 
         foreach ($monthArray as $element)
         {
-            echo($element . " ");
+            echo($element . " "); // print out the array (will be starting from December to January)
         }
 
-        return $monthArray;
+        return array_reverse($monthArray); // reverse the array to start in January instead of December
     }
 
     public function getTrafficByYear($year)

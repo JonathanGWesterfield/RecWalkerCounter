@@ -31,6 +31,14 @@ $test->printEntireDB();
 $test->getTotalNumWalkers();
 $test->getNumWalkersToday();
 $test->getNumWalkersThisWeek();
-$test->getCurrentYearTraffic();
+$monthArray = $test->getCurrentYearTraffic();
+
+echo("<br> FROM THE TEST FILE <br>");
+foreach ($monthArray as $element)
+{
+    echo($element . " ");
+}
+echo("<br>");
+
 
 ?>
