@@ -20,10 +20,29 @@ class DBAPI implements DBInterface
     private $nextYear;
     private $currentMonth;
 
+    /**
+     * DBAPI constructor.
+     * @param $db
+     *
+     * Mostly sets up the dates in this object. Also sets the timezone to our timezone.
+     */
     public function __construct($db)
     {
         echo("<br>Constructor has been called<br>");
+
         $this->COMMON = $db;
+
+        date_default_timezone_set('America/Chicago');
+
+        // Check to make sure the timezone the server is in is set correctly (to College Station)
+        if (date_default_timezone_get() != 'America/Chicago')
+        {
+            echo("ERROR! TIMEZONE SET INCORRECTLY!!! NOT SET TO COLLEGE STATION'S TIME (CHICAGO)!!<br>");
+            echo 'date_default_timezone_set: ' . date_default_timezone_get() . '<br/>';
+            exit(1);
+        }
+        echo("Default Timezone set to: " . date_default_timezone_get() . "<br>");
+
         $this->currentDate = date("Y-m-d");
         $this->currentDateTime = date("Y-m-d H:i:s");
         $this->currentWeekDay = date('w');
@@ -43,6 +62,9 @@ class DBAPI implements DBInterface
         echo("<br><br>");
     }
 
+    /**
+     * Class destructor
+     */
     public function __destruct()
     {
         // TODO: Implement __destruct() method.
@@ -133,10 +155,13 @@ class DBAPI implements DBInterface
         return (int)$row['COUNT(WalkerNumber)'];
     }
 
+    /**
+     * @return array
+     *
+     * Returns an array of the traffic numbers for each month in a 12 element array
+     */
     public function getCurrentYearTraffic()
     {
-        // TODO: Implement getCurrentYearTraffic() method.
-
         echo("<br>Starting getCurrentYearTraffic() <br>");
 
         $prevMonth = new DateTime($this->nextYear);
@@ -156,10 +181,9 @@ class DBAPI implements DBInterface
             $row = $rs->fetch(PDO::FETCH_ASSOC);
 
             array_push($monthArray, $row['COUNT(WalkerNumber)']); // add the result to the month array
-
-            echo("The numbers for this year starting from the end of the year: ");
         }
 
+        echo("The numbers for this year starting from the end of the year: ");
         foreach ($monthArray as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
@@ -173,9 +197,63 @@ class DBAPI implements DBInterface
         // TODO: Implement getTrafficByYear() method.
     }
 
+    /**
+     * @return array
+     *
+     * Gets the traffic numbers for each day during the current month.
+     */
     public function getCurrentMonthTraffic()
     {
-        // TODO: Implement getCurrentMonthTraffic() method.
+        // get the very first day of the month
+        $thisMonth = new DateTime($this->currentYear . "-" . $this->currentMonth . "-01");
+        echo("The beginning of this month: " . $thisMonth->format('Y-m-d') . "<br>");
+
+        // copy to make the next Month's object
+        $nextMonth = clone $thisMonth;
+
+        // get the next month's date by incrementing a month
+        $nextMonth->modify('+1 month');
+        echo("Next Month is: " . $nextMonth->format('Y-m-d') . "<br>");
+
+        // calculate the # of days between the start and end of the month - # of days in the month
+        $diff = $nextMonth->diff($thisMonth)->format("%a");
+
+        echo("Difference between the 2 months in days: " . $diff . "<br>");
+
+        // create 2 days to look at the numbers between each day
+        $lookDay = clone $nextMonth;
+        $dayBefore = clone $nextMonth;
+        $dayBefore->modify('-1 day');
+
+        echo("Look day: " . $lookDay->format('Y-m-d') . "<br>");
+        echo("Day Before: " . $dayBefore->format('Y-m-d') . "<br>");
+
+        $dayArray = [];
+
+        for($i = 0; $i < $diff; $i++)
+        {
+            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
+                $dayBefore->format('Y-m-d') . "%\" AND \"" . $lookDay->format('Y-m-d') . "%\"";
+
+            $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+            $row = $rs->fetch(PDO::FETCH_ASSOC);
+
+            // add the result to the day array
+            array_push($dayArray, $row['COUNT(WalkerNumber)']);
+
+            // decrement the target days for the next iteration
+            $lookDay->modify("-1 day");
+            $dayBefore->modify("-1 day");
+        }
+
+        echo("Numbers for the days of this current month: <br>");
+        foreach (array_reverse($dayArray) as $element)
+        {
+            echo($element . " "); // print out the array (will be starting from December to January)
+        }
+
+        // return the days reversed since the original array starts from the end of the month
+        return array_reverse($dayArray);
     }
 
     public function getTrafficByMonth($year, $month)

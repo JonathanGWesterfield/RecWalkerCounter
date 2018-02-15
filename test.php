@@ -40,5 +40,13 @@ foreach ($monthArray as $element)
 }
 echo("<br>");
 
+$dayArray = $test->getCurrentMonthTraffic();
+echo("<br> FROM THE TEST FILE <br>");
+foreach ($dayArray as $element)
+{
+    echo($element . " ");
+}
+echo("<br>");
+
 
 ?>
