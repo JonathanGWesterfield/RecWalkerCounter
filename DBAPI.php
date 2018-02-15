@@ -139,18 +139,18 @@ class DBAPI implements DBInterface
 
         echo("<br>Starting getCurrentYearTraffic() <br>");
 
-        $lookMonth = $this->nextYear;
         $prevMonth = new DateTime($this->nextYear);
 
+        $monthArray = []; // array for the numbers for the months
 
         for($i = 0; $i < 12; $i++)
         {
-            $lookMonth = $prevMonth;
+            $lookMonth = clone $prevMonth;
             $prevMonth->modify('-1 month');
             echo $prevMonth->format('Y-m-d');
 
-            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth . "%\" AND \"" .
-                $lookMonth . "%\"";
+            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth->format('Y-m-d') . "%\" AND \"" .
+                $lookMonth->format('Y-m-d') . "%\"";
 
             echo($sql . "<br>");
 
@@ -160,18 +160,14 @@ class DBAPI implements DBInterface
 
             $row = $rs->fetch(PDO::FETCH_ASSOC);
 
-            $monthArray = [];
-
-            foreach ($row as $element)
-            {
-                $monthArray.array_push($element);
-            }
+            array_push($monthArray, $row['COUNT(WalkerNumber)']);
 
             echo("The numbers for the last year: ");
-            for($i = 0; $i < $monthArray.length(); $i++)
-            {
-                echo($monthArray[$i] . " ");
-            }
+        }
+
+        foreach ($monthArray as $element)
+        {
+            echo($element . " ");
         }
 
         return $monthArray;
