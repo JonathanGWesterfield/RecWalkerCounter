@@ -17,6 +17,7 @@ class DBAPI implements DBInterface
     private $currentWeekDay;
     private $tomorrowDate;
     private $currentYear;
+    private $nextYear;
     private $currentMonth;
 
     public function __construct($db)
@@ -29,6 +30,8 @@ class DBAPI implements DBInterface
         $this->tomorrowDate = date('Y-m-d', strtotime('+1 day'));
         $this->currentYear = date("Y");
         $this->currentMonth = date("m");
+        $this->nextYear = date('Y', strtotime('+1 year'));
+        $this->nextYear = $this->nextYear . "-01-01";
 
         echo("Current Date: " . $this->currentDate . "<br>");
         echo("Current DateTime: " . $this->currentDateTime . "<br>");
@@ -36,6 +39,7 @@ class DBAPI implements DBInterface
         echo("Tomorrow's Date: " . $this->tomorrowDate . "<br>");
         echo("The current year is: " . $this->currentYear . "<br>");
         echo("The current month is: " . $this->currentMonth . "<br>");
+        echo("Next year is: " . $this->nextYear . "<br>");
         echo("<br><br>");
     }
 
@@ -132,6 +136,45 @@ class DBAPI implements DBInterface
     public function getCurrentYearTraffic()
     {
         // TODO: Implement getCurrentYearTraffic() method.
+
+        echo("<br>Starting getCurrentYearTraffic() <br>");
+
+        $lookMonth = $this->nextYear;
+        $prevMonth = new DateTime($this->nextYear);
+
+
+        for($i = 0; $i < 12; $i++)
+        {
+            $lookMonth = $prevMonth;
+            $prevMonth->modify('-1 month');
+            echo $prevMonth->format('Y-m-d');
+
+            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth . "%\" AND \"" .
+                $lookMonth . "%\"";
+
+            echo($sql . "<br>");
+
+            echo("We got it <br>");
+
+            $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+
+            $row = $rs->fetch(PDO::FETCH_ASSOC);
+
+            $monthArray = [];
+
+            foreach ($row as $element)
+            {
+                $monthArray.array_push($element);
+            }
+
+            echo("The numbers for the last year: ");
+            for($i = 0; $i < $monthArray.length(); $i++)
+            {
+                echo($monthArray[$i] . " ");
+            }
+        }
+
+        return $monthArray;
     }
 
     public function getTrafficByYear($year)

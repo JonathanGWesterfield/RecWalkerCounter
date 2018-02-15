@@ -6,6 +6,12 @@
  * Time: 5:05 PM
  */
 
+error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+
+ini_set('error_log', './script_errors.log');  // change here
+ini_set('log_errors', 'On');
+
 include_once "CommonInterface.php";
 include_once "DBInterface.php";
 
@@ -25,5 +31,6 @@ $test->printEntireDB();
 $test->getTotalNumWalkers();
 $test->getNumWalkersToday();
 $test->getNumWalkersThisWeek();
+$test->getCurrentYearTraffic();
 
 ?>
