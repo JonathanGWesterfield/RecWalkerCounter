@@ -10,42 +10,96 @@ include_once "DBAPI.php";
 
 interface DBInterface
 {
-    // class constructor
+    /**
+     * DBAPI constructor.
+     * @param $db
+     *
+     * Mostly sets up the dates in this object. Also sets the timezone to our timezone.
+     */
     public function __construct($db);
 
     // class Destructor
     public function __destruct();
+
     // prints out the entire database on the page in a table
     public function printEntireDB();
 
-    // returns the total number of walkers in the database
+    /**
+     * @return int
+     *
+     * Returns the total number of walkers in the table
+     */
     public function getTotalNumWalkers();
 
-    // gets the number of walkers that walked through from the start to the end of the day
+    /**
+     * @return int
+     *
+     * Returns the number of walkers that walked through from the start to the end of the day
+     */
     public function getNumWalkersToday();
 
-    // gets the number of walkers from the start to the end of the week
+    /**
+     * @return int
+     *
+     * Returns the number of walkers from the start to the end of the week
+     */
     public function getNumWalkersThisWeek();
 
     //public function getHotTimes(); // gets the hours of day with peak traffic
     //public function getHotDays(); // gets the days with peak traffic for a week
 
-    // Returns an array containing total number of walkers for each month for the current year
+    /**
+     * @return array
+     *
+     * Returns an array containing total number of walkers for each month for the current year
+     * 12 Element Array
+     */
     public function getCurrentYearTraffic();
 
-    // Returns an array containing total number of walkers for each month.
+    /**
+     * @param $year
+     * @return array
+     *
+     * Gives the traffic for each month in an array for the specified year passed in
+     */
     public function getTrafficByYear($year);
 
-    // Returns an array containing total number of walkers for each day for the current month
+    /**
+     * @return array
+     *
+     * Returns an array containing total number of walkers for each day for the current month
+     */
     public function getCurrentMonthTraffic();
 
-    // Returns an array containing total number of walkers for each day.
+    /**
+     * @param $year
+     * @param $month
+     * @return array
+     *
+     * Gets the traffic for each day during the specified month of the specified year
+     *
+     * Usage: getTrafficByMonth(2018, 2); // for February 2018
+     */
     public function getTrafficByMonth($year, $month);
 
-    // Returns an array containing total number of walkers for each hour for the current day
+    /**
+     * @return array
+     *
+     * Returns a length 24 array containing total number of walkers for each hour
+     * for the current day
+     */
     public function getCurrentDayTraffic();
 
-    // Returns an array (24) containing total number of walkers for each hour
+    /**
+     * @param $year
+     * @param $month
+     * @param $day
+     * @return array
+     *
+     * Returns an array (24) containing total number of walkers for each hour
+     *
+     * Usage: <var = getTrafficByDay(2018, 2, 15);> for Febraury 15, 2018
+     */
     public function getTrafficByDay($year, $month, $day);
 }
 
