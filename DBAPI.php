@@ -192,11 +192,6 @@ class DBAPI implements DBInterface
         return array_reverse($monthArray); // reverse the array to start in January instead of December
     }
 
-    public function getTrafficByYear($year)
-    {
-        // TODO: Implement getTrafficByYear() method.
-    }
-
     /**
      * @return array
      *
@@ -256,14 +251,63 @@ class DBAPI implements DBInterface
         return array_reverse($dayArray);
     }
 
+    /**
+     * @return array
+     *
+     * Gets the number of people for every hour and returns a length 24 array
+     */
+    public function getCurrentDayTraffic()
+    {
+        // get the time of the absolute end of the day and the hour before that
+        $endOfToday = new DateTime($this->tomorrowDate . " 00:00:00");
+        $prevHour = clone $endOfToday;
+        $prevHour->modify('-1 hour');
+
+        echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
+        echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
+
+        $hourArray = [];
+
+        for($i = 0; $i < 24; $i++)
+        {
+            /** output the times to see if I overshot how many times to iterate */
+            echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
+            echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
+
+            // get the number of walkers in between the 2 times
+            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
+                $prevHour->format('Y-m-d H:i:s') . "\" AND \"" . $endOfToday->format('Y-m-d H:i:s') . "\"";
+
+            $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+            $row = $rs->fetch(PDO::FETCH_ASSOC);
+
+            // push the result onto the array
+            array_push($hourArray, $row['COUNT(WalkerNumber)']);
+
+            // decrement the hour for the next iteration
+            $endOfToday->modify('-1 hour');
+            $prevHour->modify('-1 hour');
+        }
+
+        echo("Numbers by hour: ");
+        foreach (array_reverse($hourArray) as $element)
+        {
+            echo($element . " "); // print out the array (will be starting from December to January)
+        }
+        echo("<br>");
+
+        // reverse the array since it starts from the end of the day
+        return array_reverse($hourArray);
+    }
+
+    public function getTrafficByYear($year)
+    {
+        // TODO: Implement getTrafficByYear() method.
+    }
+
     public function getTrafficByMonth($year, $month)
     {
         // TODO: Implement getTrafficByMonth() method.
-    }
-
-    public function getCurrentDayTraffic()
-    {
-        // TODO: Implement getCurrentDayTraffic() method.
     }
 
     public function getTrafficByDay($year, $month, $day)

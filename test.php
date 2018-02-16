@@ -38,7 +38,7 @@ foreach ($monthArray as $element)
 {
     echo($element . " ");
 }
-echo("<br>");
+echo("<br><br>");
 
 $dayArray = $test->getCurrentMonthTraffic();
 echo("<br> FROM THE TEST FILE <br>");
@@ -46,7 +46,15 @@ foreach ($dayArray as $element)
 {
     echo($element . " ");
 }
-echo("<br>");
+echo("<br><br>");
 
+$hourArray = $test->getCurrentDayTraffic();
+
+echo("FROM THE TEST FILE: <br>");
+foreach ($hourArray as $element)
+{
+    echo($element . " "); // print out the array (will be starting from December to January)
+}
+echo("<br><br>");
 
 ?>
