@@ -162,8 +162,6 @@ class DBAPI implements DBInterface
      */
     public function getCurrentYearTraffic()
     {
-        echo("<br>Starting getCurrentYearTraffic() <br>");
-
         $prevMonth = new DateTime($this->nextYear);
 
         $monthArray = []; // array for the numbers for the months
@@ -185,6 +183,47 @@ class DBAPI implements DBInterface
 
         echo("The numbers for this year starting from the end of the year: ");
         foreach ($monthArray as $element)
+        {
+            echo($element . " "); // print out the array (will be starting from December to January)
+        }
+
+        return array_reverse($monthArray); // reverse the array to start in January instead of December
+    }
+
+    /**
+     * @param $year
+     * @return array
+     *
+     * Gives the traffic for each month in an array for the specified year passed in
+     */
+    public function getTrafficByYear($year)
+    {
+        // TODO: Implement getTrafficByYear() method.
+        $thisYear = new DateTime((string)$year . "-01-01");
+        $nextYear = clone $thisYear;
+        $nextYear->modify('+1 year');
+
+        $prevMonth = clone $nextYear;
+
+        $monthArray = []; // array for the numbers for the months
+
+        for($i = 0; $i < 12; $i++) // get numbers for each month
+        {
+            $lookMonth = clone $prevMonth;
+            $prevMonth->modify('-1 month'); // decrement month
+            echo $prevMonth->format('Y-m-d');
+
+            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth->format('Y-m-d') . "%\" AND \"" .
+                $lookMonth->format('Y-m-d') . "%\"";
+
+            $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+            $row = $rs->fetch(PDO::FETCH_ASSOC);
+
+            array_push($monthArray, $row['COUNT(WalkerNumber)']); // add the result to the month array
+        }
+
+        echo("The numbers for this year starting from the end of the year: ");
+        foreach (array_reverse($monthArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
@@ -251,6 +290,11 @@ class DBAPI implements DBInterface
         return array_reverse($dayArray);
     }
 
+    public function getTrafficByMonth($year, $month)
+    {
+        // TODO: Implement getTrafficByMonth() method.
+    }
+
     /**
      * @return array
      *
@@ -298,16 +342,6 @@ class DBAPI implements DBInterface
 
         // reverse the array since it starts from the end of the day
         return array_reverse($hourArray);
-    }
-
-    public function getTrafficByYear($year)
-    {
-        // TODO: Implement getTrafficByYear() method.
-    }
-
-    public function getTrafficByMonth($year, $month)
-    {
-        // TODO: Implement getTrafficByMonth() method.
     }
 
     public function getTrafficByDay($year, $month, $day)

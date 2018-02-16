@@ -57,4 +57,12 @@ foreach ($hourArray as $element)
 }
 echo("<br><br>");
 
+$secondMonthArray = $test->getTrafficByYear(2018);
+echo("<br> FROM THE TEST FILE <br>");
+foreach ($secondMonthArray as $element)
+{
+    echo($element . " ");
+}
+echo("<br><br>");
+
 ?>
