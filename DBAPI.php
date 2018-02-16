@@ -198,7 +198,6 @@ class DBAPI implements DBInterface
      */
     public function getTrafficByYear($year)
     {
-        // TODO: Implement getTrafficByYear() method.
         $thisYear = new DateTime((string)$year . "-01-01");
         $nextYear = clone $thisYear;
         $nextYear->modify('+1 year');
@@ -290,9 +289,67 @@ class DBAPI implements DBInterface
         return array_reverse($dayArray);
     }
 
+    /**
+     * @param $year
+     * @param $month
+     * @return array
+     *
+     * Gets the traffic for each day during the specified month of the specified year
+     *
+     * Usage: getTrafficByMonth(2018, 2); // for February 2018
+     */
     public function getTrafficByMonth($year, $month)
     {
-        // TODO: Implement getTrafficByMonth() method.
+        // get the very first day of the month
+        $thisMonth = new DateTime((string)$year . "-" . (string)$month . "-01");
+        echo("The beginning of this month: " . $thisMonth->format('Y-m-d') . "<br>");
+
+        // copy to make the next Month's object
+        $nextMonth = clone $thisMonth;
+
+        // get the next month's date by incrementing a month
+        $nextMonth->modify('+1 month');
+        echo("Next Month is: " . $nextMonth->format('Y-m-d') . "<br>");
+
+        // calculate the # of days between the start and end of the month - # of days in the month
+        $diff = $nextMonth->diff($thisMonth)->format("%a");
+
+        echo("Difference between the 2 months in days: " . $diff . "<br>");
+
+        // create 2 days to look at the numbers between each day
+        $lookDay = clone $nextMonth;
+        $dayBefore = clone $nextMonth;
+        $dayBefore->modify('-1 day');
+
+        echo("Look day: " . $lookDay->format('Y-m-d') . "<br>");
+        echo("Day Before: " . $dayBefore->format('Y-m-d') . "<br>");
+
+        $dayArray = [];
+
+        for($i = 0; $i < $diff; $i++)
+        {
+            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
+                $dayBefore->format('Y-m-d') . "%\" AND \"" . $lookDay->format('Y-m-d') . "%\"";
+
+            $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+            $row = $rs->fetch(PDO::FETCH_ASSOC);
+
+            // add the result to the day array
+            array_push($dayArray, $row['COUNT(WalkerNumber)']);
+
+            // decrement the target days for the next iteration
+            $lookDay->modify("-1 day");
+            $dayBefore->modify("-1 day");
+        }
+
+        echo("Numbers for the days of this current month: <br>");
+        foreach (array_reverse($dayArray) as $element)
+        {
+            echo($element . " "); // print out the array (will be starting from December to January)
+        }
+
+        // return the days reversed since the original array starts from the end of the month
+        return array_reverse($dayArray);
     }
 
     /**

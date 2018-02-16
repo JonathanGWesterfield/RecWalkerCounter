@@ -65,4 +65,12 @@ foreach ($secondMonthArray as $element)
 }
 echo("<br><br>");
 
+$secondDayArray = $test->getTrafficByMonth(2020, 2);
+echo("<br> FROM THE TEST FILE <br>");
+foreach ($secondDayArray as $element)
+{
+    echo($element . " ");
+}
+echo("<br><br>");
+
 ?>
