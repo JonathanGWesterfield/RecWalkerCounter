@@ -73,4 +73,13 @@ foreach ($secondDayArray as $element)
 }
 echo("<br><br>");
 
+$secondHourArray = $test->getTrafficByDay(2018, 2, 15);
+
+echo("FROM THE TEST FILE: <br>");
+foreach ($secondHourArray as $element)
+{
+    echo($element . " "); // print out the array (will be starting from December to January)
+}
+echo("<br><br>");
+
 ?>
