@@ -102,6 +102,7 @@ class DBAPI implements DBInterface
      */
     public function getTotalNumWalkers()
     {
+        echo("<br><br>getTotalNumWalkers<br>");
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
@@ -120,6 +121,7 @@ class DBAPI implements DBInterface
      */
     public function getNumWalkersToday()
     {
+        echo("<br><br>getNumWalkersToday");
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $this->currentDate . "%\" AND \""
             . $this->tomorrowDate . "%\"";
 
@@ -139,6 +141,7 @@ class DBAPI implements DBInterface
      */
     public function getNumWalkersThisWeek()
     {
+        echo("<br><br>getNumWalkersThisWeek<br>");
         $lastWeek = date('Y-m-d', strtotime('-1 week'));
 
         echo("Last weeks date: " . $lastWeek . "<br>");
@@ -182,11 +185,11 @@ class DBAPI implements DBInterface
         }
 
         echo("The numbers for this year starting from the end of the year: ");
-        foreach ($monthArray as $element)
+        foreach (array_reverse($monthArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
-
+        echo("<br><br>");
         return array_reverse($monthArray); // reverse the array to start in January instead of December
     }
 
@@ -226,6 +229,8 @@ class DBAPI implements DBInterface
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
+
+        echo("<br><br>");
 
         return array_reverse($monthArray); // reverse the array to start in January instead of December
     }
@@ -284,6 +289,7 @@ class DBAPI implements DBInterface
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
+        echo("<br><br>");
 
         // return the days reversed since the original array starts from the end of the month
         return array_reverse($dayArray);
@@ -348,6 +354,8 @@ class DBAPI implements DBInterface
             echo($element . " "); // print out the array (will be starting from December to January)
         }
 
+        echo("<br><br>");
+
         // return the days reversed since the original array starts from the end of the month
         return array_reverse($dayArray);
     }
@@ -395,7 +403,8 @@ class DBAPI implements DBInterface
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
-        echo("<br>");
+
+        echo("<br><br>");
 
         // reverse the array since it starts from the end of the day
         return array_reverse($hourArray);
@@ -451,7 +460,8 @@ class DBAPI implements DBInterface
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
-        echo("<br>");
+
+        echo("<br><br>");
 
         // reverse the array since it starts from the end of the day
         return array_reverse($hourArray);

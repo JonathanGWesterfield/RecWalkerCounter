@@ -28,87 +28,81 @@ $test = new DBAPI($thisCommon);
 echo("Created the DBAPI object<br>");
 
 $test->printEntireDB();
-$test->getTotalNumWalkers();
-$test->getNumWalkersToday();
-$test->getNumWalkersThisWeek();
-$monthArray = $test->getCurrentYearTraffic();
 
-echo("<br> FROM THE TEST FILE <br>");
-foreach ($monthArray as $element)
-{
-    echo($element . " ");
-}
-echo("<br><br>");
-
-$dayArray = $test->getCurrentMonthTraffic();
-echo("<br> FROM THE TEST FILE <br>");
-foreach ($dayArray as $element)
-{
-    echo($element . " ");
-}
-echo("<br><br>");
-
-$hourArray = $test->getCurrentDayTraffic();
-
-echo("FROM THE TEST FILE: <br>");
-foreach ($hourArray as $element)
-{
-    echo($element . " "); // print out the array (will be starting from December to January)
-}
-echo("<br><br>");
-
-$secondMonthArray = $test->getTrafficByYear(2018);
-echo("<br> FROM THE TEST FILE <br>");
-foreach ($secondMonthArray as $element)
-{
-    echo($element . " ");
-}
-echo("<br><br>");
-
-$secondDayArray = $test->getTrafficByMonth(2020, 2);
-echo("<br> FROM THE TEST FILE <br>");
-foreach ($secondDayArray as $element)
-{
-    echo($element . " ");
-}
-echo("<br><br>");
-
-$secondHourArray = $test->getTrafficByDay(2018, 2, 15);
-
-echo("FROM THE TEST FILE: <br>");
-foreach ($secondHourArray as $element)
-{
-    echo($element . " "); // print out the array (will be starting from December to January)
-}
-echo("<br><br>");
-
-/**
- * Unit tests start here
- */
-
+/** Testing getTotalNumWalkers - should be 17 */
 if($test->getTotalNumWalkers() != 17)
 {
-    echo("getTotalNumWalkers() failed! Didn't equal 17 (the number of rows in the DB<br>");
+    echo("<br><br>getTotalNumWalkers() failed! Didn't equal 17 (the number of rows in the DB<br><br>");
 }
 
-//TODO: write test cases to make sure the objects data (dates) are correct for the class
+/** Testing getNumWalkersToday - Should be 0 */
 if($test->getNumWalkersToday() != 0)
 {
-    echo("getNumWalkersToday() failed! There are supposed to be 0 walkers today! <br>");
+    echo("<br><br>getNumWalkersToday() failed! There are supposed to be 0 walkers today! <br><br>");
 }
 
-if(count($monthArray != 12))
+/** Testing getNumWalkersThisWeek - Should be 0 */
+if($test->getNumWalkersThisWeek() != 8)
 {
-    echo("Error in getCurrentYearTraffic()!!<br>");
-    echo("Did not return 12 months in the year!<br>");
+    echo("<br><br>getNumWalkersThisWeek() failed! There are supposed to be 8 walkers this week! <br><br>");
 }
 
-if(array_sum($monthArray) != 17)
+/** @var $monthArray
+ * Testing getCurrentYearTraffic - Should be 12 months returned */
+$monthArray = $test->getCurrentYearTraffic();
+if(count($monthArray) != 12)
 {
-    echo("Error in getCurrentYearTraffic()!!! Got the wrong number of walkers back!<br>");
+    echo("<br><br>Error in getCurrentYearTraffic()!!<br>");
+    echo("Did not return 12 months in the year!<br><br>");
 }
 
-/* TODO: Make more flexible testing to make sure that the functions are returning the correct things
-    for the correct day, week, month */
+/** @var $dayArray
+ * Testing getCurrentMonthTraffic - should have the correct number of days in the current month
+ */
+$dayArray = $test->getCurrentMonthTraffic();
+if(count($dayArray) != cal_days_in_month(CAL_GREGORIAN,2,2018))
+{
+    echo("Number of days in the month<br>" . cal_days_in_month(CAL_GREGORIAN,2,2018));
+
+    echo("<br><br>ERROR!! getCurrentMonthTraffic Failed! Wrong number of days returned!<br><br>");
+}
+
+/** @var $hourArray
+ * Testing getCurrentDayTraffic - should return length 24 for a 24 hour day*/
+$hourArray = $test->getCurrentDayTraffic();
+if(count($hourArray) != 24)
+{
+    echo("<br><br>ERROR! getCurrentDayTraffic Failed! Did not return 24 hours!<br><br>");
+}
+
+/** @var $secondMonthArray
+ * Testing getTrafficByYear by putting in the current year - should return 12 months*/
+$secondMonthArray = $test->getTrafficByYear(2018);
+if(count($secondMonthArray) != 12)
+{
+    echo("<br><br>ERROR!! getTrafficByYear Failed!! Does not return 12 months!<br><br>");
+}
+
+/** @var $secondDayArray
+ * Testing getTrafficByMonth testing February 2020 - should return correct amount of days*/
+$secondDayArray = $test->getTrafficByMonth(2020, 2);
+if(count($secondDayArray) !=cal_days_in_month(CAL_GREGORIAN,2,2020))
+{
+    echo("<br><br>ERROR!! getTrafficByMonth Failed!! Does not return correct # of days for Feb 2020!<br><br>");
+}
+
+/** Should return 0 walkers for Feb 2020 since no records in the future */
+if(array_sum($secondDayArray) != 0)
+{
+    echo("<br><br>ERROR!! getTrafficByMonth Failed!! Does not return correct # of walkers for Feb 2020!<br><br>");
+}
+
+/** @var $secondHourArray
+ * Testing getTrafficByDay - should return 24 hours */
+$secondHourArray = $test->getTrafficByDay(2018, 2, 15);
+if(count($secondHourArray) != 24)
+{
+    echo("<br><br>ERROR! getTrafficByDay Failed! Did not return 24 hours!<br><br>");
+}
 
 ?>
