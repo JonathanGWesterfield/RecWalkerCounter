@@ -82,4 +82,33 @@ foreach ($secondHourArray as $element)
 }
 echo("<br><br>");
 
+/**
+ * Unit tests start here
+ */
+
+if($test->getTotalNumWalkers() != 17)
+{
+    echo("getTotalNumWalkers() failed! Didn't equal 17 (the number of rows in the DB<br>");
+}
+
+//TODO: write test cases to make sure the objects data (dates) are correct for the class
+if($test->getNumWalkersToday() != 0)
+{
+    echo("getNumWalkersToday() failed! There are supposed to be 0 walkers today! <br>");
+}
+
+if(count($monthArray != 12))
+{
+    echo("Error in getCurrentYearTraffic()!!<br>");
+    echo("Did not return 12 months in the year!<br>");
+}
+
+if(array_sum($monthArray) != 17)
+{
+    echo("Error in getCurrentYearTraffic()!!! Got the wrong number of walkers back!<br>");
+}
+
+/* TODO: Make more flexible testing to make sure that the functions are returning the correct things
+    for the correct day, week, month */
+
 ?>
