@@ -11,10 +11,17 @@ class Common implements CommonInterface
     var $conn;
     var $debug;
 
+    /* info for local DB
     var $db="localhost:8889";
     var $dbname="WalkerProject";
     var $user="root";
-    var $pass="root";
+    var $pass="root"; */
+
+    var $db="database.cse.tamu.edu";
+    var $dbname="WalkerData";
+    var $user="jgwesterfield";
+    var $pass="JULY1111july";
+
 
     function Common($debug)
     {
