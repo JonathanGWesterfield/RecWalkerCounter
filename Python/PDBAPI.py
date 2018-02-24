@@ -38,9 +38,10 @@ class PDBAPI:
             print(sql)
             self.__cursor.execute(sql)
             self.__cnx.commit()
+            return 0
 
         except mysql.connector.Error as err:
             # say it missed it an move on
             print("Something went wrong: {}".format(err))
-            return
+            return 1
 
