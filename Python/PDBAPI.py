@@ -3,10 +3,10 @@ from mysql.connector import errorcode
 
 class PDBAPI:
     __config = {
-        'user': 'root',
-        'password': 'root',
-        'host': 'localhost:8889',
-        'database': 'WalkerProject'
+        'user': 'jgwesterfield',
+        'password': 'Whoop19!',
+        'host': 'database.cse.tamu.edu',
+        'database': 'WalkerData'
     }
 
     # class constructor connects to the database
