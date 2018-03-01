@@ -6,7 +6,7 @@ class PDBAPI:
         'user': 'jgwesterfield',
         'password': 'Whoop19!',
         'host': 'database.cse.tamu.edu',
-        'database': 'WalkerData'
+        'database': 'jgwesterfield-WalkerData'
     }
 
     # class constructor connects to the database
