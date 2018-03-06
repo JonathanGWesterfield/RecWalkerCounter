@@ -25,9 +25,11 @@ def insert(cnx, cursor, inOrOut):
 
 def dbConnect():
     try:
+        # declare cnx and cursor as global so they can be used in other functions
         global cnx
         global cursor
 
+        # make the connection
         cnx = mysql.connector.connect(user='jgwesterfield', password='Whoop19!', host='database.cse.tamu.edu', database='jgwesterfield-WalkerData')
         cursor = cnx.cursor()
         print ("DB Connected")
@@ -50,11 +52,13 @@ def dbConnect():
 
 #####################################################################################################################################################
 
+# test code
 dbConnect()
 if (insert(cnx, cursor, True)):
     print("ERROR!")
 else:
     print("IT WORKED!")
+cnx.close()
 
 """class PDBAPI:
 

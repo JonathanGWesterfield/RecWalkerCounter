@@ -11,19 +11,19 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Python2_7$Unnamed.coverage" NAME="PDBAPI Coverage Results" MODIFIED="1519926666553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python2_7$PDBAPI.coverage" NAME="PDBAPI Coverage Results" MODIFIED="1520353162572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python2_7$PDBAPI.coverage" NAME="PDBAPI Coverage Results" MODIFIED="1520353546566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="PDBAPI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PDBAPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-278">
-              <caret line="0" column="107" lean-forward="false" selection-start-line="0" selection-start-column="107" selection-end-line="0" selection-end-column="107" />
+            <state relative-caret-position="339">
+              <caret line="60" column="11" lean-forward="false" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
               <folding>
                 <element signature="e#248#270#0" expanded="true" />
-                <marker date="1520353353000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
-                <marker date="1520353353000" expanded="true" signature="3040:3140" ph="INSERT INTO WalkerData... " />
+                <marker date="1520353542000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
+                <marker date="1520353542000" expanded="true" signature="3176:3276" ph="INSERT INTO WalkerData... " />
               </folding>
             </state>
           </provider>
@@ -216,8 +216,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#248#270#0" expanded="true" />
-            <marker date="1520353353000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
-            <marker date="1520353353000" expanded="true" signature="3040:3140" ph="INSERT INTO WalkerData... " />
+            <marker date="1520353542000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
+            <marker date="1520353542000" expanded="true" signature="3176:3276" ph="INSERT INTO WalkerData... " />
           </folding>
         </state>
       </provider>
@@ -228,8 +228,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#248#270#0" expanded="true" />
-            <marker date="1520353353000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
-            <marker date="1520353353000" expanded="true" signature="3040:3140" ph="INSERT INTO WalkerData... " />
+            <marker date="1520353542000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
+            <marker date="1520353542000" expanded="true" signature="3176:3276" ph="INSERT INTO WalkerData... " />
           </folding>
         </state>
       </provider>
@@ -251,12 +251,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PDBAPI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-278">
-          <caret line="0" column="107" lean-forward="false" selection-start-line="0" selection-start-column="107" selection-end-line="0" selection-end-column="107" />
+        <state relative-caret-position="339">
+          <caret line="60" column="11" lean-forward="false" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
           <folding>
             <element signature="e#248#270#0" expanded="true" />
-            <marker date="1520353353000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
-            <marker date="1520353353000" expanded="true" signature="3040:3140" ph="INSERT INTO WalkerData... " />
+            <marker date="1520353542000" expanded="true" signature="368:468" ph="INSERT INTO WalkerData... " />
+            <marker date="1520353542000" expanded="true" signature="3176:3276" ph="INSERT INTO WalkerData... " />
           </folding>
         </state>
       </provider>
