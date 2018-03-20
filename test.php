@@ -110,4 +110,12 @@ if(count($secondHourArray) != 24)
     echo("<br><br>ERROR! getTrafficByDay Failed! Did not return 24 hours!<br><br>");
 }
 
+$numRange = $test->getTrafficTimeRange(2018, 2, 12, 2018, 2, 16);
+echo("NUMBER RANGE FROM TEST: " . $numRange . "<br>");
+if($numRange != 8)
+{
+    echo("ERROR! getTrafficTimeRange did not return the correct number of walkers!<br><br>");
+}
+
+
 ?>

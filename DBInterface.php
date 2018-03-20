@@ -101,6 +101,19 @@ interface DBInterface
      * Usage: <var = getTrafficByDay(2018, 2, 15);> for Febraury 15, 2018
      */
     public function getTrafficByDay($year, $month, $day);
+
+    /**
+     * @param $year1
+     * @param $month1
+     * @param $day1
+     * @param $year2
+     * @param $month2
+     * @param $day2
+     * @return int
+     *
+     * Takes in a date range (start and end date) and counts the number of walkers in the given range
+     */
+    public function getTrafficTimeRange($year1, $month1, $day1, $year2, $month2, $day2);
 }
 
 ?>

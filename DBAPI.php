@@ -466,6 +466,44 @@ class DBAPI implements DBInterface
         // reverse the array since it starts from the end of the day
         return array_reverse($hourArray);
     }
+
+    /**
+     * @param $year1
+     * @param $month1
+     * @param $day1
+     * @param $year2
+     * @param $month2
+     * @param $day2
+     * @return int
+     *
+     * Takes in a date range (start and end date) and counts the number of walkers in the given range
+     */
+    public function getTrafficTimeRange($year1, $month1, $day1, $year2, $month2, $day2)
+    {
+        $startDay = new DateTime((string)$year1 . "-" . (string)$month1 . "-" . (string)$day1 . " 00:00:00");
+        // get the next day to get the correct date
+        $day2 += 1;
+        // get the time of the absolute end of the end day
+        $endDay = new DateTime((string)$year2 . "-" . (string)$month2 . "-" . (string)$day2 . " 00:00:00");
+
+
+        echo("Start Day: " . $startDay->format('Y-m-d H:i:s') . "<br>");
+        echo("End Day: " . $endDay->format('Y-m-d H:i:s') . "<br>");
+
+        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
+            $startDay->format('Y-m-d H:i:s') . "\" AND \"" . $endDay->format('Y-m-d H:i:s') . "\"";
+
+        $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+        $row = $rs->fetch(PDO::FETCH_ASSOC);
+
+        echo("Number of People in given time range: " . $row['COUNT(WalkerNumber)'] . "<br><br>");
+
+        return (int)$row['COUNT(WalkerNumber)'];
+    }
 }
 
+
+//TODO: get number of walkers for a given week
 ?>
+
+
