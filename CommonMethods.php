@@ -18,9 +18,9 @@ class Common implements CommonInterface
     var $pass="root"; */
 
     var $db="database.cse.tamu.edu";
-    var $dbname="WalkerData";
+    var $dbname="jgwesterfield-WalkerData";
     var $user="jgwesterfield";
-    var $pass="JULY1111july";
+    var $pass="Whoop19!";
 
 
     function Common($debug)
