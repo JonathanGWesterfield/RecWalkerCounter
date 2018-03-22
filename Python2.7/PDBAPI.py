@@ -1,11 +1,20 @@
-###########################################################################################################
-#COPY AND PAST THESE FUNCTIONS
-###########################################################################################################
+#####################################################################################################################
+#                                COPY AND PAST THESE FUNCTIONS AT THE TOP OF THE FILE                               #
+#####################################################################################################################
 
 import mysql.connector
 from mysql.connector import errorcode
 
 def insert(cnx, cursor, inOrOut):
+    """
+    This function inserts an entry into the database. Will insert the location (should be the Student Recreation Center
+    but can be changed), a boolean value as to whether the subject exited or entered, the day of the week in number
+    format (using the mysql dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
+    :param cnx:
+    :param cursor:
+    :param inOrOut:
+    :return: Boolean
+    """
     try:
         sql = "INSERT INTO WalkerData (Location, InOrOut, WeekDay, DateTime) VALUES (\"Student Recreation Center\", "
         sql += str(inOrOut) + ", dayofweek(now()), now())"
@@ -24,6 +33,11 @@ def insert(cnx, cursor, inOrOut):
         return True
 
 def dbConnect():
+    '''
+    Connects to the database using my credentials and the mysql password. Will print out a string
+    depeding on the status of the connection i.e.: whether if failed or not and why.
+    :return:
+    '''
     try:
         # declare cnx and cursor as global so they can be used in other functions
         global cnx
@@ -60,68 +74,4 @@ else:
     print("IT WORKED!")
 cnx.close()
 
-"""class PDBAPI:
-
-    __config = {
-        'user': 'jgwesterfield',
-        'password': 'Whoop19!',
-        'host': 'database.cse.tamu.edu',
-        'database': 'jgwesterfield-WalkerData'
-    }
-
-    __config = {
-        'user': 'root',
-        'password': 'root',
-        'host': 'localhost',
-        'database': 'WalkerProject'
-    }
-
-    # class constructor connefts to the database
-    def __init__(self):
-        try:
-            self.cnx = mysql.connector.connect(user='root', password='root', host='localhost', database='WalkerProject')
-            self.cursor = self.cnx.cursor()
-
-        except mysql.connector.Error as err:
-            if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-                print("Something is wrong with your user name or password")
-            elif err.errno == errorcode.ER_BAD_DB_ERROR:
-                print("Database does not exist")
-            else:
-                print(err)
-        else:
-            self.cnx.close()
-
-    def __del__(self):
-        self.cnx.close()
-        print("Closing Database Connection")
-
-    # inserts the Location, InOrOut, Weekday, Datetime and timestamp into the database
-    def insert(self, inOrOut):
-        try:
-            sql = "INSERT INTO WalkerData (Location, InOrOut, WeekDay, DateTime) VALUES (\"Student Recreation Center\", "
-            sql += str(inOrOut) + ", dayofweek(now()), now())"
-
-
-            print("Attempting to Insert into the Database: ")
-
-
-            print(sql)
-            print("\n")
-            self.cursor.execute(sql)
-            self.cnx.commit()
-            return False
-
-        except mysql.connector.Error as err:
-            # say it missed it an move on
-            print("Something went wrong: {}".format(err))
-            return True
-
-
-dbConn = PDBAPI()
-
-if dbConn.insert(True):
-    print("ERROR!!!")
-else:
-    print("It's Good")"""
 
