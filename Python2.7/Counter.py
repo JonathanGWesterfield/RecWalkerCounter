@@ -68,11 +68,11 @@ def dbConnect():
 
 dbConnect()
 
-if (insert(cnx, cursor, True)):
-    print("ERROR!")
-else:
-    print("IT WORKED!")
-cnx.close()
+#if (insert(cnx, cursor, True)):
+#    print("ERROR!")
+#else:
+#    print("IT WORKED!")
+#cnx.close()
 
 # create a PyMata instance
 board = PyMata("COM3", verbose=True) # Change port to /dev/ttyACM... for LINUX
