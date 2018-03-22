@@ -12,7 +12,7 @@ def insert(cnx, cursor, inOrOut):
     format (using the mysql dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
     :param cnx:
     :param cursor:
-    :param inOrOut:
+    :param inOrOut: True=In, False=Out
     :return: Boolean
     """
     try:
