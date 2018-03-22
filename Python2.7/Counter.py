@@ -66,18 +66,13 @@ def dbConnect():
             cnx.close()
             return
 
+# Connect to the MySQL database
 dbConnect()
 
-#if (insert(cnx, cursor, True)):
-#    print("ERROR!")
-#else:
-#    print("IT WORKED!")
-#cnx.close()
-
-# create a PyMata instance
+# Create a PyMata instance
 board = PyMata("COM3", verbose=True) # Change port to /dev/ttyACM... for LINUX
 
-# you may need to press ctrl c twice
+# May need to press ctrl c twice
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C')
     if board is not None:
@@ -87,16 +82,14 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-# Configure the trigger and echo pins
-
-# Sensor 1
+# Configure the trigger and echo pins - Sensor 1
 board.sonar_config(12, 12)
 
-# Sensor 2
+# Configure the trigger and echo pins - Sensor 2
 board.sonar_config(13, 13)
 time.sleep(1)
 
-# Create a forever loop that will print out the sonar data for the PING device
+# Loop to read from ultrasonic sensors and add data to DB
 while 1:
     data = board.get_sonar_data()
 
@@ -105,14 +98,16 @@ while 1:
     hit1 = 0
     hit2 = 0
 
+	# Check distances for both sensors, trip at close distances
     if (distance1 < 15):
-        print("Entering...")
+        #print("Entering...") #Debug
         hit1 = 1
 
     if (distance2 < 15):
-        print("Exiting...")
+        #print("Exiting...") #Debug 
         hit2 = 1
-
+	
+	# Entering has been triggered, wait to complete before reading again
     while hit1 == 1 and hit2 == 0:
         dist = 0
         data = board.get_sonar_data()
@@ -120,11 +115,12 @@ while 1:
         if (dist < 15):
             hit1 = 0
             hit2 = 0
-            print("ENTERED! Inserting into DB...")
+            #print("ENTERED! Inserting into DB...") #Debug 
             insert(cnx, cursor, True)
             time.sleep(.25)
             break
-
+	
+	# Exiting has been triggered, wait to complete before reading again
     while hit1 == 0 and hit2 == 1:
         dist = 0
         data = board.get_sonar_data()
@@ -132,14 +128,9 @@ while 1:
         if (dist < 15):
             hit1 = 0
             hit2 = 0
-            print("EXITED! Inserting into DB...")
+            #print("EXITED! Inserting into DB...") #Debug 
             insert(cnx, cursor, False)
             time.sleep(.25)
             break
-
-    # Data key value is sensor pin
-    # Debug
-    #print(str(data[12][1]) + ' CM on Sensor 1!')
-    #print(str(data[13][1]) + ' CM on Sensor 2!')
 
     time.sleep(.2)
