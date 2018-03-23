@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="class_common" kind="class"><name>Common</name>
+    <member refid="class_common_1aa8a5a87b9c1a6a0819b88447cbe41877" kind="variable"><name>$conn</name></member>
+    <member refid="class_common_1a85ae3e64cd40e9564adceb010085e9dd" kind="variable"><name>$debug</name></member>
+    <member refid="class_common_1a1fa3127fc82f96b1436d871ef02be319" kind="variable"><name>$db</name></member>
+    <member refid="class_common_1ac5111a571fffa2499732833bb7f0d8c1" kind="variable"><name>$dbname</name></member>
+    <member refid="class_common_1a598ca4e71b15a1313ec95f0df1027ca5" kind="variable"><name>$user</name></member>
+    <member refid="class_common_1a12ec2780b52bd1c54d38c2f981c0349f" kind="variable"><name>$pass</name></member>
+    <member refid="class_common_1a4a9e6769ab6c946d0895e8d987df1c10" kind="function"><name>Common</name></member>
+    <member refid="class_common_1a1b1bd9b3f45a5fbd2549355282cdc96f" kind="function"><name>connect</name></member>
+    <member refid="class_common_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" kind="function"><name>executeQuery</name></member>
+  </compound>
+  <compound refid="interface_common_interface" kind="interface"><name>CommonInterface</name>
+    <member refid="interface_common_interface_1a4a9e6769ab6c946d0895e8d987df1c10" kind="function"><name>Common</name></member>
+    <member refid="interface_common_interface_1a1b1bd9b3f45a5fbd2549355282cdc96f" kind="function"><name>connect</name></member>
+    <member refid="interface_common_interface_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" kind="function"><name>executeQuery</name></member>
+  </compound>
+  <compound refid="class_d_b_a_p_i" kind="class"><name>DBAPI</name>
+    <member refid="class_d_b_a_p_i_1aba1f4eb76fc33bc0fd1bccffa8ede90e" kind="variable"><name>$COMMON</name></member>
+    <member refid="class_d_b_a_p_i_1a71b0d4434a284e136badb5b9a37f38bb" kind="variable"><name>$currentDate</name></member>
+    <member refid="class_d_b_a_p_i_1a897144b05115420af1686441d0554612" kind="variable"><name>$currentDateTime</name></member>
+    <member refid="class_d_b_a_p_i_1ad99fb9e9c4cfdc71b7bb02224731c768" kind="variable"><name>$currentWeekDay</name></member>
+    <member refid="class_d_b_a_p_i_1ab2f352c42ae0410d2ea7309dad052bb8" kind="variable"><name>$tomorrowDate</name></member>
+    <member refid="class_d_b_a_p_i_1a15ab92024d7ae669c5ebc01265314aae" kind="variable"><name>$currentYear</name></member>
+    <member refid="class_d_b_a_p_i_1a21cb95ca024ce71db8455134cde5afa1" kind="variable"><name>$nextYear</name></member>
+    <member refid="class_d_b_a_p_i_1a745701639dbb9e33bd9240f869c4acf2" kind="variable"><name>$currentMonth</name></member>
+    <member refid="class_d_b_a_p_i_1a800f8efee13692788b13ee57c5960092" kind="function"><name>__construct</name></member>
+    <member refid="class_d_b_a_p_i_1a421831a265621325e1fdd19aace0c758" kind="function"><name>__destruct</name></member>
+    <member refid="class_d_b_a_p_i_1a7e02b55449fecf4bed4ca717f38dafd5" kind="function"><name>printEntireDB</name></member>
+    <member refid="class_d_b_a_p_i_1ab7a902c85d04b9973a30b73963cb3270" kind="function"><name>getTotalNumWalkers</name></member>
+    <member refid="class_d_b_a_p_i_1adf40141a9763141c0eaeb9ce620181ad" kind="function"><name>getNumWalkersToday</name></member>
+    <member refid="class_d_b_a_p_i_1ae7a2342889cfd984513ba17ddbd14bef" kind="function"><name>getNumWalkersThisWeek</name></member>
+    <member refid="class_d_b_a_p_i_1ad487abf76c66536778a43009612b6843" kind="function"><name>getCurrentYearTraffic</name></member>
+    <member refid="class_d_b_a_p_i_1a82c5e558141dca62c793baf0d1216bc0" kind="function"><name>getTrafficByYear</name></member>
+    <member refid="class_d_b_a_p_i_1ae1b5c3c8112356b5c8ea9184286ec89a" kind="function"><name>getCurrentMonthTraffic</name></member>
+    <member refid="class_d_b_a_p_i_1a0e954fca184f4b8ac04f51cb0c558def" kind="function"><name>getTrafficByMonth</name></member>
+    <member refid="class_d_b_a_p_i_1a50aa5202dd6a6314b4b0da6fd3026415" kind="function"><name>getCurrentDayTraffic</name></member>
+    <member refid="class_d_b_a_p_i_1a732a3a52aedfb5dd4b63f7292cb8ec3b" kind="function"><name>getTrafficByDay</name></member>
+    <member refid="class_d_b_a_p_i_1a546615c71715e031c6218799e97937ab" kind="function"><name>getTrafficTimeRange</name></member>
+  </compound>
+  <compound refid="interface_d_b_interface" kind="interface"><name>DBInterface</name>
+    <member refid="interface_d_b_interface_1a800f8efee13692788b13ee57c5960092" kind="function"><name>__construct</name></member>
+    <member refid="interface_d_b_interface_1a421831a265621325e1fdd19aace0c758" kind="function"><name>__destruct</name></member>
+    <member refid="interface_d_b_interface_1a7e02b55449fecf4bed4ca717f38dafd5" kind="function"><name>printEntireDB</name></member>
+    <member refid="interface_d_b_interface_1ab7a902c85d04b9973a30b73963cb3270" kind="function"><name>getTotalNumWalkers</name></member>
+    <member refid="interface_d_b_interface_1adf40141a9763141c0eaeb9ce620181ad" kind="function"><name>getNumWalkersToday</name></member>
+    <member refid="interface_d_b_interface_1ae7a2342889cfd984513ba17ddbd14bef" kind="function"><name>getNumWalkersThisWeek</name></member>
+    <member refid="interface_d_b_interface_1ad487abf76c66536778a43009612b6843" kind="function"><name>getCurrentYearTraffic</name></member>
+    <member refid="interface_d_b_interface_1a82c5e558141dca62c793baf0d1216bc0" kind="function"><name>getTrafficByYear</name></member>
+    <member refid="interface_d_b_interface_1ae1b5c3c8112356b5c8ea9184286ec89a" kind="function"><name>getCurrentMonthTraffic</name></member>
+    <member refid="interface_d_b_interface_1a0e954fca184f4b8ac04f51cb0c558def" kind="function"><name>getTrafficByMonth</name></member>
+    <member refid="interface_d_b_interface_1a50aa5202dd6a6314b4b0da6fd3026415" kind="function"><name>getCurrentDayTraffic</name></member>
+    <member refid="interface_d_b_interface_1a732a3a52aedfb5dd4b63f7292cb8ec3b" kind="function"><name>getTrafficByDay</name></member>
+    <member refid="interface_d_b_interface_1a546615c71715e031c6218799e97937ab" kind="function"><name>getTrafficTimeRange</name></member>
+  </compound>
+  <compound refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i" kind="class"><name>PDBAPI::PDBAPI</name>
+    <member refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i_1a2c86b53ffca1a58fab69ad1fdac63a56" kind="variable"><name>__config</name></member>
+    <member refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i_1ae93cacbc00b5a22deb7830db1667ab86" kind="variable"><name>__cnx</name></member>
+    <member refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i_1ae7c28868956504a49401d473d0f54911" kind="variable"><name>__cursor</name></member>
+    <member refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i_1ae64f0875afe3067b97ba370b354b9213" kind="function"><name>__init__</name></member>
+    <member refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i_1a41a65d7030dd1006b177d0bc24e1a12b" kind="function"><name>__del__</name></member>
+    <member refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i_1a92919dd1ba46f1db668faf16328afb40" kind="function"><name>insert</name></member>
+  </compound>
+  <compound refid="namespace_counter" kind="namespace"><name>Counter</name>
+    <member refid="namespace_counter_1af3184e6d3aac51d64ce9a9af9571c9c0" kind="variable"><name>board</name></member>
+    <member refid="namespace_counter_1a511ae0b1c13f95e5f08f1a0dd3da3d93" kind="variable"><name>data</name></member>
+    <member refid="namespace_counter_1a6bf62367f02a224fdd2fe85ee50ba6ea" kind="variable"><name>distance1</name></member>
+    <member refid="namespace_counter_1a253d925c9f0934281d81c1c4037011a0" kind="variable"><name>distance2</name></member>
+    <member refid="namespace_counter_1ae2d3c5f9d45188786bd6c62b4a1de2d9" kind="variable"><name>hit1</name></member>
+    <member refid="namespace_counter_1a8e4751a4da4c6b6bcedeea1988ede98a" kind="variable"><name>hit2</name></member>
+    <member refid="namespace_counter_1a62d19f1b68cc51e55723b31a29cdef78" kind="variable"><name>dist</name></member>
+    <member refid="namespace_counter_1a49e12affeadafd8435a97b06057e2dfe" kind="function"><name>insert</name></member>
+    <member refid="namespace_counter_1a8e429790189b662dee33d000087cb1f8" kind="function"><name>dbConnect</name></member>
+    <member refid="namespace_counter_1abd6cd9e7a4e8224f96c5d38e18db6291" kind="function"><name>signal_handler</name></member>
+  </compound>
+  <compound refid="namespace_p_d_b_a_p_i" kind="namespace"><name>PDBAPI</name>
+    <member refid="namespace_p_d_b_a_p_i_1a0ee555e066e29e16d083d5ed52f873a1" kind="function"><name>insert</name></member>
+    <member refid="namespace_p_d_b_a_p_i_1a36ba8c63bef5ee909cfc48428ea592b1" kind="function"><name>dbConnect</name></member>
+  </compound>
+  <compound refid="_chart_8min_8js" kind="file"><name>Chart.min.js</name>
+    <member refid="_chart_8min_8js_1a6e2c9a4472a75ae2ec32ee54ff87c001" kind="function"><name>!function</name></member>
+  </compound>
+  <compound refid="_common_interface_8php" kind="file"><name>CommonInterface.php</name>
+  </compound>
+  <compound refid="_common_methods_8php" kind="file"><name>CommonMethods.php</name>
+  </compound>
+  <compound refid="_d_b_a_p_i_8php" kind="file"><name>DBAPI.php</name>
+  </compound>
+  <compound refid="_d_b_interface_8php" kind="file"><name>DBInterface.php</name>
+  </compound>
+  <compound refid="graph_8php" kind="file"><name>graph.php</name>
+    <member refid="graph_8php_1a2dc37683cec5a169d791007363950944" kind="variable"><name>$thisCommon</name></member>
+    <member refid="graph_8php_1a1fa3127fc82f96b1436d871ef02be319" kind="variable"><name>$db</name></member>
+    <member refid="graph_8php_1aa98e5745136db21835880938c0eba666" kind="variable"><name>else</name></member>
+    <member refid="graph_8php_1a7af48d7091d5a774294eae9ab84a5057" kind="function"><name>print_array</name></member>
+    <member refid="graph_8php_1af55d8d11c9641c2dd1b0b29a790b0fe8" kind="function"><name>display_graph</name></member>
+  </compound>
+  <compound refid="index_8php" kind="file"><name>index.php</name>
+    <member refid="index_8php_1a2dc37683cec5a169d791007363950944" kind="variable"><name>$thisCommon</name></member>
+    <member refid="index_8php_1a1fa3127fc82f96b1436d871ef02be319" kind="variable"><name>$db</name></member>
+  </compound>
+  <compound refid="jquery-3_83_81_8min_8js" kind="file"><name>jquery-3.3.1.min.js</name>
+    <member refid="jquery-3_83_81_8min_8js_1ae21cc36bf0d65014c717a481a3f8a468" kind="variable"><name>undefined</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a2c038346d47955cbe2cb91e338edd7e1" kind="variable"><name>e</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a23c5666e83bbbceee94adcd0851f50c4" kind="variable"><name>t</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a3c7365c007156a2a63223e3c9909fbf8" kind="variable"><name>n</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a07c0e0a63b5b484807c0331c78558c9e" kind="variable"><name>r</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a5e25b1d1bed9ab5f3174b76d6a722180" kind="variable"><name>i</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a400dc8109620963da8314d4bdfa14f83" kind="variable"><name>o</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a82ca4ee5dd63e58a2bb967077dc8b8fb" kind="variable"><name>a</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1ad9a7d92cb87932d25187fdec3ba1b621" kind="variable"><name>s</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1accb4ce8dd4113ac0f510653e31809106" kind="variable"><name>u</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1ae5e71a2600e8891c54854be157cc6626" kind="variable"><name>l</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1abce695e0af988ece0826d9ad59b8160d" kind="variable"><name>c</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a9cf09a2972472098a4c689fd988f4dfc" kind="variable"><name>f</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1ad1707b001240e9c8298830073364c8bf" kind="variable"><name>p</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1aeb337d295abaddb5ec3cb34cc2e2bbc9" kind="variable"><name>d</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a79fe0eb780a2a4b5543b4dddf8b6188a" kind="variable"><name>h</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a103df269476e78897c9c4c6cb8f4eb06" kind="variable"><name>g</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a0b31909b1cae9ed1db6ff042057fce60" kind="variable"><name>y</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1afc3dd12de12777f6e20b4c93b7e7cb96" kind="variable"><name>v</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1aa4026ad5544b958e54ce5e106fa1c805" kind="variable"><name>b</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a9721a992655f700bdc2e91ba68b71e26" kind="variable"><name>w</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1aa798e0c32253f973f3154aa30c996eb2" kind="variable"><name>T</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a8a938b10dab9fa9d43908785f7e2c002" kind="variable"><name>fn</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1acb0a3c5d7aebc85506c33b7ad6d9a319" kind="variable"><name>extend</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1afcc778a3e07eb56672fb93c2a8eef157" kind="function"><name>!function</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a0ec8a20adf1566f8b4a6e6f09bbda330" kind="function"><name>m</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1aec90c211248513365bccc43afdd81f3c" kind="function"><name>x</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a1d47f171ff6dcf52b3c23cdbef019ea3" kind="function"><name>extend</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1a877963eb3bdbe10cffb2337a091a7ff1" kind="function"><name>each</name></member>
+    <member refid="jquery-3_83_81_8min_8js_1adb5f7878ff2c93b56217c17c2ced51f6" kind="function"><name>C</name></member>
+  </compound>
+  <compound refid="_p_d_b_a_p_i_8py" kind="file"><name>PDBAPI.py</name>
+  </compound>
+  <compound refid="_87_2_p_d_b_a_p_i_8py" kind="file"><name>PDBAPI.py</name>
+  </compound>
+  <compound refid="_counter_8py" kind="file"><name>Counter.py</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="stats_8php" kind="file"><name>stats.php</name>
+    <member refid="stats_8php_1a2dc37683cec5a169d791007363950944" kind="variable"><name>$thisCommon</name></member>
+    <member refid="stats_8php_1a1fa3127fc82f96b1436d871ef02be319" kind="variable"><name>$db</name></member>
+    <member refid="stats_8php_1aa98e5745136db21835880938c0eba666" kind="variable"><name>else</name></member>
+    <member refid="stats_8php_1aadb6c25cd1cea1971104d049c282b778" kind="function"><name>display_stats</name></member>
+  </compound>
+  <compound refid="test_8php" kind="file"><name>test.php</name>
+    <member refid="test_8php_1a2dc37683cec5a169d791007363950944" kind="variable"><name>$thisCommon</name></member>
+    <member refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kind="variable"><name>$test</name></member>
+    <member refid="test_8php_1a0a9fb7e3e04662dfa0c7c2ec403e2734" kind="variable"><name>$monthArray</name></member>
+    <member refid="test_8php_1a91cb99eedc303fe58894b37cdc8a05e2" kind="variable"><name>$dayArray</name></member>
+    <member refid="test_8php_1a997718df5e43b02ef37998ab52f74cb6" kind="variable"><name>$hourArray</name></member>
+    <member refid="test_8php_1a056500060fa87796ceb5c1d9c6e1502e" kind="variable"><name>$secondMonthArray</name></member>
+    <member refid="test_8php_1ab8151e5eb27fe41385727bc11a25f79f" kind="variable"><name>$secondDayArray</name></member>
+    <member refid="test_8php_1a1d19ca72f1f9b19ab4d0107dec987a79" kind="variable"><name>$secondHourArray</name></member>
+    <member refid="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" kind="variable"><name>$numRange</name></member>
+  </compound>
+  <compound refid="md_Users_JonathanWesterfield_Documents_CSCE_315_RecWalkerCounter_README" kind="page"><name>md_Users_JonathanWesterfield_Documents_CSCE_315_RecWalkerCounter_README</name>
+  </compound>
+  <compound refid="dir_f8572bb7c716aea4f4f1763625d4fe31" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315</name>
+  </compound>
+  <compound refid="dir_e786fce247269efc49d01abc6dc65ade" kind="dir"><name>Users/JonathanWesterfield/Documents</name>
+  </compound>
+  <compound refid="dir_3ce1afc6f4ddb0f62f9b760af6e1f717" kind="dir"><name>Users/JonathanWesterfield</name>
+  </compound>
+  <compound refid="dir_b7f5b94326d3e16dc81fc39afce14c26" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python</name>
+  </compound>
+  <compound refid="dir_017eda6e8e4107a4c4111635809cdb66" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7</name>
+  </compound>
+  <compound refid="dir_62688563bdd7e66bca27589a793fe686" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter</name>
+  </compound>
+  <compound refid="dir_d522931ffa1371640980b621734a4381" kind="dir"><name>Users</name>
+  </compound>
+</doxygenindex>

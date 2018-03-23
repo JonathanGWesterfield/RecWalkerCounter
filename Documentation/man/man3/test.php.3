@@ -1,0 +1,80 @@
+.TH "Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" 3 "Thu Mar 22 2018" "SRec Walker Counter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB$thisCommon\fP = new \fBCommon\fP(true)"
+.br
+.ti -1c
+.RI "\fB$test\fP = new \fBDBAPI\fP($thisCommon)"
+.br
+.ti -1c
+.RI "\fB$monthArray\fP = $test\->getCurrentYearTraffic()"
+.br
+.ti -1c
+.RI "\fB$dayArray\fP = $test\->getCurrentMonthTraffic()"
+.br
+.ti -1c
+.RI "\fB$hourArray\fP = $test\->getCurrentDayTraffic()"
+.br
+.ti -1c
+.RI "\fB$secondMonthArray\fP = $test\->getTrafficByYear(2018)"
+.br
+.ti -1c
+.RI "\fB$secondDayArray\fP = $test\->getTrafficByMonth(2020, 2)"
+.br
+.ti -1c
+.RI "\fB$secondHourArray\fP = $test\->getTrafficByDay(2018, 2, 15)"
+.br
+.ti -1c
+.RI "if(count($secondHourArray)!=24) \fB$numRange\fP = $test\->getTrafficTimeRange(2018, 2, 12, 2018, 2, 16)"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "if $dayArray = $test\->getCurrentMonthTraffic()"
+Testing getCurrentMonthTraffic - should have the correct number of days in the current month 
+.PP
+Definition at line 67 of file test\&.php\&.
+.SS "if $hourArray = $test\->getCurrentDayTraffic()"
+Testing getCurrentDayTraffic - should return length 24 for a 24 hour day 
+.PP
+Definition at line 77 of file test\&.php\&.
+.SS "$monthArray = $test\->getCurrentYearTraffic()"
+
+.PP
+Definition at line 57 of file test\&.php\&.
+.SS "if (count($secondHourArray)!=24) $numRange = $test\->getTrafficTimeRange(2018, 2, 12, 2018, 2, 16)"
+
+.PP
+Definition at line 113 of file test\&.php\&.
+.SS "if $secondDayArray = $test\->getTrafficByMonth(2020, 2)"
+Testing getTrafficByMonth testing February 2020 - should return correct amount of days 
+.PP
+Definition at line 93 of file test\&.php\&.
+.SS "$secondHourArray = $test\->getTrafficByDay(2018, 2, 15)"
+
+.PP
+Definition at line 107 of file test\&.php\&.
+.SS "if $secondMonthArray = $test\->getTrafficByYear(2018)"
+Testing getTrafficByYear by putting in the current year - should return 12 months 
+.PP
+Definition at line 85 of file test\&.php\&.
+.SS "$test = new \fBDBAPI\fP($thisCommon)"
+
+.PP
+Definition at line 31 of file test\&.php\&.
+.SS "$thisCommon = new \fBCommon\fP(true)"
+
+.PP
+Definition at line 26 of file test\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SRec Walker Counter from the source code\&.

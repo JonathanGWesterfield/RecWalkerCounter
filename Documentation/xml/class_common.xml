@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_common" kind="class" language="PHP" prot="public">
+    <compoundname>Common</compoundname>
+    <basecompoundref refid="interface_common_interface" prot="public" virt="non-virtual">CommonInterface</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_common_1aa8a5a87b9c1a6a0819b88447cbe41877" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$conn</definition>
+        <argsstring></argsstring>
+        <name>$conn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="11" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_common_1a85ae3e64cd40e9564adceb010085e9dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$debug</definition>
+        <argsstring></argsstring>
+        <name>$debug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="12" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_common_1a1fa3127fc82f96b1436d871ef02be319" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$db</definition>
+        <argsstring></argsstring>
+        <name>$db</name>
+        <initializer>=&quot;database.cse.tamu.edu&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="20" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_common_1ac5111a571fffa2499732833bb7f0d8c1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$dbname</definition>
+        <argsstring></argsstring>
+        <name>$dbname</name>
+        <initializer>=&quot;jgwesterfield-WalkerData&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="21" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_common_1a598ca4e71b15a1313ec95f0df1027ca5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$user</definition>
+        <argsstring></argsstring>
+        <name>$user</name>
+        <initializer>=&quot;jgwesterfield&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="22" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_common_1a12ec2780b52bd1c54d38c2f981c0349f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$pass</definition>
+        <argsstring></argsstring>
+        <name>$pass</name>
+        <initializer>=&quot;Whoop19!&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="23" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_common_1a4a9e6769ab6c946d0895e8d987df1c10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Common</definition>
+        <argsstring>($debug)</argsstring>
+        <name>Common</name>
+        <reimplements refid="interface_common_interface_1a4a9e6769ab6c946d0895e8d987df1c10">Common</reimplements>
+        <param>
+          <declname>$debug</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="25" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_common_1a1b1bd9b3f45a5fbd2549355282cdc96f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>connect</definition>
+        <argsstring>($db)</argsstring>
+        <name>connect</name>
+        <reimplements refid="interface_common_interface_1a1b1bd9b3f45a5fbd2549355282cdc96f">connect</reimplements>
+        <param>
+          <declname>$db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="34" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="34" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_common_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>executeQuery</definition>
+        <argsstring>($sql, $filename)</argsstring>
+        <name>executeQuery</name>
+        <reimplements refid="interface_common_interface_1a57a9dbd1203cf7b3ef3c5ce40d4047cc">executeQuery</reimplements>
+        <param>
+          <declname>$sql</declname>
+        </param>
+        <param>
+          <declname>$filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="49" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="49" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by PhpStorm. User: JonathanWesterfield Date: 2/8/18 Time: 4:20 PM </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>CommonInterface</label>
+        <link refid="interface_common_interface"/>
+      </node>
+      <node id="0">
+        <label>Common</label>
+        <link refid="class_common"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>CommonInterface</label>
+        <link refid="interface_common_interface"/>
+      </node>
+      <node id="2">
+        <label>Common</label>
+        <link refid="class_common"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="10" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="9" bodyend="59"/>
+    <listofallmembers>
+      <member refid="class_common_1aa8a5a87b9c1a6a0819b88447cbe41877" prot="public" virt="non-virtual"><scope>Common</scope><name>$conn</name></member>
+      <member refid="class_common_1a1fa3127fc82f96b1436d871ef02be319" prot="public" virt="non-virtual"><scope>Common</scope><name>$db</name></member>
+      <member refid="class_common_1ac5111a571fffa2499732833bb7f0d8c1" prot="public" virt="non-virtual"><scope>Common</scope><name>$dbname</name></member>
+      <member refid="class_common_1a85ae3e64cd40e9564adceb010085e9dd" prot="public" virt="non-virtual"><scope>Common</scope><name>$debug</name></member>
+      <member refid="class_common_1a12ec2780b52bd1c54d38c2f981c0349f" prot="public" virt="non-virtual"><scope>Common</scope><name>$pass</name></member>
+      <member refid="class_common_1a598ca4e71b15a1313ec95f0df1027ca5" prot="public" virt="non-virtual"><scope>Common</scope><name>$user</name></member>
+      <member refid="class_common_1a4a9e6769ab6c946d0895e8d987df1c10" prot="public" virt="non-virtual"><scope>Common</scope><name>Common</name></member>
+      <member refid="class_common_1a1b1bd9b3f45a5fbd2549355282cdc96f" prot="public" virt="non-virtual"><scope>Common</scope><name>connect</name></member>
+      <member refid="class_common_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" prot="public" virt="non-virtual"><scope>Common</scope><name>executeQuery</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_p_d_b_a_p_i" kind="namespace" language="Python">
+    <compoundname>PDBAPI</compoundname>
+    <innerclass refid="class_p_d_b_a_p_i_1_1_p_d_b_a_p_i" prot="public">PDBAPI::PDBAPI</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_p_d_b_a_p_i_1a0ee555e066e29e16d083d5ed52f873a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def PDBAPI.insert</definition>
+        <argsstring>(cnx, cursor, inOrOut)</argsstring>
+        <name>insert</name>
+        <param>
+          <type>cnx</type>
+          <defname>cnx</defname>
+        </param>
+        <param>
+          <type>cursor</type>
+          <defname>cursor</defname>
+        </param>
+        <param>
+          <type>inOrOut</type>
+          <defname>inOrOut</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This function inserts an entry into the database. Will insert the location (should be the Student Recreation Center
+but can be changed), a boolean value as to whether the subject exited or entered, the day of the week in number
+format (using the mysql dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
+:param cnx:
+:param cursor:
+:param inOrOut: True=In, False=Out
+:return: Boolean
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7/PDBAPI.py" line="8" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7/PDBAPI.py" bodystart="8" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_p_d_b_a_p_i_1a36ba8c63bef5ee909cfc48428ea592b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def PDBAPI.dbConnect</definition>
+        <argsstring>()</argsstring>
+        <name>dbConnect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Connects to the database using my credentials and the mysql password. Will print out a string
+depeding on the status of the connection i.e.: whether if failed or not and why.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7/PDBAPI.py" line="35" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7/PDBAPI.py" bodystart="35" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python/PDBAPI.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

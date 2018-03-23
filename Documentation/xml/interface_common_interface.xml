@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="interface_common_interface" kind="interface" language="PHP" prot="public">
+    <compoundname>CommonInterface</compoundname>
+    <derivedcompoundref refid="class_common" prot="public" virt="non-virtual">Common</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_common_interface_1a4a9e6769ab6c946d0895e8d987df1c10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Common</definition>
+        <argsstring>($debug)</argsstring>
+        <name>Common</name>
+        <reimplementedby refid="class_common_1a4a9e6769ab6c946d0895e8d987df1c10">Common</reimplementedby>
+        <param>
+          <declname>$debug</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_common_interface_1a1b1bd9b3f45a5fbd2549355282cdc96f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>connect</definition>
+        <argsstring>($db)</argsstring>
+        <name>connect</name>
+        <reimplementedby refid="class_common_1a1b1bd9b3f45a5fbd2549355282cdc96f">connect</reimplementedby>
+        <param>
+          <declname>$db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_common_interface_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>executeQuery</definition>
+        <argsstring>($sql, $filename)</argsstring>
+        <name>executeQuery</name>
+        <reimplementedby refid="class_common_1a57a9dbd1203cf7b3ef3c5ce40d4047cc">executeQuery</reimplementedby>
+        <param>
+          <declname>$sql</declname>
+        </param>
+        <param>
+          <declname>$filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="15" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by PhpStorm. User: JonathanWesterfield Date: 2/8/18 Time: 4:31 PM </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>CommonInterface</label>
+        <link refid="interface_common_interface"/>
+      </node>
+      <node id="5">
+        <label>Common</label>
+        <link refid="class_common"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="12" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" bodystart="11" bodyend="16"/>
+    <listofallmembers>
+      <member refid="interface_common_interface_1a4a9e6769ab6c946d0895e8d987df1c10" prot="public" virt="non-virtual"><scope>CommonInterface</scope><name>Common</name></member>
+      <member refid="interface_common_interface_1a1b1bd9b3f45a5fbd2549355282cdc96f" prot="public" virt="non-virtual"><scope>CommonInterface</scope><name>connect</name></member>
+      <member refid="interface_common_interface_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" prot="public" virt="non-virtual"><scope>CommonInterface</scope><name>executeQuery</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

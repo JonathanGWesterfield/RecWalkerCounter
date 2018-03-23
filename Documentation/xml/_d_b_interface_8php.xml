@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_d_b_interface_8php" kind="file" language="PHP">
+    <compoundname>DBInterface.php</compoundname>
+    <innerclass refid="interface_d_b_interface" prot="public">DBInterface</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">include_once<sp/></highlight><highlight class="stringliteral">&quot;DBAPI.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="interface_d_b_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interface_d_b_interface" kindref="compound">DBInterface</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a800f8efee13692788b13ee57c5960092" kindref="member">__construct</ref>(<ref refid="graph_8php_1a1fa3127fc82f96b1436d871ef02be319" kindref="member">$db</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>class<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a421831a265621325e1fdd19aace0c758" kindref="member">__destruct</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>prints<sp/>out<sp/>the<sp/>entire<sp/>database<sp/>on<sp/>the<sp/>page<sp/>in<sp/>a<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a7e02b55449fecf4bed4ca717f38dafd5" kindref="member">printEntireDB</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1ab7a902c85d04b9973a30b73963cb3270" kindref="member">getTotalNumWalkers</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1adf40141a9763141c0eaeb9ce620181ad" kindref="member">getNumWalkersToday</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1ae7a2342889cfd984513ba17ddbd14bef" kindref="member">getNumWalkersThisWeek</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//public<sp/>function<sp/>getHotTimes();<sp/>//<sp/>gets<sp/>the<sp/>hours<sp/>of<sp/>day<sp/>with<sp/>peak<sp/>traffic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//public<sp/>function<sp/>getHotDays();<sp/>//<sp/>gets<sp/>the<sp/>days<sp/>with<sp/>peak<sp/>traffic<sp/>for<sp/>a<sp/>week</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1ad487abf76c66536778a43009612b6843" kindref="member">getCurrentYearTraffic</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a82c5e558141dca62c793baf0d1216bc0" kindref="member">getTrafficByYear</ref>($year);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1ae1b5c3c8112356b5c8ea9184286ec89a" kindref="member">getCurrentMonthTraffic</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a0e954fca184f4b8ac04f51cb0c558def" kindref="member">getTrafficByMonth</ref>($year,<sp/>$month);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a50aa5202dd6a6314b4b0da6fd3026415" kindref="member">getCurrentDayTraffic</ref>();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a732a3a52aedfb5dd4b63f7292cb8ec3b" kindref="member">getTrafficByDay</ref>($year,<sp/>$month,<sp/>$day);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_d_b_interface_1a546615c71715e031c6218799e97937ab" kindref="member">getTrafficTimeRange</ref>($year1,<sp/>$month1,<sp/>$day1,<sp/>$year2,<sp/>$month2,<sp/>$day2);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,131 @@
+\section{Counter Namespace Reference}
+\label{namespace_counter}\index{Counter@{Counter}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def {\bf insert} (cnx, cursor, in\+Or\+Out)
+\item 
+def {\bf db\+Connect} ()
+\item 
+def {\bf signal\+\_\+handler} (sig, frame)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf board} = Py\+Mata(\char`\"{}C\+O\+M3\char`\"{}, verbose=True)
+\item 
+{\bf data} = board.\+get\+\_\+sonar\+\_\+data()
+\item 
+{\bf distance1} = {\bf data}[12][1]
+\item 
+{\bf distance2} = {\bf data}[13][1]
+\item 
+int {\bf hit1} = 0
+\item 
+int {\bf hit2} = 0
+\item 
+int {\bf dist} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Counter@{Counter}!db\+Connect@{db\+Connect}}
+\index{db\+Connect@{db\+Connect}!Counter@{Counter}}
+\subsubsection[{db\+Connect()}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+db\+Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespace_counter_a8e429790189b662dee33d000087cb1f8}
+\begin{DoxyVerb}Connects to the database using my credentials and the mysql password. Will print out a string
+depeding on the status of the connection i.e.: whether if failed or not and why.
+:return:
+\end{DoxyVerb}
+ 
+
+Definition at line 40 of file Counter.\+py.
+
+\index{Counter@{Counter}!insert@{insert}}
+\index{insert@{insert}!Counter@{Counter}}
+\subsubsection[{insert(cnx, cursor, in\+Or\+Out)}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+insert (
+\begin{DoxyParamCaption}
+\item[{}]{cnx, }
+\item[{}]{cursor, }
+\item[{}]{in\+Or\+Out}
+\end{DoxyParamCaption}
+)}\label{namespace_counter_a49e12affeadafd8435a97b06057e2dfe}
+\begin{DoxyVerb}This function inserts an entry into the database. Will insert the location (should be the Student Recreation Center
+but can be changed), a boolean value as to whether the subject exited or entered, the day of the week in number
+format (using the mysql dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
+:param cnx:
+:param cursor:
+:param inOrOut:
+:return: Boolean
+\end{DoxyVerb}
+ 
+
+Definition at line 13 of file Counter.\+py.
+
+\index{Counter@{Counter}!signal\+\_\+handler@{signal\+\_\+handler}}
+\index{signal\+\_\+handler@{signal\+\_\+handler}!Counter@{Counter}}
+\subsubsection[{signal\+\_\+handler(sig, frame)}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+signal\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{}]{sig, }
+\item[{}]{frame}
+\end{DoxyParamCaption}
+)}\label{namespace_counter_abd6cd9e7a4e8224f96c5d38e18db6291}
+
+
+Definition at line 78 of file Counter.\+py.
+
+
+
+\subsection{Variable Documentation}
+\index{Counter@{Counter}!board@{board}}
+\index{board@{board}!Counter@{Counter}}
+\subsubsection[{board}]{\setlength{\rightskip}{0pt plus 5cm}board = Py\+Mata(\char`\"{}C\+O\+M3\char`\"{}, verbose=True)}\label{namespace_counter_af3184e6d3aac51d64ce9a9af9571c9c0}
+
+
+Definition at line 75 of file Counter.\+py.
+
+\index{Counter@{Counter}!data@{data}}
+\index{data@{data}!Counter@{Counter}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}data = board.\+get\+\_\+sonar\+\_\+data()}\label{namespace_counter_a511ae0b1c13f95e5f08f1a0dd3da3d93}
+
+
+Definition at line 96 of file Counter.\+py.
+
+\index{Counter@{Counter}!dist@{dist}}
+\index{dist@{dist}!Counter@{Counter}}
+\subsubsection[{dist}]{\setlength{\rightskip}{0pt plus 5cm}int dist = 0}\label{namespace_counter_a62d19f1b68cc51e55723b31a29cdef78}
+
+
+Definition at line 114 of file Counter.\+py.
+
+\index{Counter@{Counter}!distance1@{distance1}}
+\index{distance1@{distance1}!Counter@{Counter}}
+\subsubsection[{distance1}]{\setlength{\rightskip}{0pt plus 5cm}distance1 = {\bf data}[12][1]}\label{namespace_counter_a6bf62367f02a224fdd2fe85ee50ba6ea}
+
+
+Definition at line 98 of file Counter.\+py.
+
+\index{Counter@{Counter}!distance2@{distance2}}
+\index{distance2@{distance2}!Counter@{Counter}}
+\subsubsection[{distance2}]{\setlength{\rightskip}{0pt plus 5cm}distance2 = {\bf data}[13][1]}\label{namespace_counter_a253d925c9f0934281d81c1c4037011a0}
+
+
+Definition at line 99 of file Counter.\+py.
+
+\index{Counter@{Counter}!hit1@{hit1}}
+\index{hit1@{hit1}!Counter@{Counter}}
+\subsubsection[{hit1}]{\setlength{\rightskip}{0pt plus 5cm}int hit1 = 0}\label{namespace_counter_ae2d3c5f9d45188786bd6c62b4a1de2d9}
+
+
+Definition at line 100 of file Counter.\+py.
+
+\index{Counter@{Counter}!hit2@{hit2}}
+\index{hit2@{hit2}!Counter@{Counter}}
+\subsubsection[{hit2}]{\setlength{\rightskip}{0pt plus 5cm}int hit2 = 0}\label{namespace_counter_a8e4751a4da4c6b6bcedeea1988ede98a}
+
+
+Definition at line 101 of file Counter.\+py.
+

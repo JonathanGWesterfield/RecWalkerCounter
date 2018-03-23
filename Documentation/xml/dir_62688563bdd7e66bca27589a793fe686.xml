@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_62688563bdd7e66bca27589a793fe686" kind="dir">
+    <compoundname>Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter</compoundname>
+    <innerdir refid="dir_b7f5b94326d3e16dc81fc39afce14c26">Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python</innerdir>
+    <innerdir refid="dir_017eda6e8e4107a4c4111635809cdb66">Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7</innerdir>
+    <innerfile refid="_chart_8min_8js">Chart.min.js</innerfile>
+    <innerfile refid="_common_interface_8php">CommonInterface.php</innerfile>
+    <innerfile refid="_common_methods_8php">CommonMethods.php</innerfile>
+    <innerfile refid="_d_b_a_p_i_8php">DBAPI.php</innerfile>
+    <innerfile refid="_d_b_interface_8php">DBInterface.php</innerfile>
+    <innerfile refid="graph_8php">graph.php</innerfile>
+    <innerfile refid="index_8php">index.php</innerfile>
+    <innerfile refid="jquery-3_83_81_8min_8js">jquery-3.3.1.min.js</innerfile>
+    <innerfile refid="stats_8php">stats.php</innerfile>
+    <innerfile refid="test_8php">test.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/"/>
+  </compounddef>
+</doxygen>

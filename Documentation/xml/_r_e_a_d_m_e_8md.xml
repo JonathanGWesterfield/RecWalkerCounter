@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>RecWalkerCounter</highlight></codeline>
+<codeline><highlight class="normal">Personal<sp/>Repo<sp/>for<sp/>developing<sp/>the<sp/>Database<sp/>API<sp/>for<sp/>this<sp/>class<sp/>project</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">I&apos;m<sp/>doing<sp/>this<sp/>because<sp/>I<sp/>accidently<sp/>deleted<sp/>my<sp/>old<sp/>Database<sp/>API</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>How<sp/>to<sp/>Use</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>important<sp/>file<sp/>is<sp/>the<sp/>DBInterface<sp/>file<sp/>but<sp/>all<sp/>of<sp/>the<sp/>files<sp/>except<sp/>for<sp/>the<sp/>test.php<sp/>file<sp/>are<sp/>required.<sp/>Run<sp/>the<sp/>test.php<sp/>file<sp/>to<sp/>see<sp/></highlight></codeline>
+<codeline><highlight class="normal">the<sp/>output<sp/>of<sp/>the<sp/>DBInterface.php<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Needed<sp/>Work</highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>verified,<sp/>I<sp/>will<sp/>go<sp/>in<sp/>and<sp/>delete<sp/>all<sp/>of<sp/>the<sp/>print<sp/>statements<sp/>from<sp/>the<sp/>functions<sp/>since<sp/>they<sp/>won&apos;t<sp/>be<sp/>needed<sp/>when<sp/>the<sp/>API<sp/>is<sp/>being<sp/></highlight></codeline>
+<codeline><highlight class="normal">used.</highlight></codeline>
+    </programlisting>
+    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/README.md"/>
+  </compounddef>
+</doxygen>

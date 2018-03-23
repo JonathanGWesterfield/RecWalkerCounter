@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="test_8php" kind="file" language="PHP">
+    <compoundname>test.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="test_8php_1a2dc37683cec5a169d791007363950944" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$thisCommon</definition>
+        <argsstring></argsstring>
+        <name>$thisCommon</name>
+        <initializer>= new <ref refid="class_common" kindref="compound">Common</ref>(true)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="26" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1a31daebf88fc668f410293e2c70cea3fc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$test</definition>
+        <argsstring></argsstring>
+        <name>$test</name>
+        <initializer>= new <ref refid="class_d_b_a_p_i" kindref="compound">DBAPI</ref>($thisCommon)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="31" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1a0a9fb7e3e04662dfa0c7c2ec403e2734" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$monthArray</definition>
+        <argsstring></argsstring>
+        <name>$monthArray</name>
+        <initializer>= $test-&gt;getCurrentYearTraffic()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="57" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1a91cb99eedc303fe58894b37cdc8a05e2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if $dayArray</definition>
+        <argsstring></argsstring>
+        <name>$dayArray</name>
+        <initializer>= $test-&gt;getCurrentMonthTraffic()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Testing getCurrentMonthTraffic - should have the correct number of days in the current month </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="67" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1a997718df5e43b02ef37998ab52f74cb6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if $hourArray</definition>
+        <argsstring></argsstring>
+        <name>$hourArray</name>
+        <initializer>= $test-&gt;getCurrentDayTraffic()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Testing getCurrentDayTraffic - should return length 24 for a 24 hour day </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="77" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1a056500060fa87796ceb5c1d9c6e1502e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if $secondMonthArray</definition>
+        <argsstring></argsstring>
+        <name>$secondMonthArray</name>
+        <initializer>= $test-&gt;getTrafficByYear(2018)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Testing getTrafficByYear by putting in the current year - should return 12 months </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="85" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1ab8151e5eb27fe41385727bc11a25f79f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if $secondDayArray</definition>
+        <argsstring></argsstring>
+        <name>$secondDayArray</name>
+        <initializer>= $test-&gt;getTrafficByMonth(2020, 2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Testing getTrafficByMonth testing February 2020 - should return correct amount of days </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="93" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1a1d19ca72f1f9b19ab4d0107dec987a79" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$secondHourArray</definition>
+        <argsstring></argsstring>
+        <name>$secondHourArray</name>
+        <initializer>= $test-&gt;getTrafficByDay(2018, 2, 15)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="107" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" prot="public" static="no" mutable="no">
+        <type>if(count($secondHourArray)!=24)</type>
+        <definition>if (count($secondHourArray)!=24) $numRange</definition>
+        <argsstring></argsstring>
+        <name>$numRange</name>
+        <initializer>= $test-&gt;getTrafficTimeRange(2018, 2, 12, 2018, 2, 16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="113" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">error_reporting(E_ALL);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">ini_set(</highlight><highlight class="stringliteral">&apos;error_reporting&apos;</highlight><highlight class="normal">,<sp/>E_ALL);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">ini_set(</highlight><highlight class="stringliteral">&apos;error_log&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;./script_errors.log&apos;</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="comment">//<sp/>change<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">ini_set(</highlight><highlight class="stringliteral">&apos;log_errors&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;On&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">include_once<sp/></highlight><highlight class="stringliteral">&quot;CommonInterface.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">include_once<sp/></highlight><highlight class="stringliteral">&quot;DBInterface.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">echo(</highlight><highlight class="stringliteral">&quot;Attempting<sp/>to<sp/>start&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="test_8php_1a2dc37683cec5a169d791007363950944" refkind="member"><highlight class="normal"><ref refid="test_8php_1a2dc37683cec5a169d791007363950944" kindref="member">$thisCommon</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_common" kindref="compound">Common</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">echo(</highlight><highlight class="stringliteral">&quot;Started<sp/>the<sp/>Common&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">echo(</highlight><highlight class="stringliteral">&quot;Starting<sp/>the<sp/>API&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" refkind="member"><highlight class="normal"><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_d_b_a_p_i" kindref="compound">DBAPI</ref>(<ref refid="test_8php_1a2dc37683cec5a169d791007363950944" kindref="member">$thisCommon</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">echo(</highlight><highlight class="stringliteral">&quot;Created<sp/>the<sp/>DBAPI<sp/>object&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;printEntireDB();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getTotalNumWalkers()<sp/>!=<sp/>17)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;getTotalNumWalkers()<sp/>failed!<sp/>Didn&apos;t<sp/>equal<sp/>17<sp/>(the<sp/>number<sp/>of<sp/>rows<sp/>in<sp/>the<sp/>DB&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getNumWalkersToday()<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;getNumWalkersToday()<sp/>failed!<sp/>There<sp/>are<sp/>supposed<sp/>to<sp/>be<sp/>0<sp/>walkers<sp/>today!<sp/>&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getNumWalkersThisWeek()<sp/>!=<sp/>8)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;getNumWalkersThisWeek()<sp/>failed!<sp/>There<sp/>are<sp/>supposed<sp/>to<sp/>be<sp/>8<sp/>walkers<sp/>this<sp/>week!<sp/>&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="test_8php_1a0a9fb7e3e04662dfa0c7c2ec403e2734" refkind="member"><highlight class="normal"><ref refid="test_8php_1a0a9fb7e3e04662dfa0c7c2ec403e2734" kindref="member">$monthArray</ref><sp/>=<sp/><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getCurrentYearTraffic();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count(<ref refid="test_8php_1a0a9fb7e3e04662dfa0c7c2ec403e2734" kindref="member">$monthArray</ref>)<sp/>!=<sp/>12)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;Error<sp/>in<sp/>getCurrentYearTraffic()!!&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;Did<sp/>not<sp/>return<sp/>12<sp/>months<sp/>in<sp/>the<sp/>year!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="test_8php_1a91cb99eedc303fe58894b37cdc8a05e2" refkind="member"><highlight class="normal"><ref refid="test_8php_1a91cb99eedc303fe58894b37cdc8a05e2" kindref="member">$dayArray</ref><sp/>=<sp/><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getCurrentMonthTraffic();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count(<ref refid="test_8php_1a91cb99eedc303fe58894b37cdc8a05e2" kindref="member">$dayArray</ref>)<sp/>!=<sp/>cal_days_in_month(CAL_GREGORIAN,2,2018))</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>days<sp/>in<sp/>the<sp/>month&lt;br&gt;&quot;</highlight><highlight class="normal"><sp/>.<sp/>cal_days_in_month(CAL_GREGORIAN,2,2018));</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;ERROR!!<sp/>getCurrentMonthTraffic<sp/>Failed!<sp/>Wrong<sp/>number<sp/>of<sp/>days<sp/>returned!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="test_8php_1a997718df5e43b02ef37998ab52f74cb6" refkind="member"><highlight class="normal"><ref refid="test_8php_1a997718df5e43b02ef37998ab52f74cb6" kindref="member">$hourArray</ref><sp/>=<sp/><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getCurrentDayTraffic();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count(<ref refid="test_8php_1a997718df5e43b02ef37998ab52f74cb6" kindref="member">$hourArray</ref>)<sp/>!=<sp/>24)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;ERROR!<sp/>getCurrentDayTraffic<sp/>Failed!<sp/>Did<sp/>not<sp/>return<sp/>24<sp/>hours!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="test_8php_1a056500060fa87796ceb5c1d9c6e1502e" refkind="member"><highlight class="normal"><ref refid="test_8php_1a056500060fa87796ceb5c1d9c6e1502e" kindref="member">$secondMonthArray</ref><sp/>=<sp/><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getTrafficByYear(2018);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count(<ref refid="test_8php_1a056500060fa87796ceb5c1d9c6e1502e" kindref="member">$secondMonthArray</ref>)<sp/>!=<sp/>12)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;ERROR!!<sp/>getTrafficByYear<sp/>Failed!!<sp/>Does<sp/>not<sp/>return<sp/>12<sp/>months!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="test_8php_1ab8151e5eb27fe41385727bc11a25f79f" refkind="member"><highlight class="normal"><ref refid="test_8php_1ab8151e5eb27fe41385727bc11a25f79f" kindref="member">$secondDayArray</ref><sp/>=<sp/><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getTrafficByMonth(2020,<sp/>2);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count(<ref refid="test_8php_1ab8151e5eb27fe41385727bc11a25f79f" kindref="member">$secondDayArray</ref>)<sp/>!=cal_days_in_month(CAL_GREGORIAN,2,2020))</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;ERROR!!<sp/>getTrafficByMonth<sp/>Failed!!<sp/>Does<sp/>not<sp/>return<sp/>correct<sp/>#<sp/>of<sp/>days<sp/>for<sp/>Feb<sp/>2020!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="keywordflow">if</highlight><highlight class="normal">(array_sum(<ref refid="test_8php_1ab8151e5eb27fe41385727bc11a25f79f" kindref="member">$secondDayArray</ref>)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;ERROR!!<sp/>getTrafficByMonth<sp/>Failed!!<sp/>Does<sp/>not<sp/>return<sp/>correct<sp/>#<sp/>of<sp/>walkers<sp/>for<sp/>Feb<sp/>2020!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="test_8php_1a1d19ca72f1f9b19ab4d0107dec987a79" refkind="member"><highlight class="normal"><ref refid="test_8php_1a1d19ca72f1f9b19ab4d0107dec987a79" kindref="member">$secondHourArray</ref><sp/>=<sp/><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getTrafficByDay(2018,<sp/>2,<sp/>15);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count(<ref refid="test_8php_1a1d19ca72f1f9b19ab4d0107dec987a79" kindref="member">$secondHourArray</ref>)<sp/>!=<sp/>24)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;&lt;br&gt;&lt;br&gt;ERROR!<sp/>getTrafficByDay<sp/>Failed!<sp/>Did<sp/>not<sp/>return<sp/>24<sp/>hours!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" refkind="member"><highlight class="normal"><ref refid="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" kindref="member">$numRange</ref><sp/>=<sp/><ref refid="test_8php_1a31daebf88fc668f410293e2c70cea3fc" kindref="member">$test</ref>-&gt;getTrafficTimeRange(2018,<sp/>2,<sp/>12,<sp/>2018,<sp/>2,<sp/>16);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">echo(</highlight><highlight class="stringliteral">&quot;NUMBER<sp/>RANGE<sp/>FROM<sp/>TEST:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" kindref="member">$numRange</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&quot;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" kindref="member">$numRange</ref><sp/>!=<sp/>8)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>echo(</highlight><highlight class="stringliteral">&quot;ERROR!<sp/>getTrafficTimeRange<sp/>did<sp/>not<sp/>return<sp/>the<sp/>correct<sp/>number<sp/>of<sp/>walkers!&lt;br&gt;&lt;br&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php"/>
+  </compounddef>
+</doxygen>

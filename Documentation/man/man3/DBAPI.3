@@ -1,0 +1,261 @@
+.TH "DBAPI" 3 "Thu Mar 22 2018" "SRec Walker Counter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBAPI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBDBInterface\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ($db)"
+.br
+.ti -1c
+.RI "\fB__destruct\fP ()"
+.br
+.ti -1c
+.RI "\fBprintEntireDB\fP ()"
+.br
+.ti -1c
+.RI "\fBgetTotalNumWalkers\fP ()"
+.br
+.ti -1c
+.RI "\fBgetNumWalkersToday\fP ()"
+.br
+.ti -1c
+.RI "\fBgetNumWalkersThisWeek\fP ()"
+.br
+.ti -1c
+.RI "\fBgetCurrentYearTraffic\fP ()"
+.br
+.ti -1c
+.RI "\fBgetTrafficByYear\fP ($year)"
+.br
+.ti -1c
+.RI "\fBgetCurrentMonthTraffic\fP ()"
+.br
+.ti -1c
+.RI "\fBgetTrafficByMonth\fP ($year, $month)"
+.br
+.ti -1c
+.RI "\fBgetCurrentDayTraffic\fP ()"
+.br
+.ti -1c
+.RI "\fBgetTrafficByDay\fP ($year, $month, $day)"
+.br
+.ti -1c
+.RI "\fBgetTrafficTimeRange\fP ($year1, $month1, $day1, $year2, $month2, $day2)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Created by PhpStorm\&. User: JonathanWesterfield Date: 2/8/18 Time: 4:35 PM 
+.PP
+Definition at line 12 of file DBAPI\&.php\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "__construct ( $db)"
+\fBDBAPI\fP constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$db\fP Mostly sets up the dates in this object\&. Also sets the timezone to our timezone\&. 
+.RE
+.PP
+
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 29 of file DBAPI\&.php\&.
+.SS "__destruct ()"
+Class destructor 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 68 of file DBAPI\&.php\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "getCurrentDayTraffic ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+array
+.RE
+.PP
+Gets the number of people for every hour and returns a length 24 array output the times to see if I overshot how many times to iterate 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 368 of file DBAPI\&.php\&.
+.SS "getCurrentMonthTraffic ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+array
+.RE
+.PP
+Gets the traffic numbers for each day during the current month\&. 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 243 of file DBAPI\&.php\&.
+.SS "getCurrentYearTraffic ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+array
+.RE
+.PP
+Returns an array of the traffic numbers for each month in a 12 element array 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 166 of file DBAPI\&.php\&.
+.SS "getNumWalkersThisWeek ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+int
+.RE
+.PP
+Gets the number of walkers in the last week starting from today 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 142 of file DBAPI\&.php\&.
+.SS "getNumWalkersToday ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+int
+.RE
+.PP
+Gets the number of walkers from Today 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 122 of file DBAPI\&.php\&.
+.SS "getTotalNumWalkers ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+int
+.RE
+.PP
+Gets the total number of walkers in the table 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 103 of file DBAPI\&.php\&.
+.SS "getTrafficByDay ( $year,  $month,  $day)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$year\fP 
+.br
+\fI$month\fP 
+.br
+\fI$day\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+array
+.RE
+.PP
+Gets the traffic for each hour and returns it in a 24 element array\&.
+.PP
+Usage: <var = getTrafficByDay(2018, 2, 15);> for Febraury 15, 2018 output the times to see if I overshot how many times to iterate 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 423 of file DBAPI\&.php\&.
+.SS "getTrafficByMonth ( $year,  $month)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$year\fP 
+.br
+\fI$month\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+array
+.RE
+.PP
+Gets the traffic for each day during the specified month of the specified year
+.PP
+Usage: getTrafficByMonth(2018, 2); // for February 2018 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 307 of file DBAPI\&.php\&.
+.SS "getTrafficByYear ( $year)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$year\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+array
+.RE
+.PP
+Gives the traffic for each month in an array for the specified year passed in 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 202 of file DBAPI\&.php\&.
+.SS "getTrafficTimeRange ( $year1,  $month1,  $day1,  $year2,  $month2,  $day2)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$year1\fP 
+.br
+\fI$month1\fP 
+.br
+\fI$day1\fP 
+.br
+\fI$year2\fP 
+.br
+\fI$month2\fP 
+.br
+\fI$day2\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+int
+.RE
+.PP
+Takes in a date range (start and end date) and counts the number of walkers in the given range 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 481 of file DBAPI\&.php\&.
+.SS "printEntireDB ()"
+Prints out a table of the entire database 
+.PP
+Implements \fBDBInterface\fP\&.
+.PP
+Definition at line 78 of file DBAPI\&.php\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SRec Walker Counter from the source code\&.
