@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<h1>Footcount Backend</h1>
+<h1>Student Recreation Center South Entrance <br>Foot Traffic </h1>
 
 <!-- Display a graph with controls. -->
 <div id="left-container"><div id="left-contents">

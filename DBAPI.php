@@ -28,7 +28,7 @@ class DBAPI implements DBInterface
      */
     public function __construct($db)
     {
-        echo("<br>Constructor has been called<br>");
+        // echo("<br>Constructor has been called<br>");
 
         $this->COMMON = $db;
 
@@ -37,11 +37,11 @@ class DBAPI implements DBInterface
         // Check to make sure the timezone the server is in is set correctly (to College Station)
         if (date_default_timezone_get() != 'America/Chicago')
         {
-            echo("ERROR! TIMEZONE SET INCORRECTLY!!! NOT SET TO COLLEGE STATION'S TIME (CHICAGO)!!<br>");
-            echo 'date_default_timezone_set: ' . date_default_timezone_get() . '<br/>';
+            // echo("ERROR! TIMEZONE SET INCORRECTLY!!! NOT SET TO COLLEGE STATION'S TIME (CHICAGO)!!<br>");
+            // echo 'date_default_timezone_set: ' . date_default_timezone_get() . '<br/>';
             exit(1);
         }
-        echo("Default Timezone set to: " . date_default_timezone_get() . "<br>");
+        // echo("Default Timezone set to: " . date_default_timezone_get() . "<br>");
 
         $this->currentDate = date("Y-m-d");
         $this->currentDateTime = date("Y-m-d H:i:s");
@@ -52,14 +52,14 @@ class DBAPI implements DBInterface
         $this->nextYear = date('Y', strtotime('+1 year'));
         $this->nextYear = $this->nextYear . "-01-01";
 
-        echo("Current Date: " . $this->currentDate . "<br>");
-        echo("Current DateTime: " . $this->currentDateTime . "<br>");
-        echo("Current weekday numerically: " . $this->currentWeekDay . "<br>");
-        echo("Tomorrow's Date: " . $this->tomorrowDate . "<br>");
-        echo("The current year is: " . $this->currentYear . "<br>");
-        echo("The current month is: " . $this->currentMonth . "<br>");
-        echo("Next year is: " . $this->nextYear . "<br>");
-        echo("<br><br>");
+        // echo("Current Date: " . $this->currentDate . "<br>");
+        // echo("Current DateTime: " . $this->currentDateTime . "<br>");
+        // echo("Current weekday numerically: " . $this->currentWeekDay . "<br>");
+        // echo("Tomorrow's Date: " . $this->tomorrowDate . "<br>");
+        // echo("The current year is: " . $this->currentYear . "<br>");
+        // echo("The current month is: " . $this->currentMonth . "<br>");
+        // echo("Next year is: " . $this->nextYear . "<br>");
+        // echo("<br><br>");
     }
 
     /**
@@ -68,8 +68,8 @@ class DBAPI implements DBInterface
     public function __destruct()
     {
         // TODO: Implement __destruct() method.
-        echo("<br>Destructor has been called <br>");
-        echo("DESTROYING EVERTYING<br>");
+        // echo("<br>Destructor has been called <br>");
+        // echo("DESTROYING EVERTYING<br>");
     }
 
     /**
@@ -102,14 +102,14 @@ class DBAPI implements DBInterface
      */
     public function getTotalNumWalkers()
     {
-        echo("<br><br>getTotalNumWalkers<br>");
+        // echo("<br><br>getTotalNumWalkers<br>");
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
         $row = $rs->fetch(PDO::FETCH_ASSOC);
 
-        echo("Total Num Walkers is: " . $row['COUNT(WalkerNumber)'] . "<br>");
+        // echo("Total Num Walkers is: " . $row['COUNT(WalkerNumber)'] . "<br>");
 
         return (int)$row['COUNT(WalkerNumber)'];
     }
@@ -121,7 +121,7 @@ class DBAPI implements DBInterface
      */
     public function getNumWalkersToday()
     {
-        echo("<br><br>getNumWalkersToday");
+        // echo("<br><br>getNumWalkersToday");
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $this->currentDate . "%\" AND \""
             . $this->tomorrowDate . "%\"";
 
@@ -129,7 +129,7 @@ class DBAPI implements DBInterface
 
         $row = $rs->fetch(PDO::FETCH_ASSOC);
 
-        echo("Total Num Walkers is: " . $row['COUNT(WalkerNumber)'] . "<br>");
+        // echo("Total Num Walkers is: " . $row['COUNT(WalkerNumber)'] . "<br>");
 
         return (int)$row['COUNT(WalkerNumber)'];
     }
@@ -141,10 +141,10 @@ class DBAPI implements DBInterface
      */
     public function getNumWalkersThisWeek()
     {
-        echo("<br><br>getNumWalkersThisWeek<br>");
+        // echo("<br><br>getNumWalkersThisWeek<br>");
         $lastWeek = date('Y-m-d', strtotime('-1 week'));
 
-        echo("Last weeks date: " . $lastWeek . "<br>");
+        // echo("Last weeks date: " . $lastWeek . "<br>");
 
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $lastWeek . "%\" AND \""
             . $this->tomorrowDate . "%\"";
@@ -153,7 +153,7 @@ class DBAPI implements DBInterface
 
         $row = $rs->fetch(PDO::FETCH_ASSOC);
 
-        echo("Total Num Walkers is: " . $row['COUNT(WalkerNumber)'] . "<br>");
+        // echo("Total Num Walkers is: " . $row['COUNT(WalkerNumber)'] . "<br>");
 
         return (int)$row['COUNT(WalkerNumber)'];
     }
@@ -173,7 +173,7 @@ class DBAPI implements DBInterface
         {
             $lookMonth = clone $prevMonth;
             $prevMonth->modify('-1 month'); // decrement month
-            echo $prevMonth->format('Y-m-d');
+            // echo $prevMonth->format('Y-m-d');
 
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth->format('Y-m-d') . "%\" AND \"" .
                 $lookMonth->format('Y-m-d') . "%\"";
@@ -184,12 +184,12 @@ class DBAPI implements DBInterface
             array_push($monthArray, $row['COUNT(WalkerNumber)']); // add the result to the month array
         }
 
-        echo("The numbers for this year starting from the end of the year: ");
+        /* echo("The numbers for this year starting from the end of the year: ");
         foreach (array_reverse($monthArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
-        echo("<br><br>");
+        echo("<br><br>"); */
         return array_reverse($monthArray); // reverse the array to start in January instead of December
     }
 
@@ -213,7 +213,7 @@ class DBAPI implements DBInterface
         {
             $lookMonth = clone $prevMonth;
             $prevMonth->modify('-1 month'); // decrement month
-            echo $prevMonth->format('Y-m-d');
+            // echo $prevMonth->format('Y-m-d');
 
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth->format('Y-m-d') . "%\" AND \"" .
                 $lookMonth->format('Y-m-d') . "%\"";
@@ -224,13 +224,13 @@ class DBAPI implements DBInterface
             array_push($monthArray, $row['COUNT(WalkerNumber)']); // add the result to the month array
         }
 
-        echo("The numbers for this year starting from the end of the year: ");
-        foreach (array_reverse($monthArray) as $element)
+        // echo("The numbers for this year starting from the end of the year: ");
+        /*foreach (array_reverse($monthArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
 
-        echo("<br><br>");
+        echo("<br><br>");*/
 
         return array_reverse($monthArray); // reverse the array to start in January instead of December
     }
@@ -244,27 +244,27 @@ class DBAPI implements DBInterface
     {
         // get the very first day of the month
         $thisMonth = new DateTime($this->currentYear . "-" . $this->currentMonth . "-01");
-        echo("The beginning of this month: " . $thisMonth->format('Y-m-d') . "<br>");
+        // echo("The beginning of this month: " . $thisMonth->format('Y-m-d') . "<br>");
 
         // copy to make the next Month's object
         $nextMonth = clone $thisMonth;
 
         // get the next month's date by incrementing a month
         $nextMonth->modify('+1 month');
-        echo("Next Month is: " . $nextMonth->format('Y-m-d') . "<br>");
+        // echo("Next Month is: " . $nextMonth->format('Y-m-d') . "<br>");
 
         // calculate the # of days between the start and end of the month - # of days in the month
         $diff = $nextMonth->diff($thisMonth)->format("%a");
 
-        echo("Difference between the 2 months in days: " . $diff . "<br>");
+        // echo("Difference between the 2 months in days: " . $diff . "<br>");
 
         // create 2 days to look at the numbers between each day
         $lookDay = clone $nextMonth;
         $dayBefore = clone $nextMonth;
         $dayBefore->modify('-1 day');
 
-        echo("Look day: " . $lookDay->format('Y-m-d') . "<br>");
-        echo("Day Before: " . $dayBefore->format('Y-m-d') . "<br>");
+        // echo("Look day: " . $lookDay->format('Y-m-d') . "<br>");
+        // echo("Day Before: " . $dayBefore->format('Y-m-d') . "<br>");
 
         $dayArray = [];
 
@@ -284,12 +284,12 @@ class DBAPI implements DBInterface
             $dayBefore->modify("-1 day");
         }
 
-        echo("Numbers for the days of this current month: <br>");
+        /* echo("Numbers for the days of this current month: <br>");
         foreach (array_reverse($dayArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
-        echo("<br><br>");
+        echo("<br><br>");*/
 
         // return the days reversed since the original array starts from the end of the month
         return array_reverse($dayArray);
@@ -308,27 +308,27 @@ class DBAPI implements DBInterface
     {
         // get the very first day of the month
         $thisMonth = new DateTime((string)$year . "-" . (string)$month . "-01");
-        echo("The beginning of this month: " . $thisMonth->format('Y-m-d') . "<br>");
+        // echo("The beginning of this month: " . $thisMonth->format('Y-m-d') . "<br>");
 
         // copy to make the next Month's object
         $nextMonth = clone $thisMonth;
 
         // get the next month's date by incrementing a month
         $nextMonth->modify('+1 month');
-        echo("Next Month is: " . $nextMonth->format('Y-m-d') . "<br>");
+        // echo("Next Month is: " . $nextMonth->format('Y-m-d') . "<br>");
 
         // calculate the # of days between the start and end of the month - # of days in the month
         $diff = $nextMonth->diff($thisMonth)->format("%a");
 
-        echo("Difference between the 2 months in days: " . $diff . "<br>");
+        // echo("Difference between the 2 months in days: " . $diff . "<br>");
 
         // create 2 days to look at the numbers between each day
         $lookDay = clone $nextMonth;
         $dayBefore = clone $nextMonth;
         $dayBefore->modify('-1 day');
 
-        echo("Look day: " . $lookDay->format('Y-m-d') . "<br>");
-        echo("Day Before: " . $dayBefore->format('Y-m-d') . "<br>");
+        // echo("Look day: " . $lookDay->format('Y-m-d') . "<br>");
+        // echo("Day Before: " . $dayBefore->format('Y-m-d') . "<br>");
 
         $dayArray = [];
 
@@ -348,13 +348,13 @@ class DBAPI implements DBInterface
             $dayBefore->modify("-1 day");
         }
 
-        echo("Numbers for the days of this current month: <br>");
-        foreach (array_reverse($dayArray) as $element)
+        // echo("Numbers for the days of this current month: <br>");
+        /*foreach (array_reverse($dayArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
 
-        echo("<br><br>");
+        echo("<br><br>"); */
 
         // return the days reversed since the original array starts from the end of the month
         return array_reverse($dayArray);
@@ -372,16 +372,16 @@ class DBAPI implements DBInterface
         $prevHour = clone $endOfToday;
         $prevHour->modify('-1 hour');
 
-        echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
-        echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
+        // echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
+        // echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
 
         $hourArray = [];
 
         for($i = 0; $i < 24; $i++)
         {
             /** output the times to see if I overshot how many times to iterate */
-            echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
-            echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
+            // echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
+            // echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
 
             // get the number of walkers in between the 2 times
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
@@ -398,13 +398,13 @@ class DBAPI implements DBInterface
             $prevHour->modify('-1 hour');
         }
 
-        echo("Numbers by hour: ");
-        foreach (array_reverse($hourArray) as $element)
+        // echo("Numbers by hour: ");
+        /* foreach (array_reverse($hourArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
 
-        echo("<br><br>");
+        echo("<br><br>"); */
 
         // reverse the array since it starts from the end of the day
         return array_reverse($hourArray);
@@ -429,16 +429,16 @@ class DBAPI implements DBInterface
         $prevHour = clone $endOfToday;
         $prevHour->modify('-1 hour');
 
-        echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
-        echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
+        // echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
+        // echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
 
         $hourArray = [];
 
         for($i = 0; $i < 24; $i++)
         {
             /** output the times to see if I overshot how many times to iterate */
-            echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
-            echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
+            // echo("End of Today: " . $endOfToday->format('Y-m-d H:i:s') . "<br>");
+            // echo("End of Today - 1 hour: " . $prevHour->format('Y-m-d H:i:s') . "<br>");
 
             // get the number of walkers in between the 2 times
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
@@ -455,13 +455,13 @@ class DBAPI implements DBInterface
             $prevHour->modify('-1 hour');
         }
 
-        echo("Numbers by hour: ");
-        foreach (array_reverse($hourArray) as $element)
+        // echo("Numbers by hour: ");
+        /* foreach (array_reverse($hourArray) as $element)
         {
             echo($element . " "); // print out the array (will be starting from December to January)
         }
 
-        echo("<br><br>");
+        echo("<br><br>"); */
 
         // reverse the array since it starts from the end of the day
         return array_reverse($hourArray);
@@ -487,8 +487,8 @@ class DBAPI implements DBInterface
         $endDay = new DateTime((string)$year2 . "-" . (string)$month2 . "-" . (string)$day2 . " 00:00:00");
 
 
-        echo("Start Day: " . $startDay->format('Y-m-d H:i:s') . "<br>");
-        echo("End Day: " . $endDay->format('Y-m-d H:i:s') . "<br>");
+        // echo("Start Day: " . $startDay->format('Y-m-d H:i:s') . "<br>");
+        // echo("End Day: " . $endDay->format('Y-m-d H:i:s') . "<br>");
 
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
             $startDay->format('Y-m-d H:i:s') . "\" AND \"" . $endDay->format('Y-m-d H:i:s') . "\"";
@@ -496,7 +496,7 @@ class DBAPI implements DBInterface
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
         $row = $rs->fetch(PDO::FETCH_ASSOC);
 
-        echo("Number of People in given time range: " . $row['COUNT(WalkerNumber)'] . "<br><br>");
+        // echo("Number of People in given time range: " . $row['COUNT(WalkerNumber)'] . "<br><br>");
 
         return (int)$row['COUNT(WalkerNumber)'];
     }

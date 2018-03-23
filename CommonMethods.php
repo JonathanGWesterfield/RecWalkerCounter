@@ -48,7 +48,10 @@ class Common implements CommonInterface
 
     function executeQuery($sql, $filename) // execute query
     {
-        if($this->debug == true) { echo("<br>$sql <br>\n"); }
+        /*if($this->debug == true)
+        {
+            echo("<br>$sql <br>\n");
+        }*/
         $rs = $this->conn->query($sql) or die("Could not execute query '$sql' in $filename");
         return $rs;
     }

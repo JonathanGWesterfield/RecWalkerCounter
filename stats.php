@@ -7,10 +7,10 @@ $db = new DBAPI($thisCommon);
 
 function display_stats($date_format, $sub_division, $data) {
     echo "<h3>Statistics for <u>" . $date_format . "</u></h3>";
-    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Total walkers</div><div>" . array_sum($data) . "</div></div></div>";
-    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Mean walkers per " . $sub_division . "</div><div>" . round(array_sum($data)/count($data), 2) . "</div></div></div>";
-    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Max walkers in an " . $sub_division . "</div><div>" . max($data) . "</div></div></div>";
-    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Min walkers in an " . $sub_division . "</div><div>" . min($data) . "</div></div></div>";
+    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Total Walkers</div><div>" . array_sum($data) . "</div></div></div>";
+    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Average Number of Walkers per " . $sub_division . "</div><div>" . round(array_sum($data)/count($data), 2) . "</div></div></div>";
+    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Max Number of Walkers in an " . $sub_division . "</div><div>" . max($data) . "</div></div></div>";
+    echo "<div class=\"stat\"><div class=\"stat-contents\"><div>Min Number of Walkers in an " . $sub_division . "</div><div>" . min($data) . "</div></div></div>";
 }
 
 if(!isset($_GET['mode'])) {
