@@ -25,14 +25,17 @@ function display_graph($labels, $values, $date_format) { ?>
 <canvas id="graph"></canvas>
 <script>
 var ctx = document.getElementById('graph').getContext('2d');
-var chart = new Chart(ctx, {
+var chart = new Chart(ctx,
+    {
     // The type of chart we want to create
     type: 'line',
 
     // The data for our dataset
-    data: {
+    data:
+        {
         labels: <?php echo $labels; ?>,
-        datasets: [{
+        datasets:
+            [{
             label: "Number of walkers",
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgba(255, 99, 132, .08)',
@@ -85,9 +88,9 @@ if(!isset($_GET['mode'])) {
     
         if(strtolower($_GET['mode']) == 'day') {
 
-            $labels = '["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00",' .
-                '"10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00",' .
-                '"20:00", "21:00", "22:00", "23:00"]';
+            $labels = '["12:00 am", "01:00 am", "02:00 am", "03:00 am", "04:00 am", "05:00 am", "06:00 am", "07:00 am", "08:00 am", "09:00 am",' .
+                '"10:00 am", "11:00 am", "12:00 pm", "01:00 pm", "02:00 pm", "03:00 pm", "04:00 pm", "05:00 pm", "06:00 pm", "07:00 pm",' .
+                '"08:00 pm", "09:00 pm", "10:00 pm", "11:00 pm"]';
             display_graph($labels, $db->getTrafficByDay($year, $month, $day), $dateObj->format('D, F j, Y'));
 
         } else if(strtolower($_GET['mode']) == 'month') {
