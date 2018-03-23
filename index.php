@@ -8,7 +8,7 @@
 <html>
 <head>
 
-<title>Footcount Backend</title>
+<title>Rec Foot Traffic</title>
 <script src="Chart.min.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
