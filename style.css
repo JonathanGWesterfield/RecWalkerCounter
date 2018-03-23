@@ -1,0 +1,75 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+    background: radial-gradient(#fcfffb 0%, #edf0ec 51%, #d7dad6 75%);
+    
+    color: #666;
+    font-size: 18pt;
+    padding: 0 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(78, 141, 99);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48pt;
+}
+
+h3 {
+    font-size: 24pt;
+}
+
+#right-container h3 {
+    color: rgb(115, 190, 119);
+}
+
+#left-container {
+    float: left;
+    width: 50%;
+}
+
+#left-contents {
+    padding-right: 50px;
+}
+
+#right-container {
+    float: right;
+    width: 50%;
+}
+
+#right-contents {
+    padding-left: 50px;
+}
+
+.stat {
+    background: rgb(78, 141, 99);
+    color: #fff;
+    margin:10px;
+    text-align: center;
+    display:block;
+    float: left;
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.stat-contents {
+    display:table-cell;
+    vertical-align:middle;
+    height: 175px;
+    width: 175px;
+}
+
+.stat div:first-of-type {
+    font-size: 16pt;
+}
+
+.stat div:nth-of-type(2) {
+    font-size: 32pt;
+}
