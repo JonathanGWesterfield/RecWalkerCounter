@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "SRec Walker Counter", "index.html", [
-    [ "RecWalkerCounter", "md_Users_JonathanWesterfield_Documents_CSCE_315_RecWalkerCounter_README.html", null ],
+    [ "RecWalkerCounter", "md_README.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [

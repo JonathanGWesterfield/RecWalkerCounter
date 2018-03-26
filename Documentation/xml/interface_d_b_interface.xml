@@ -27,7 +27,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="19" column="1"/>
+        <location file="DBInterface.php" line="19" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1a421831a265621325e1fdd19aace0c758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="22" column="1"/>
+        <location file="DBInterface.php" line="22" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1a7e02b55449fecf4bed4ca717f38dafd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="25" column="1"/>
+        <location file="DBInterface.php" line="25" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1ab7a902c85d04b9973a30b73963cb3270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -70,7 +70,7 @@
 Returns the total number of walkers in the table </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="32" column="1"/>
+        <location file="DBInterface.php" line="32" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1adf40141a9763141c0eaeb9ce620181ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -85,7 +85,7 @@ Returns the total number of walkers in the table </para>        </detaileddescri
 Returns the number of walkers that walked through from the start to the end of the day </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="39" column="1"/>
+        <location file="DBInterface.php" line="39" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1ae7a2342889cfd984513ba17ddbd14bef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -100,7 +100,7 @@ Returns the number of walkers that walked through from the start to the end of t
 Returns the number of walkers from the start to the end of the week </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="46" column="1"/>
+        <location file="DBInterface.php" line="46" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1ad487abf76c66536778a43009612b6843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -115,7 +115,7 @@ Returns the number of walkers from the start to the end of the week </para>     
 Returns an array containing total number of walkers for each month for the current year 12 Element Array </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="57" column="1"/>
+        <location file="DBInterface.php" line="57" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1a82c5e558141dca62c793baf0d1216bc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -141,7 +141,7 @@ Returns an array containing total number of walkers for each month for the curre
 Gives the traffic for each month in an array for the specified year passed in </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="65" column="1"/>
+        <location file="DBInterface.php" line="65" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1ae1b5c3c8112356b5c8ea9184286ec89a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -156,7 +156,7 @@ Gives the traffic for each month in an array for the specified year passed in </
 Returns an array containing total number of walkers for each day for the current month </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="72" column="1"/>
+        <location file="DBInterface.php" line="72" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1a0e954fca184f4b8ac04f51cb0c558def" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -192,7 +192,7 @@ Returns an array containing total number of walkers for each day for the current
 Gets the traffic for each day during the specified month of the specified year</para><para>Usage: getTrafficByMonth(2018, 2); // for February 2018 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="83" column="1"/>
+        <location file="DBInterface.php" line="83" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1a50aa5202dd6a6314b4b0da6fd3026415" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -207,7 +207,7 @@ Gets the traffic for each day during the specified month of the specified year</
 Returns a length 24 array containing total number of walkers for each hour for the current day </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="91" column="1"/>
+        <location file="DBInterface.php" line="91" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1a732a3a52aedfb5dd4b63f7292cb8ec3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -253,7 +253,7 @@ Returns a length 24 array containing total number of walkers for each hour for t
 Returns an array (24) containing total number of walkers for each hour</para><para>Usage: &lt;var = getTrafficByDay(2018, 2, 15);&gt; for Febraury 15, 2018 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="103" column="1"/>
+        <location file="DBInterface.php" line="103" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_d_b_interface_1a546615c71715e031c6218799e97937ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -329,7 +329,7 @@ Returns an array (24) containing total number of walkers for each hour</para><pa
 Takes in a date range (start and end date) and counts the number of walkers in the given range </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="116" column="1"/>
+        <location file="DBInterface.php" line="116" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -348,7 +348,7 @@ Takes in a date range (start and end date) and counts the number of walkers in t
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" line="12" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/DBInterface.php" bodystart="11" bodyend="117"/>
+    <location file="DBInterface.php" line="12" column="1" bodyfile="DBInterface.php" bodystart="11" bodyend="117"/>
     <listofallmembers>
       <member refid="interface_d_b_interface_1a800f8efee13692788b13ee57c5960092" prot="public" virt="non-virtual"><scope>DBInterface</scope><name>__construct</name></member>
       <member refid="interface_d_b_interface_1a421831a265621325e1fdd19aace0c758" prot="public" virt="non-virtual"><scope>DBInterface</scope><name>__destruct</name></member>

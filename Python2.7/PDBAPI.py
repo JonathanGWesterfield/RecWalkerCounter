@@ -2,6 +2,12 @@
 #                                COPY AND PAST THESE FUNCTIONS AT THE TOP OF THE FILE                               #
 #####################################################################################################################
 
+"""
+This file is the Python API that allows the Arduino to communicate with the database. It allows one way communication
+from the Arduino pushing data to the database. dbConnect() must be called before insert will work. Otherwise,
+it will throw an exception (that gets caught within the function itself).
+"""
+
 import mysql.connector
 from mysql.connector import errorcode
 
@@ -66,7 +72,10 @@ def dbConnect():
 
 #####################################################################################################################################################
 
-# test code
+################################                         TEST CODE                         ##########################################################
+
+#####################################################################################################################################################
+# This test case is sparse, however, there are try-catch blocks in the python code that are the real "unit tests"
 dbConnect()
 if (insert(cnx, cursor, True)):
     print("ERROR!")

@@ -1,0 +1,91 @@
+\begin{theindex}
+
+  \item {\+\_\+\+\_\+construct}
+    \subitem {D\+B\+A\+PI}, 7
+    \subitem {D\+B\+Interface}, 11
+  \item {\+\_\+\+\_\+destruct}
+    \subitem {D\+B\+A\+PI}, 8
+
+  \indexspace
+
+  \item {Common}, 5
+    \subitem {Common}, 5
+    \subitem {connect}, 6
+    \subitem {execute\+Query}, 6
+  \item {Common\+Interface}, 6
+  \item {connect}
+    \subitem {Common}, 6
+
+  \indexspace
+
+  \item {D\+B\+A\+PI}, 7
+    \subitem {\+\_\+\+\_\+construct}, 7
+    \subitem {\+\_\+\+\_\+destruct}, 8
+    \subitem {get\+Current\+Day\+Traffic}, 8
+    \subitem {get\+Current\+Month\+Traffic}, 8
+    \subitem {get\+Current\+Year\+Traffic}, 8
+    \subitem {get\+Num\+Walkers\+This\+Week}, 8
+    \subitem {get\+Num\+Walkers\+Today}, 9
+    \subitem {get\+Total\+Num\+Walkers}, 9
+    \subitem {get\+Traffic\+By\+Day}, 9
+    \subitem {get\+Traffic\+By\+Month}, 9
+    \subitem {get\+Traffic\+By\+Year}, 10
+    \subitem {get\+Traffic\+Time\+Range}, 10
+    \subitem {print\+Entire\+DB}, 10
+  \item {D\+B\+Interface}, 11
+    \subitem {\+\_\+\+\_\+construct}, 11
+    \subitem {get\+Current\+Day\+Traffic}, 12
+    \subitem {get\+Current\+Month\+Traffic}, 12
+    \subitem {get\+Current\+Year\+Traffic}, 12
+    \subitem {get\+Num\+Walkers\+This\+Week}, 12
+    \subitem {get\+Num\+Walkers\+Today}, 12
+    \subitem {get\+Total\+Num\+Walkers}, 13
+    \subitem {get\+Traffic\+By\+Day}, 13
+    \subitem {get\+Traffic\+By\+Month}, 13
+    \subitem {get\+Traffic\+By\+Year}, 14
+    \subitem {get\+Traffic\+Time\+Range}, 14
+
+  \indexspace
+
+  \item {execute\+Query}
+    \subitem {Common}, 6
+
+  \indexspace
+
+  \item {get\+Current\+Day\+Traffic}
+    \subitem {D\+B\+A\+PI}, 8
+    \subitem {D\+B\+Interface}, 12
+  \item {get\+Current\+Month\+Traffic}
+    \subitem {D\+B\+A\+PI}, 8
+    \subitem {D\+B\+Interface}, 12
+  \item {get\+Current\+Year\+Traffic}
+    \subitem {D\+B\+A\+PI}, 8
+    \subitem {D\+B\+Interface}, 12
+  \item {get\+Num\+Walkers\+This\+Week}
+    \subitem {D\+B\+A\+PI}, 8
+    \subitem {D\+B\+Interface}, 12
+  \item {get\+Num\+Walkers\+Today}
+    \subitem {D\+B\+A\+PI}, 9
+    \subitem {D\+B\+Interface}, 12
+  \item {get\+Total\+Num\+Walkers}
+    \subitem {D\+B\+A\+PI}, 9
+    \subitem {D\+B\+Interface}, 13
+  \item {get\+Traffic\+By\+Day}
+    \subitem {D\+B\+A\+PI}, 9
+    \subitem {D\+B\+Interface}, 13
+  \item {get\+Traffic\+By\+Month}
+    \subitem {D\+B\+A\+PI}, 9
+    \subitem {D\+B\+Interface}, 13
+  \item {get\+Traffic\+By\+Year}
+    \subitem {D\+B\+A\+PI}, 10
+    \subitem {D\+B\+Interface}, 14
+  \item {get\+Traffic\+Time\+Range}
+    \subitem {D\+B\+A\+PI}, 10
+    \subitem {D\+B\+Interface}, 14
+
+  \indexspace
+
+  \item {print\+Entire\+DB}
+    \subitem {D\+B\+A\+PI}, 10
+
+\end{theindex}

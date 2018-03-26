@@ -147,6 +147,6 @@
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>time.sleep(.2)</highlight></codeline>
     </programlisting>
-    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7/Counter.py"/>
+    <location file="Python2.7/Counter.py"/>
   </compounddef>
 </doxygen>

@@ -157,20 +157,10 @@
     <member refid="test_8php_1a1d19ca72f1f9b19ab4d0107dec987a79" kind="variable"><name>$secondHourArray</name></member>
     <member refid="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" kind="variable"><name>$numRange</name></member>
   </compound>
-  <compound refid="md_Users_JonathanWesterfield_Documents_CSCE_315_RecWalkerCounter_README" kind="page"><name>md_Users_JonathanWesterfield_Documents_CSCE_315_RecWalkerCounter_README</name>
+  <compound refid="md_README" kind="page"><name>md_README</name>
   </compound>
-  <compound refid="dir_f8572bb7c716aea4f4f1763625d4fe31" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315</name>
+  <compound refid="dir_8669bb0c9144cb4951e4111ac38d1610" kind="dir"><name>Python</name>
   </compound>
-  <compound refid="dir_e786fce247269efc49d01abc6dc65ade" kind="dir"><name>Users/JonathanWesterfield/Documents</name>
-  </compound>
-  <compound refid="dir_3ce1afc6f4ddb0f62f9b760af6e1f717" kind="dir"><name>Users/JonathanWesterfield</name>
-  </compound>
-  <compound refid="dir_b7f5b94326d3e16dc81fc39afce14c26" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python</name>
-  </compound>
-  <compound refid="dir_017eda6e8e4107a4c4111635809cdb66" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/Python2.7</name>
-  </compound>
-  <compound refid="dir_62688563bdd7e66bca27589a793fe686" kind="dir"><name>Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter</name>
-  </compound>
-  <compound refid="dir_d522931ffa1371640980b621734a4381" kind="dir"><name>Users</name>
+  <compound refid="dir_42e9b67ffba52c13982b85f2f69ab462" kind="dir"><name>Python2.7</name>
   </compound>
 </doxygenindex>

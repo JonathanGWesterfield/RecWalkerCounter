@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="26" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="26" bodyend="-1"/>
+        <location file="test.php" line="26" column="1" bodyfile="test.php" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1a31daebf88fc668f410293e2c70cea3fc" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="31" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="31" bodyend="-1"/>
+        <location file="test.php" line="31" column="1" bodyfile="test.php" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1a0a9fb7e3e04662dfa0c7c2ec403e2734" prot="public" static="no" mutable="no">
         <type></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="57" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="57" bodyend="-1"/>
+        <location file="test.php" line="57" column="1" bodyfile="test.php" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1a91cb99eedc303fe58894b37cdc8a05e2" prot="public" static="no" mutable="no">
         <type></type>
@@ -57,7 +57,7 @@
 <para>Testing getCurrentMonthTraffic - should have the correct number of days in the current month </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="67" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="67" bodyend="-1"/>
+        <location file="test.php" line="67" column="1" bodyfile="test.php" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1a997718df5e43b02ef37998ab52f74cb6" prot="public" static="no" mutable="no">
         <type></type>
@@ -71,7 +71,7 @@
 <para>Testing getCurrentDayTraffic - should return length 24 for a 24 hour day </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="77" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="77" bodyend="-1"/>
+        <location file="test.php" line="77" column="1" bodyfile="test.php" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1a056500060fa87796ceb5c1d9c6e1502e" prot="public" static="no" mutable="no">
         <type></type>
@@ -85,7 +85,7 @@
 <para>Testing getTrafficByYear by putting in the current year - should return 12 months </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="85" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="85" bodyend="-1"/>
+        <location file="test.php" line="85" column="1" bodyfile="test.php" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1ab8151e5eb27fe41385727bc11a25f79f" prot="public" static="no" mutable="no">
         <type></type>
@@ -99,7 +99,7 @@
 <para>Testing getTrafficByMonth testing February 2020 - should return correct amount of days </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="93" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="93" bodyend="-1"/>
+        <location file="test.php" line="93" column="1" bodyfile="test.php" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1a1d19ca72f1f9b19ab4d0107dec987a79" prot="public" static="no" mutable="no">
         <type></type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="107" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="107" bodyend="-1"/>
+        <location file="test.php" line="107" column="1" bodyfile="test.php" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="test_8php_1a8b7af4d269daccce936da8eb0293bb6d" prot="public" static="no" mutable="no">
         <type>if(count($secondHourArray)!=24)</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" line="113" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php" bodystart="113" bodyend="-1"/>
+        <location file="test.php" line="113" column="1" bodyfile="test.php" bodystart="113" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -228,6 +228,6 @@
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
 <codeline lineno="121"><highlight class="normal">?&gt;</highlight></codeline>
     </programlisting>
-    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/test.php"/>
+    <location file="test.php"/>
   </compounddef>
 </doxygen>

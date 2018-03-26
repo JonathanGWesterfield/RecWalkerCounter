@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="13" column="1"/>
+        <location file="CommonInterface.php" line="13" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_common_interface_1a1b1bd9b3f45a5fbd2549355282cdc96f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="14" column="1"/>
+        <location file="CommonInterface.php" line="14" column="1"/>
       </memberdef>
       <memberdef kind="function" id="interface_common_interface_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="15" column="1"/>
+        <location file="CommonInterface.php" line="15" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -75,7 +75,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" line="12" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonInterface.php" bodystart="11" bodyend="16"/>
+    <location file="CommonInterface.php" line="12" column="1" bodyfile="CommonInterface.php" bodystart="11" bodyend="16"/>
     <listofallmembers>
       <member refid="interface_common_interface_1a4a9e6769ab6c946d0895e8d987df1c10" prot="public" virt="non-virtual"><scope>CommonInterface</scope><name>Common</name></member>
       <member refid="interface_common_interface_1a1b1bd9b3f45a5fbd2549355282cdc96f" prot="public" virt="non-virtual"><scope>CommonInterface</scope><name>connect</name></member>

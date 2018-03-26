@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="11" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="11" bodyend="-1"/>
+        <location file="CommonMethods.php" line="11" column="1" bodyfile="CommonMethods.php" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_common_1a85ae3e64cd40e9564adceb010085e9dd" prot="public" static="no" mutable="no">
         <type></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="12" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="12" bodyend="-1"/>
+        <location file="CommonMethods.php" line="12" column="1" bodyfile="CommonMethods.php" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_common_1a1fa3127fc82f96b1436d871ef02be319" prot="public" static="no" mutable="no">
         <type></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="20" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="20" bodyend="-1"/>
+        <location file="CommonMethods.php" line="20" column="1" bodyfile="CommonMethods.php" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_common_1ac5111a571fffa2499732833bb7f0d8c1" prot="public" static="no" mutable="no">
         <type></type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="21" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="21" bodyend="-1"/>
+        <location file="CommonMethods.php" line="21" column="1" bodyfile="CommonMethods.php" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_common_1a598ca4e71b15a1313ec95f0df1027ca5" prot="public" static="no" mutable="no">
         <type></type>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="22" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="22" bodyend="-1"/>
+        <location file="CommonMethods.php" line="22" column="1" bodyfile="CommonMethods.php" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_common_1a12ec2780b52bd1c54d38c2f981c0349f" prot="public" static="no" mutable="no">
         <type></type>
@@ -84,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="23" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="23" bodyend="-1"/>
+        <location file="CommonMethods.php" line="23" column="1" bodyfile="CommonMethods.php" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="25" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="25" bodyend="30"/>
+        <location file="CommonMethods.php" line="25" column="1" bodyfile="CommonMethods.php" bodystart="25" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_common_1a1b1bd9b3f45a5fbd2549355282cdc96f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="34" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="34" bodyend="45"/>
+        <location file="CommonMethods.php" line="34" column="1" bodyfile="CommonMethods.php" bodystart="34" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="class_common_1a57a9dbd1203cf7b3ef3c5ce40d4047cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="49" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="49" bodyend="57"/>
+        <location file="CommonMethods.php" line="49" column="1" bodyfile="CommonMethods.php" bodystart="49" bodyend="57"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -171,7 +171,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" line="10" column="1" bodyfile="Users/JonathanWesterfield/Documents/CSCE 315/RecWalkerCounter/CommonMethods.php" bodystart="9" bodyend="59"/>
+    <location file="CommonMethods.php" line="10" column="1" bodyfile="CommonMethods.php" bodystart="9" bodyend="59"/>
     <listofallmembers>
       <member refid="class_common_1aa8a5a87b9c1a6a0819b88447cbe41877" prot="public" virt="non-virtual"><scope>Common</scope><name>$conn</name></member>
       <member refid="class_common_1a1fa3127fc82f96b1436d871ef02be319" prot="public" virt="non-virtual"><scope>Common</scope><name>$db</name></member>
