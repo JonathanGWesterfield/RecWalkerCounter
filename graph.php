@@ -6,6 +6,13 @@ include_once "DBInterface.php";
 $thisCommon = new Common(true);
 $db = new DBAPI($thisCommon);
 
+/**
+ * DBAPI constructor.
+ * @param $values
+ * @return string
+ *
+ * Returns a string representation of an array.
+ */
 function print_array($values) {
     $printed_first = false;
     $result = "[";
@@ -21,6 +28,14 @@ function print_array($values) {
     return $result;
 }
 
+/**
+ * DBAPI constructor.
+ * @param $labels
+ * @param $values
+ * @param $date_format
+ *
+ * Displays a graph with the data given in $values. $date_format is used for the title, and $labels are used for the x-axis.
+ */
 function display_graph($labels, $values, $date_format) { ?>
 <canvas id="graph"></canvas>
 <script>
