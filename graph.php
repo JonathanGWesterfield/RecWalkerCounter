@@ -84,16 +84,20 @@ var chart = new Chart(ctx,
 </script>
 <?php }
 
+// Check if the mode is set.
 if(!isset($_GET['mode'])) {
 
     echo '<script>console.log("Please specify a mode.");</script>';
 
+// Check if mode is a valid option.
 } elseif(strtolower($_GET['mode']) == 'day' || strtolower($_GET['mode']) == 'month'|| strtolower($_GET['mode']) == 'year') {
 
+    // Ensure that day, month, and year are all set.
     if(!isset($_GET['day']) || !isset($_GET['month']) || !isset($_GET['year'])) {
 
         echo '<script>console.log("Please specify a day, month, and year.");</script>';
 
+    // Display statistics.
     } else {
 
         $dateObj = DateTime::createFromFormat('d-m-Y|', $_GET['day'] . '-' . $_GET['month'] . '-' . $_GET['year']);
