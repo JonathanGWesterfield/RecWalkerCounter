@@ -80,7 +80,7 @@ class DBAPI implements DBInterface
      */
     public function printEntireDB()
     {
-        $sql = "SELECT * FROM WalkerData ORDER BY WalkerNumber";
+        $sql = "SELECT * FROM WalkerData WHERE InOrOut=1 ORDER BY WalkerNumber";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -106,7 +106,7 @@ class DBAPI implements DBInterface
     public function getTotalNumWalkers()
     {
         // echo("<br><br>getTotalNumWalkers<br>");
-        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData";
+        $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE InOrOut=1";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -126,7 +126,7 @@ class DBAPI implements DBInterface
     {
         // echo("<br><br>getNumWalkersToday");
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $this->currentDate . "%\" AND \""
-            . $this->tomorrowDate . "%\"";
+            . $this->tomorrowDate . "%\" AND InOrOut=1";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -150,7 +150,7 @@ class DBAPI implements DBInterface
         // echo("Last weeks date: " . $lastWeek . "<br>");
 
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $lastWeek . "%\" AND \""
-            . $this->tomorrowDate . "%\"";
+            . $this->tomorrowDate . "%\" AND InOrOut=1";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
 
@@ -179,7 +179,7 @@ class DBAPI implements DBInterface
             // echo $prevMonth->format('Y-m-d');
 
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth->format('Y-m-d') . "%\" AND \"" .
-                $lookMonth->format('Y-m-d') . "%\"";
+                $lookMonth->format('Y-m-d') . "%\" AND InOrOut=1";
 
             $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
             $row = $rs->fetch(PDO::FETCH_ASSOC);
@@ -218,8 +218,9 @@ class DBAPI implements DBInterface
             $prevMonth->modify('-1 month'); // decrement month
             // echo $prevMonth->format('Y-m-d');
 
-            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" . $prevMonth->format('Y-m-d') . "%\" AND \"" .
-                $lookMonth->format('Y-m-d') . "%\"";
+            $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
+                $prevMonth->format('Y-m-d') . "%\" AND \"" .
+                $lookMonth->format('Y-m-d') . "%\" AND InOrOut=1";
 
             $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
             $row = $rs->fetch(PDO::FETCH_ASSOC);
@@ -274,7 +275,8 @@ class DBAPI implements DBInterface
         for($i = 0; $i < $diff; $i++)
         {
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
-                $dayBefore->format('Y-m-d') . "%\" AND \"" . $lookDay->format('Y-m-d') . "%\"";
+                $dayBefore->format('Y-m-d') . "%\" AND \"" . $lookDay->format('Y-m-d') .
+                "%\" AND InOrOut=1";
 
             $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
             $row = $rs->fetch(PDO::FETCH_ASSOC);
@@ -338,7 +340,8 @@ class DBAPI implements DBInterface
         for($i = 0; $i < $diff; $i++)
         {
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
-                $dayBefore->format('Y-m-d') . "%\" AND \"" . $lookDay->format('Y-m-d') . "%\"";
+                $dayBefore->format('Y-m-d') . "%\" AND \"" . $lookDay->format('Y-m-d') .
+                "%\" AND InOrOut=1";
 
             $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
             $row = $rs->fetch(PDO::FETCH_ASSOC);
@@ -388,7 +391,8 @@ class DBAPI implements DBInterface
 
             // get the number of walkers in between the 2 times
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
-                $prevHour->format('Y-m-d H:i:s') . "\" AND \"" . $endOfToday->format('Y-m-d H:i:s') . "\"";
+                $prevHour->format('Y-m-d H:i:s') . "\" AND \"" . $endOfToday->format('Y-m-d H:i:s') .
+                "\" AND InOrOut=1";
 
             $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
             $row = $rs->fetch(PDO::FETCH_ASSOC);
@@ -445,7 +449,8 @@ class DBAPI implements DBInterface
 
             // get the number of walkers in between the 2 times
             $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
-                $prevHour->format('Y-m-d H:i:s') . "\" AND \"" . $endOfToday->format('Y-m-d H:i:s') . "\"";
+                $prevHour->format('Y-m-d H:i:s') . "\" AND \"" . $endOfToday->format('Y-m-d H:i:s') .
+                "\" AND InOrOut=1";
 
             $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
             $row = $rs->fetch(PDO::FETCH_ASSOC);
@@ -494,7 +499,8 @@ class DBAPI implements DBInterface
         // echo("End Day: " . $endDay->format('Y-m-d H:i:s') . "<br>");
 
         $sql = "SELECT COUNT(WalkerNumber) FROM WalkerData WHERE DateTime BETWEEN \"" .
-            $startDay->format('Y-m-d H:i:s') . "\" AND \"" . $endDay->format('Y-m-d H:i:s') . "\"";
+            $startDay->format('Y-m-d H:i:s') . "\" AND \"" . $endDay->format('Y-m-d H:i:s') .
+            "\" AND InOrOut=1";
 
         $rs = $this->COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
         $row = $rs->fetch(PDO::FETCH_ASSOC);
