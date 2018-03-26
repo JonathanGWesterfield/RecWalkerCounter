@@ -75,7 +75,6 @@ board = PyMata("COM3", verbose=True) # Change port to /dev/ttyACM... for LINUX
 # May need to press ctrl c twice
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C')
-	cnx.close()
     if board is not None:
         board.reset()
         board.close()
@@ -118,7 +117,7 @@ while 1:
             hit2 = 0
             #print("ENTERED! Inserting into DB...") #Debug 
             insert(cnx, cursor, True)
-            time.sleep(.4)
+            time.sleep(.25)
             break
 	
 	# Exiting has been triggered, wait to complete before reading again
@@ -131,7 +130,7 @@ while 1:
             hit2 = 0
             #print("EXITED! Inserting into DB...") #Debug 
             insert(cnx, cursor, False)
-            time.sleep(.4)
+            time.sleep(.25)
             break
 
     time.sleep(.2)
