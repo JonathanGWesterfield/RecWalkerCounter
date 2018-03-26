@@ -7,7 +7,6 @@ $thisCommon = new Common(true);
 $db = new DBAPI($thisCommon);
 
 /**
- * DBAPI constructor.
  * @param $values
  * @return string
  *
@@ -29,7 +28,6 @@ function print_array($values) {
 }
 
 /**
- * DBAPI constructor.
  * @param $labels
  * @param $values
  * @param $date_format
