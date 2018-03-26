@@ -4,13 +4,12 @@
  * User: JonathanWesterfield
  * Date: 2/8/18
  * Time: 5:05 PM
- */
-
-/**
+ *
  * This code is for error reporting and "compile" errors. They really help because they
  * actually tell me whats wrong with the code. Otherwise, i'll often just see a blank
  * page load and its really annoying and hard to debug.
  */
+
 error_reporting(E_ALL);
 ini_set('error_reporting', E_ALL);
 

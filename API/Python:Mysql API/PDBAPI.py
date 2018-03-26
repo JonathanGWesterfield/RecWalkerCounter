@@ -1,15 +1,26 @@
+"""
+This file is the Python API that allows the Arduino to
+communicate with the database. It allows one way communication
+from the Arduino pushing data to the database. dbConnect()
+must be called before insert will work. Otherwise,
+it will throw an exception (that gets caught within the function itself).
+"""
+
 #####################################################################################################################
 #                                COPY AND PAST THESE FUNCTIONS AT THE TOP OF THE FILE                               #
 #####################################################################################################################
+
+## @file PDBAPI.py
 
 import mysql.connector
 from mysql.connector import errorcode
 
 def insert(cnx, cursor, inOrOut):
     """
-    This function inserts an entry into the database. Will insert the location (should be the Student Recreation Center
-    but can be changed), a boolean value as to whether the subject exited or entered, the day of the week in number
-    format (using the mysql dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
+    This function inserts an entry into the database. Will insert the location (should
+    be the Student Recreation Center but can be changed), a boolean value as to whether
+    the subject exited or entered, the day of the week in number format (using the mysql
+    dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
     :param cnx:
     :param cursor:
     :param inOrOut: True=In, False=Out
@@ -34,10 +45,8 @@ def insert(cnx, cursor, inOrOut):
 
 def dbConnect():
     '''
-    This connects to the database using my credentials and the mysql password. Will print out a string
+    Connects to the database using my credentials and the mysql password. Will print out a string
     depeding on the status of the connection i.e.: whether if failed or not and why.
-
-    MUST BE CALLED BEFORE INSERT
     :return:
     '''
     try:
