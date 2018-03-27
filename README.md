@@ -1,7 +1,7 @@
 # RecWalkerCounter
 Contains all of the files for CSCE 315 Project 1 at Texas A&M University.
 
-# Website Interface 
+# Possible Location for Documentation 
 https://jonathangwesterfield.github.io/RecWalkerCounter/
 
 # Purpose - Walking Traffic Counter
@@ -18,5 +18,16 @@ database for further research. Your group is not the only people that will work 
 work will be passed to another group. It is essential that you remember this, and build your 
 work knowing someone will be finishing it. Since it will be passed on, there will be a coding 
 standards that must be adhered to.
+
+# Components of Project
+Arduino - sends an entry to the Database through a Python API whenever someone walks in front 
+of the sensor
+
+Python/MySQL API - interface between the Arduino and the MySQL database
+
+PHP/MySQL API - interface between webpage and the MySQL database
+
+Web Page - Displays an interactive graph displaying information about the traffic through 
+the South Entrance of The Rec
 
 
