@@ -128,5 +128,3 @@ if(!isset($_GET['mode'])) {
     echo '<script>console.log("Could not load form with mode \\"' . $_GET['mode'] . '\\".");</script>';
 
 } ?>
-
-</script>
