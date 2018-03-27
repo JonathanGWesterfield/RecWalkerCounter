@@ -1,9 +1,6 @@
 # RecWalkerCounter
 Contains all of the files for CSCE 315 Project 1 at Texas A&M University.
 
-# Possible Location for Documentation 
-https://jonathangwesterfield.github.io/RecWalkerCounter/
-
 # Purpose - Walking Traffic Counter
 The Rec Center opened a new South Entrance not too long ago. The project costed millions 
 with all of the research, simulation and construction that went into the design. But anecdotally, 
@@ -18,6 +15,9 @@ database for further research. Your group is not the only people that will work 
 work will be passed to another group. It is essential that you remember this, and build your 
 work knowing someone will be finishing it. Since it will be passed on, there will be a coding 
 standards that must be adhered to.
+
+# Possible Location for Documentation 
+https://jonathangwesterfield.github.io/RecWalkerCounter/
 
 # Components of Project
 Arduino - sends an entry to the Database through a Python API whenever someone walks in front 
