@@ -8,6 +8,7 @@ import mysql.connector
 from PyMata.pymata import PyMata
 from mysql.connector import errorcode
 
+
 def insert(cnx, cursor, inOrOut):
     """
     This function inserts an entry into the database. Will insert the location (should be the Student Recreation Center
@@ -35,6 +36,7 @@ def insert(cnx, cursor, inOrOut):
         print("Something went wrong: {}".format(err))
         return True
 
+
 def dbConnect():
     '''
     Connects to the database using my credentials and the mysql password. Will print out a string
@@ -47,7 +49,8 @@ def dbConnect():
         global cursor
 
         # make the connection
-        cnx = mysql.connector.connect(user='jgwesterfield', password='Whoop19!', host='database.cse.tamu.edu', database='jgwesterfield-WalkerData')
+        cnx = mysql.connector.connect(user='jgwesterfield', password='Whoop19!', host='database.cse.tamu.edu',
+                                      database='jgwesterfield-WalkerData')
         cursor = cnx.cursor()
         print ("DB Connected")
         return
@@ -70,11 +73,63 @@ def dbConnect():
 dbConnect()
 
 # Create a PyMata instance
-board = PyMata("COM3", verbose=True) # Change port to /dev/ttyACM... for LINUX
+board = PyMata("COM3", verbose=True)  # Change port to /dev/ttyACM... for LINUX
 
-# May need to press ctrl c twice
+def readfromArduino():
+    """
+    This function reads data in from HC-SR04 (ultrasonic) sensors and registers a pedestrian
+    entering/exiting based on proximity and which sensor is triggered first. It inserts this data
+    into the MySQL database, passing in whether the pedestrian was entering or exiting
+    :return:
+    """
+    data = board.get_sonar_data()
+
+    distance1 = data[12][1]
+    distance2 = data[13][1]
+    hit1 = 0
+    hit2 = 0
+
+    # Check distances for both sensors, trip at close distances
+    if (distance1 < 15):
+        print(str(data[12][1]) + 'CM on sensor 1')
+        print("Entering...") #Debug
+        hit1 = 1
+
+    if (distance2 < 15):
+        print(str(data[13][1]) + 'CM on sensor 2')
+        print("Exiting...") #Debug
+        hit2 = 1
+
+    # Entering has been triggered, wait to complete before reading again
+    while hit1 == 1 and hit2 == 0:
+        dist = 0
+        data = board.get_sonar_data()
+        dist = data[13][1]
+        if (dist < 15):
+            hit1 = 0
+            hit2 = 0
+            print("ENTERED! Inserting into DB...") #Debug
+            insert(cnx, cursor, True)
+            time.sleep(.4)
+            break
+
+    # Exiting has been triggered, wait to complete before reading again
+    while hit1 == 0 and hit2 == 1:
+        dist = 0
+        data = board.get_sonar_data()
+        dist = data[12][1]
+        if (dist < 15):
+            hit1 = 0
+            hit2 = 0
+            print("EXITED! Inserting into DB...") #Debug
+            insert(cnx, cursor, False)
+            time.sleep(.4)
+            break
+
+# Interrupt signal handler - May need to press ctrl c twice
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C')
+    cnx.close()
     if board is not None:
         board.reset()
         board.close()
@@ -91,46 +146,5 @@ time.sleep(1)
 
 # Loop to read from ultrasonic sensors and add data to DB
 while 1:
-    data = board.get_sonar_data()
-
-    distance1 = data[12][1]
-    distance2 = data[13][1]
-    hit1 = 0
-    hit2 = 0
-
-	# Check distances for both sensors, trip at close distances
-    if (distance1 < 15):
-        #print("Entering...") #Debug
-        hit1 = 1
-
-    if (distance2 < 15):
-        #print("Exiting...") #Debug 
-        hit2 = 1
-	
-	# Entering has been triggered, wait to complete before reading again
-    while hit1 == 1 and hit2 == 0:
-        dist = 0
-        data = board.get_sonar_data()
-        dist = data[13][1]
-        if (dist < 15):
-            hit1 = 0
-            hit2 = 0
-            #print("ENTERED! Inserting into DB...") #Debug 
-            insert(cnx, cursor, True)
-            time.sleep(.25)
-            break
-	
-	# Exiting has been triggered, wait to complete before reading again
-    while hit1 == 0 and hit2 == 1:
-        dist = 0
-        data = board.get_sonar_data()
-        dist = data[12][1]
-        if (dist < 15):
-            hit1 = 0
-            hit2 = 0
-            #print("EXITED! Inserting into DB...") #Debug 
-            insert(cnx, cursor, False)
-            time.sleep(.25)
-            break
-
+    readfromArduino()
     time.sleep(.2)
