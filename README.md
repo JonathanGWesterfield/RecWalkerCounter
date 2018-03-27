@@ -16,9 +16,6 @@ work will be passed to another group. It is essential that you remember this, an
 work knowing someone will be finishing it. Since it will be passed on, there will be a coding 
 standards that must be adhered to.
 
-# Possible Location for Documentation 
-https://jonathangwesterfield.github.io/RecWalkerCounter/
-
 # Components of Project
 Arduino - sends an entry to the Database through a Python API whenever someone walks in front 
 of the sensor
@@ -29,5 +26,9 @@ PHP/MySQL API - interface between webpage and the MySQL database
 
 Web Page - Displays an interactive graph displaying information about the traffic through 
 the South Entrance of The Rec
+
+# Possible Location for Documentation 
+https://jonathangwesterfield.github.io/RecWalkerCounter/
+
 
 
