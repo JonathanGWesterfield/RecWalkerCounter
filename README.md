@@ -16,6 +16,9 @@ work will be passed to another group. It is essential that you remember this, an
 work knowing someone will be finishing it. Since it will be passed on, there will be a coding 
 standards that must be adhered to.
 
+# Web Interface
+http://students.cse.tamu.edu/jgwesterfield/
+
 # Components of Project
 Arduino - sends an entry to the Database through a Python API whenever someone walks in front 
 of the sensor
