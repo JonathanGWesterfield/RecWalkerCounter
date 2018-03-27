@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+    include_once "CommonInterface.php";
+    include_once "DBInterface.php";
+
+    $thisCommon = new Common(true);
+    $db = new DBAPI($thisCommon);
+?><!DOCTYPE html>
 <html>
 <head>
 
@@ -10,13 +16,7 @@
 </head>
 <body>
     
-<?php
-    include_once "CommonInterface.php";
-    include_once "DBInterface.php";
 
-    $thisCommon = new Common(true);
-    $db = new DBAPI($thisCommon);
-?>
 
 <h1>Student Recreation Center South Entrance <br>Foot Traffic </h1>
 
