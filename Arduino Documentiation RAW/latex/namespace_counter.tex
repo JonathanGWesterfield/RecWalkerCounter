@@ -1,0 +1,74 @@
+\hypertarget{namespace_counter}{}\section{Counter Namespace Reference}
+\label{namespace_counter}\index{Counter@{Counter}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespace_counter_a49e12affeadafd8435a97b06057e2dfe}{insert} (cnx, cursor, in\+Or\+Out)
+\item 
+def \hyperlink{namespace_counter_a8e429790189b662dee33d000087cb1f8}{db\+Connect} ()
+\item 
+def \hyperlink{namespace_counter_a27dffb0b62e84c35f52de71e22b3ee2f}{readfrom\+Arduino} ()
+\item 
+def {\bfseries signal\+\_\+handler} (sig, frame)\hypertarget{namespace_counter_abd6cd9e7a4e8224f96c5d38e18db6291}{}\label{namespace_counter_abd6cd9e7a4e8224f96c5d38e18db6291}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries board} = Py\+Mata(\char`\"{}C\+O\+M3\char`\"{}, verbose=True)\hypertarget{namespace_counter_a270588806e1d16ef8beae527f6438f20}{}\label{namespace_counter_a270588806e1d16ef8beae527f6438f20}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This file is the code that gets loaded onto the Arduino. It is constantly polling the 2 
+ultrasonic sensors attached to the Arduino to see if anything has passed through the sensors
+and in what direction they went. Once it has been determined that someone went through the 
+sensor and what direction they went, it calls the insert() function to insert an entry into 
+the database with the location, direction, and DateTime stamp.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Counter@{Counter}!db\+Connect@{db\+Connect}}
+\index{db\+Connect@{db\+Connect}!Counter@{Counter}}
+\subsubsection[{\texorpdfstring{db\+Connect()}{dbConnect()}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+db\+Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_counter_a8e429790189b662dee33d000087cb1f8}{}\label{namespace_counter_a8e429790189b662dee33d000087cb1f8}
+\begin{DoxyVerb}Connects to the database using my credentials and the mysql password. Will print out a string
+depeding on the status of the connection i.e.: whether if failed or not and why.
+:return:
+\end{DoxyVerb}
+ \index{Counter@{Counter}!insert@{insert}}
+\index{insert@{insert}!Counter@{Counter}}
+\subsubsection[{\texorpdfstring{insert(cnx, cursor, in\+Or\+Out)}{insert(cnx, cursor, inOrOut)}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+insert (
+\begin{DoxyParamCaption}
+\item[{}]{cnx, }
+\item[{}]{cursor, }
+\item[{}]{in\+Or\+Out}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_counter_a49e12affeadafd8435a97b06057e2dfe}{}\label{namespace_counter_a49e12affeadafd8435a97b06057e2dfe}
+\begin{DoxyVerb}This function inserts an entry into the database. Will insert the location (should be the Student
+Recreation Center but can be changed), a boolean value as to whether the subject exited or entered,
+the day of the week in number format (using the mysql dayofweek(now()) function) and a DateTime 
+stamp (using mysql now() function)
+:param cnx:
+:param cursor:
+:param inOrOut:
+:return: Boolean
+\end{DoxyVerb}
+ \index{Counter@{Counter}!readfrom\+Arduino@{readfrom\+Arduino}}
+\index{readfrom\+Arduino@{readfrom\+Arduino}!Counter@{Counter}}
+\subsubsection[{\texorpdfstring{readfrom\+Arduino()}{readfromArduino()}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+readfrom\+Arduino (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_counter_a27dffb0b62e84c35f52de71e22b3ee2f}{}\label{namespace_counter_a27dffb0b62e84c35f52de71e22b3ee2f}
+\begin{DoxyVerb}This function reads data in from HC-SR04 (ultrasonic) sensors and registers a pedestrian
+entering/exiting based on proximity and which sensor is triggered first. It inserts this data
+into the MySQL database, passing in whether the pedestrian was entering or exiting
+:return:
+\end{DoxyVerb}
+ 

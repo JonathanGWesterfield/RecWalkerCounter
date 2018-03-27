@@ -1,10 +1,11 @@
 #!/usr/bin/env python #LINUX?
 
 """
-This file is the code that gets loaded onto the Arduino. It is constantly polling the 2 ultrasonic sensors 
-attached to the Arduino to see if anything has passed through the sensors and in what direction they went.
-Once it has been determined that someone went through the sensor and what direction they went, it calls the insert() 
-function to insert an entry into the database with the location, direction, and DateTime stamp.
+This file is the code that gets loaded onto the Arduino. It is constantly polling the 2 
+ultrasonic sensors attached to the Arduino to see if anything has passed through the sensors
+and in what direction they went. Once it has been determined that someone went through the 
+sensor and what direction they went, it calls the insert() function to insert an entry into 
+the database with the location, direction, and DateTime stamp.
 """
 
 import time
@@ -18,9 +19,10 @@ from mysql.connector import errorcode
 
 def insert(cnx, cursor, inOrOut):
     """
-    This function inserts an entry into the database. Will insert the location (should be the Student Recreation Center
-    but can be changed), a boolean value as to whether the subject exited or entered, the day of the week in number
-    format (using the mysql dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
+    This function inserts an entry into the database. Will insert the location (should be the Student
+    Recreation Center but can be changed), a boolean value as to whether the subject exited or entered,
+    the day of the week in number format (using the mysql dayofweek(now()) function) and a DateTime 
+    stamp (using mysql now() function)
     :param cnx:
     :param cursor:
     :param inOrOut:

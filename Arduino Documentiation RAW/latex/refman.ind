@@ -1,0 +1,23 @@
+\begin{theindex}
+
+  \item {Counter}, \hyperpage{3}
+    \subitem {db\+Connect}, \hyperpage{3}
+    \subitem {insert}, \hyperpage{3}
+    \subitem {readfrom\+Arduino}, \hyperpage{4}
+
+  \indexspace
+
+  \item {db\+Connect}
+    \subitem {Counter}, \hyperpage{3}
+
+  \indexspace
+
+  \item {insert}
+    \subitem {Counter}, \hyperpage{3}
+
+  \indexspace
+
+  \item {readfrom\+Arduino}
+    \subitem {Counter}, \hyperpage{4}
+
+\end{theindex}
