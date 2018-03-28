@@ -8,6 +8,9 @@ import mysql.connector
 from PyMata.pymata import PyMata
 from mysql.connector import errorcode
 
+# Create a PyMata instance
+board = PyMata("/dev/ttyACM0", verbose=True)  # Change port to COM# (look in device manager) for Windows
+
 
 def insert(cnx, cursor, inOrOut):
     """
@@ -38,11 +41,11 @@ def insert(cnx, cursor, inOrOut):
 
 
 def dbConnect():
-    '''
+    """
     Connects to the database using my credentials and the mysql password. Will print out a string
     depeding on the status of the connection i.e.: whether if failed or not and why.
     :return:
-    '''
+    """
     try:
         # declare cnx and cursor as global so they can be used in other functions
         global cnx
@@ -69,65 +72,107 @@ def dbConnect():
             cnx.close()
             return
 
-# Connect to the MySQL database
-dbConnect()
-
-# Create a PyMata instance
-board = PyMata("/dev/ttyACM0", verbose=True)  # Change port to COM# (look in device manager) for Windows
-
-def readfromArduino():
+			
+def calibDist():
     """
-    This function reads data in from HC-SR04 (ultrasonic) sensors and registers a pedestrian
-    entering/exiting based on proximity and which sensor is triggered first. It inserts this data
-    into the MySQL database, passing in whether the pedestrian was entering or exiting
+    This function reads data from the sensors for a specified amount of time and then takes the average
+    of those values to find the distance to check against for comparison (sensor-to-wall distance).
+    :return: integer
+    """
+    totalDist = 0
+    measurements = 0
+    t_end = time.time() + 5  # Run for 5 seconds
+    print("Performing distance calibration, please wait!")
+    while time.time() < t_end:
+        data = board.get_sonar_data()
+        totalDist += data[pin1][1]
+        measurements += 1
+
+    distance = totalDist / measurements
+    print("Distance: " + str(distance))
+    print("Measurements: " + str(measurements))
+    return distance
+
+
+def readIn(pin):
+    """
+    This function reads the data from the ultrasonic sensor associated with the passed-in Arduino pin for 1/10th of
+    a second and calculates the average distance for those measurements. This is to provide more accurate data to
+    reconcile the slight inaccuracy of the sensors. Note: ~100k measurements are taken in 1/10th of a second.
+    :param pin:
     :return:
     """
-    data = board.get_sonar_data()
+    totalDist = 0
+    measurements = 0
+    t_end = time.time() + .1  # Run for distanceToCheck seconds
+    while time.time() < t_end:
+        data = board.get_sonar_data()
+        # Check for bad sensor read, loop until we get good data
+        while data[pin][1] == 0:
+            # print ("BAD DATA!")
+            data = board.get_sonar_data()
+        totalDist += data[pin][1]
+        measurements += 1
 
-    distance1 = data[12][1]
-    distance2 = data[13][1]
+    avgDistance = totalDist / measurements
+    # print("Distance: " + str(distance))
+    # print("Measurements: " + str(measurements))
+    return avgDistance
+
+
+def readFromArduino(distanceToCheck):
+    """
+    This function reads data in from HC-SR04 (ultrasonic) sensors and registers a pedestrian
+    entering/exiting based on proximity in comparison to "distanceToCheck" and which sensor is triggered first.
+    It inserts this data into the MySQL database, passing in whether the pedestrian was entering or exiting.
+    :param distanceToCheck:
+    :return:
+    """
+
+    # print("Check against: " + str(distanceToCheck))
+    distance1 = readIn(pin1)
+    distance2 = readIn(pin2)
     hit1 = 0
     hit2 = 0
 
     # Check distances for both sensors, trip at close distances
-    if (distance1 < 15):
-        print(str(data[12][1]) + 'CM on sensor 1')
-        print("Entering...") #Debug
+    if distance1 < distanceToCheck:
+        timeout = time.time() + 2
+        # print(str(data[pin1][1]) + 'CM on sensor 1')
+        print("Entering...")  # Debug
         hit1 = 1
 
-    if (distance2 < 15):
-        print(str(data[13][1]) + 'CM on sensor 2')
-        print("Exiting...") #Debug
+    if distance2 < distanceToCheck:
+        timeout = time.time() + 2
+        # print(str(data[pin2][1]) + 'CM on sensor 2')
+        print("Exiting...")  # Debug
         hit2 = 1
 
     # Entering has been triggered, wait to complete before reading again
-    while hit1 == 1 and hit2 == 0:
-        dist = 0
-        data = board.get_sonar_data()
-        dist = data[13][1]
-        if (dist < 15):
+    while hit1 == 1 and hit2 == 0 and time.time() < timeout:
+        dist = readIn(pin2)
+        if dist < distanceToCheck:
             hit1 = 0
             hit2 = 0
-            print("ENTERED! Inserting into DB...") #Debug
-            insert(cnx, cursor, True)
+            print("ENTERED! Inserting into DB...")  # Debug
+            # insert(cnx, cursor, True)
             time.sleep(.4)
             break
 
     # Exiting has been triggered, wait to complete before reading again
-    while hit1 == 0 and hit2 == 1:
-        dist = 0
-        data = board.get_sonar_data()
-        dist = data[12][1]
-        if (dist < 15):
+    while hit1 == 0 and hit2 == 1 and time.time() < timeout:
+        dist = readIn(pin1)
+        if dist < distanceToCheck:
             hit1 = 0
             hit2 = 0
-            print("EXITED! Inserting into DB...") #Debug
-            insert(cnx, cursor, False)
+            print("EXITED! Inserting into DB...")  # Debug
+            # insert(cnx, cursor, False)
             time.sleep(.4)
-            break
+            break			
+			
 
 # Interrupt signal handler - May need to press ctrl c twice
-def signal_handler(sig, frame):
+def signalHandler(sig, frame):
     print('You pressed Ctrl+C')
     cnx.close()
     if board is not None:
@@ -135,16 +180,24 @@ def signal_handler(sig, frame):
         board.close()
     sys.exit(0)
 
-signal.signal(signal.SIGINT, signal_handler)
 
-# Configure the trigger and echo pins - Sensor 1
-board.sonar_config(12, 12)
+signal.signal(signal.SIGINT, signalHandler)
 
-# Configure the trigger and echo pins - Sensor 2
-board.sonar_config(13, 13)
+# Connect to the MySQL database
+dbConnect()
+
+# Sensor pins: pin1 = entering, pin2 = exiting
+pin1 = 12
+pin2 = 13
+
+# Configure the trigger and echo pins for both sensors and wait to finish
+board.sonar_config(pin1, pin1)
+board.sonar_config(pin2, pin2)
 time.sleep(1)
+
+distToCheck = calibDist() - 10  # Leave 10 CM for sensor inaccuracy "padding"
 
 # Loop to read from ultrasonic sensors and add data to DB
 while 1:
-    readfromArduino()
+    readFromArduino(distToCheck)
     time.sleep(.2)
