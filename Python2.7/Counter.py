@@ -73,7 +73,7 @@ def dbConnect():
 dbConnect()
 
 # Create a PyMata instance
-board = PyMata("COM3", verbose=True)  # Change port to /dev/ttyACM... for LINUX
+board = PyMata("/dev/ttyACM0", verbose=True)  # Change port to COM# (look in device manager) for Windows
 
 def readfromArduino():
     """
