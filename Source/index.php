@@ -50,7 +50,8 @@ $(document).ready(function(){
     $("#date-select").val(date.getFullYear() + "-" + ("0000" + (date.getMonth()+1)).slice(-2) + "-" + ("0000" + date.getDate()).slice(-2));
     updateGraphStats();
     $("#graph-control").change(function() {
-        updateGraphStats();
+        if($("#date-select").val() != "")
+            updateGraphStats();
     });
 });
 </script>
