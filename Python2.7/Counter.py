@@ -26,10 +26,9 @@ def insert(cnx, cursor, inOrOut):
         sql = "INSERT INTO WalkerData (Location, InOrOut, WeekDay, DateTime) VALUES (\"Student Recreation Center\", "
         sql += str(inOrOut) + ", dayofweek(now()), now())"
 
-        print("Attempting to Insert into the Database: ")
-
-        print(sql)
-        print("\n")
+        # print("Attempting to Insert into the Database: ")
+        # print(sql)
+        # print("\n")
         cursor.execute(sql)
         cnx.commit()
         return False
@@ -72,8 +71,8 @@ def dbConnect():
             cnx.close()
             return
 
-			
-def calibDist():
+
+def calibDist(pin):
     """
     This function reads data from the sensors for a specified amount of time and then takes the average
     of those values to find the distance to check against for comparison (sensor-to-wall distance).
@@ -81,16 +80,18 @@ def calibDist():
     """
     totalDist = 0
     measurements = 0
-    t_end = time.time() + 5  # Run for 5 seconds
-    print("Performing distance calibration, please wait!")
+    t_end = time.time() + 2  # Run for 2 seconds
+    print("Performing distance calibration on pin " + str(pin) + ". Please wait!")
     while time.time() < t_end:
         data = board.get_sonar_data()
-        totalDist += data[pin1][1]
+        totalDist += data[pin][1]
         measurements += 1
 
     distance = totalDist / measurements
-    print("Distance: " + str(distance))
-    print("Measurements: " + str(measurements))
+    if distance == 0:
+        print("ERROR: Bad sensor data! Sensor-to-wall distance > 200CM OR sensors are misconfigured! Aborting...")
+        sys.exit(0)
+    print("Calibrated distance on pin " + str(pin) + " is " + str(distance) + " CM")
     return distance
 
 
@@ -102,25 +103,19 @@ def readIn(pin):
     :param pin:
     :return:
     """
-    totalDist = 0
-    measurements = 0
-    t_end = time.time() + .1  # Run for distanceToCheck seconds
-    while time.time() < t_end:
+    data = board.get_sonar_data()
+    badData = 0
+    while data[pin][1] == 0:
+        badData += 1
+        if badData == 100:
+            print("Sensor on pin " + str(pin) + " has stopped detecting! Aborting..." )
+            sys.exit(0)
         data = board.get_sonar_data()
-        # Check for bad sensor read, loop until we get good data
-        while data[pin][1] == 0:
-            # print ("BAD DATA!")
-            data = board.get_sonar_data()
-        totalDist += data[pin][1]
-        measurements += 1
-
-    avgDistance = totalDist / measurements
-    # print("Distance: " + str(distance))
-    # print("Measurements: " + str(measurements))
-    return avgDistance
+    distance = data[pin][1]
+    return distance
 
 
-def readFromArduino(distanceToCheck):
+def countPeople(distanceToCheck1, distanceToCheck2):
     """
     This function reads data in from HC-SR04 (ultrasonic) sensors and registers a pedestrian
     entering/exiting based on proximity in comparison to "distanceToCheck" and which sensor is triggered first.
@@ -129,47 +124,40 @@ def readFromArduino(distanceToCheck):
     :return:
     """
 
-    # print("Check against: " + str(distanceToCheck))
-    distance1 = readIn(pin1)
-    distance2 = readIn(pin2)
     hit1 = 0
     hit2 = 0
 
     # Check distances for both sensors, trip at close distances
-    if distance1 < distanceToCheck:
+    if readIn(pin2) < distanceToCheck2 and hit1 == 0:
         timeout = time.time() + 2
-        # print(str(data[pin1][1]) + 'CM on sensor 1')
-        print("Entering...")  # Debug
-        hit1 = 1
-
-    if distance2 < distanceToCheck:
-        timeout = time.time() + 2
-        # print(str(data[pin2][1]) + 'CM on sensor 2')
-        print("Exiting...")  # Debug
+        print("RIGHT: Exiting...")  # Debug
         hit2 = 1
+
+    if readIn(pin1) < distanceToCheck1 and hit2 == 0:
+        timeout = time.time() + 2
+        print("LEFT: Entering...")  # Debug
+        hit1 = 1
 
     # Entering has been triggered, wait to complete before reading again
     while hit1 == 1 and hit2 == 0 and time.time() < timeout:
-        dist = readIn(pin2)
-        if dist < distanceToCheck:
+        if readIn(pin2) < distanceToCheck2:
             hit1 = 0
             hit2 = 0
-            print("ENTERED! Inserting into DB...")  # Debug
-            # insert(cnx, cursor, True)
+            print(" RIGHT: ENTERED! Inserting into DB...")  # Debug
+            insert(cnx, cursor, True)
             time.sleep(.4)
             break
 
     # Exiting has been triggered, wait to complete before reading again
     while hit1 == 0 and hit2 == 1 and time.time() < timeout:
-        dist = readIn(pin1)
-        if dist < distanceToCheck:
+        if readIn(pin1) < distanceToCheck1:
             hit1 = 0
             hit2 = 0
-            print("EXITED! Inserting into DB...")  # Debug
-            # insert(cnx, cursor, False)
+            print("LEFT: EXITED! Inserting into DB...")  # Debug
+            insert(cnx, cursor, False)
             time.sleep(.4)
-            break			
-			
+            break
+
 
 # Interrupt signal handler - May need to press ctrl c twice
 def signalHandler(sig, frame):
@@ -195,9 +183,10 @@ board.sonar_config(pin1, pin1)
 board.sonar_config(pin2, pin2)
 time.sleep(1)
 
-distToCheck = calibDist() - 10  # Leave 10 CM for sensor inaccuracy "padding"
+distToCheck1 = calibDist(pin1) - 10  # Leave 10 CM for sensor inaccuracy "padding"
+distToCheck2 = calibDist(pin2) - 10  
 
 # Loop to read from ultrasonic sensors and add data to DB
 while 1:
-    readFromArduino(distToCheck)
-    time.sleep(.2)
+    countPeople(distToCheck1, distToCheck2)
+    time.sleep(.1)
