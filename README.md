@@ -30,7 +30,7 @@ PHP/MySQL API - interface between webpage and the MySQL database
 Web Page - Displays an interactive graph displaying information about the traffic through 
 the South Entrance of The Rec
 
-# Possible Location for Documentation 
+# Documentation
 https://jonathangwesterfield.github.io/RecWalkerCounter/
 
 
