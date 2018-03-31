@@ -1,0 +1,11 @@
+The files contained in this folder are the source files and
+all of the documentation for the Rec Walker project. 
+
+The objective is to track one way traffic through the 
+south Entrance of the student Recreation center.
+
+To do this, we used an Arduino with ultrasonic sensors
+attached to a Raspberry Pi. The Pi runs python code 
+which sends data to a database. From there, we use a PHP
+API to extract data from the database and display it 
+on a website
