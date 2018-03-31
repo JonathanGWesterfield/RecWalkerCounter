@@ -1,8 +1,4 @@
 <?php
-
-/** @file DBAPI.php
-*/
-
 /**
  * Created by PhpStorm.
  * Date: 2/8/18
@@ -433,9 +429,9 @@ class DBAPI implements DBInterface
     public function getTrafficByDay($year, $month, $day)
     {
         // get the next day to get the correct date
-        $day += 1;
         // get the time of the absolute end of the day and the hour before that
         $endOfToday = new DateTime((string)$year . "-" . (string)$month . "-" . (string)$day . " 00:00:00");
+        $endOfToday->modify('+1 day');
         $prevHour = clone $endOfToday;
         $prevHour->modify('-1 hour');
 
@@ -493,9 +489,10 @@ class DBAPI implements DBInterface
     {
         $startDay = new DateTime((string)$year1 . "-" . (string)$month1 . "-" . (string)$day1 . " 00:00:00");
         // get the next day to get the correct date
-        $day2 += 1;
+
         // get the time of the absolute end of the end day
         $endDay = new DateTime((string)$year2 . "-" . (string)$month2 . "-" . (string)$day2 . " 00:00:00");
+        $endDay->modify('+1 day');
 
 
         // echo("Start Day: " . $startDay->format('Y-m-d H:i:s') . "<br>");
