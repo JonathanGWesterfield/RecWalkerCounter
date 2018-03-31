@@ -1,7 +1,6 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: JonathanWesterfield
  * Date: 2/8/18
  * Time: 4:36 PM
  */

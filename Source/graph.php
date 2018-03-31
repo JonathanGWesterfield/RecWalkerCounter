@@ -1,5 +1,8 @@
 <?php
 
+/** @file graph.php
+*/
+
 include_once "CommonInterface.php";
 include_once "DBInterface.php";
 
@@ -128,3 +131,5 @@ if(!isset($_GET['mode'])) {
     echo '<script>console.log("Could not load form with mode \\"' . $_GET['mode'] . '\\".");</script>';
 
 } ?>
+
+</script>
