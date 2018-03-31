@@ -1,5 +1,6 @@
 #!/usr/bin/env python #LINUX?
 
+## @file Counter.py
 import time
 import sys
 import signal
@@ -14,12 +15,13 @@ board = PyMata("/dev/ttyACM0", verbose=True)  # Change port to COM# (look in dev
 
 def insert(cnx, cursor, inOrOut):
     """
-    This function inserts an entry into the database. Will insert the location (should be the Student Recreation Center
-    but can be changed), a boolean value as to whether the subject exited or entered, the day of the week in number
-    format (using the mysql dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
+    This function inserts an entry into the database. Will insert the location (should
+    be the Student Recreation Center but can be changed), a boolean value as to whether
+    the subject exited or entered, the day of the week in number format (using the mysql
+    dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
     :param cnx:
     :param cursor:
-    :param inOrOut:
+    :param inOrOut: True=In, False=Out
     :return: Boolean
     """
     try:
@@ -97,9 +99,10 @@ def calibDist(pin):
 
 def readIn(pin):
     """
-    This function reads the data from the ultrasonic sensor associated with the passed-in Arduino pin for 1/10th of
-    a second and calculates the average distance for those measurements. This is to provide more accurate data to
-    reconcile the slight inaccuracy of the sensors. Note: ~100k measurements are taken in 1/10th of a second.
+    This function reads the data from the ultrasonic sensor associated with the passed-in
+    Arduino pin for 1/10th of a second and calculates the average distance for those 
+    measurements. This is to provide more accurate data to reconcile the slight inaccuracy
+    of the sensors. Note: ~100k measurements are taken in 1/10th of a second.
     :param pin:
     :return:
     """
@@ -118,8 +121,9 @@ def readIn(pin):
 def countPeople(distanceToCheck1, distanceToCheck2):
     """
     This function reads data in from HC-SR04 (ultrasonic) sensors and registers a pedestrian
-    entering/exiting based on proximity in comparison to "distanceToCheck" and which sensor is triggered first.
-    It inserts this data into the MySQL database, passing in whether the pedestrian was entering or exiting.
+    entering/exiting based on proximity in comparison to "distanceToCheck" and which sensor is 
+    triggered first. It inserts this data into the MySQL database, passing in whether the 
+    pedestrian was entering or exiting.
     :param distanceToCheck:
     :return:
     """

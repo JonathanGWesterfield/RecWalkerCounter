@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: JonathanWesterfield
- * Date: 2/8/18
- * Time: 4:36 PM
- */
+
+/** @file DBInterface.php
+*/
 
 include_once "DBAPI.php";
 

@@ -1,0 +1,109 @@
+\hypertarget{_counter_8py}{}\section{Arduino Source/\+Counter.py File Reference}
+\label{_counter_8py}\index{Arduino Source/\+Counter.\+py@{Arduino Source/\+Counter.\+py}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{_counter_8py_a49e12affeadafd8435a97b06057e2dfe}{insert} (cnx, cursor, in\+Or\+Out)
+\item 
+def \hyperlink{_counter_8py_a8e429790189b662dee33d000087cb1f8}{db\+Connect} ()
+\item 
+def \hyperlink{_counter_8py_a756c3becf251d26d860226d280e44454}{calib\+Dist} (pin)
+\item 
+def \hyperlink{_counter_8py_a38818986d0cfdea8141fbdce1992b039}{read\+In} (pin)
+\item 
+def \hyperlink{_counter_8py_ad7840a08a69ebf4ff8d57fc9bacce0a3}{count\+People} (distance\+To\+Check1, distance\+To\+Check2)
+\item 
+def {\bfseries signal\+Handler} (sig, frame)\hypertarget{_counter_8py_a891a24c346ed628a1dfcadabab275623}{}\label{_counter_8py_a891a24c346ed628a1dfcadabab275623}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries board} = Py\+Mata(\char`\"{}/dev/tty\+A\+C\+M0\char`\"{}, verbose=True)\hypertarget{_counter_8py_af3184e6d3aac51d64ce9a9af9571c9c0}{}\label{_counter_8py_af3184e6d3aac51d64ce9a9af9571c9c0}
+
+\item 
+int {\bfseries pin1} = 12\hypertarget{_counter_8py_a17fa7c4f36f8151dac74689c5acc65d7}{}\label{_counter_8py_a17fa7c4f36f8151dac74689c5acc65d7}
+
+\item 
+int {\bfseries pin2} = 13\hypertarget{_counter_8py_a42b6bc80268fe9212f7856451447ae8e}{}\label{_counter_8py_a42b6bc80268fe9212f7856451447ae8e}
+
+\item 
+int {\bfseries dist\+To\+Check1} = calib\+Dist(pin1)-\/10\hypertarget{_counter_8py_ad344dcb00d5b5f9d43284d1a0314fea1}{}\label{_counter_8py_ad344dcb00d5b5f9d43284d1a0314fea1}
+
+\item 
+int {\bfseries dist\+To\+Check2} = calib\+Dist(pin2)-\/10\hypertarget{_counter_8py_a99e6a8b1264f5e8c2063f6bafc9d6fec}{}\label{_counter_8py_a99e6a8b1264f5e8c2063f6bafc9d6fec}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Counter.\+py@{Counter.\+py}!calib\+Dist@{calib\+Dist}}
+\index{calib\+Dist@{calib\+Dist}!Counter.\+py@{Counter.\+py}}
+\subsubsection[{\texorpdfstring{calib\+Dist(pin)}{calibDist(pin)}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+calib\+Dist (
+\begin{DoxyParamCaption}
+\item[{}]{pin}
+\end{DoxyParamCaption}
+)}\hypertarget{_counter_8py_file_a756c3becf251d26d860226d280e44454}{}\label{_counter_8py_file_a756c3becf251d26d860226d280e44454}
+\begin{DoxyVerb}This function reads data from the sensors for a specified amount of time and then takes the average
+of those values to find the distance to check against for comparison (sensor-to-wall distance).
+:return: integer
+\end{DoxyVerb}
+ \index{Counter.\+py@{Counter.\+py}!count\+People@{count\+People}}
+\index{count\+People@{count\+People}!Counter.\+py@{Counter.\+py}}
+\subsubsection[{\texorpdfstring{count\+People(distance\+To\+Check1, distance\+To\+Check2)}{countPeople(distanceToCheck1, distanceToCheck2)}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+count\+People (
+\begin{DoxyParamCaption}
+\item[{}]{distance\+To\+Check1, }
+\item[{}]{distance\+To\+Check2}
+\end{DoxyParamCaption}
+)}\hypertarget{_counter_8py_file_ad7840a08a69ebf4ff8d57fc9bacce0a3}{}\label{_counter_8py_file_ad7840a08a69ebf4ff8d57fc9bacce0a3}
+\begin{DoxyVerb}This function reads data in from HC-SR04 (ultrasonic) sensors and registers a pedestrian
+entering/exiting based on proximity in comparison to "distanceToCheck" and which sensor is 
+triggered first. It inserts this data into the MySQL database, passing in whether the 
+pedestrian was entering or exiting.
+:param distanceToCheck:
+:return:
+\end{DoxyVerb}
+ \index{Counter.\+py@{Counter.\+py}!db\+Connect@{db\+Connect}}
+\index{db\+Connect@{db\+Connect}!Counter.\+py@{Counter.\+py}}
+\subsubsection[{\texorpdfstring{db\+Connect()}{dbConnect()}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+db\+Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_counter_8py_file_a8e429790189b662dee33d000087cb1f8}{}\label{_counter_8py_file_a8e429790189b662dee33d000087cb1f8}
+\begin{DoxyVerb}Connects to the database using my credentials and the mysql password. Will print out a string
+depeding on the status of the connection i.e.: whether if failed or not and why.
+:return:
+\end{DoxyVerb}
+ \index{Counter.\+py@{Counter.\+py}!insert@{insert}}
+\index{insert@{insert}!Counter.\+py@{Counter.\+py}}
+\subsubsection[{\texorpdfstring{insert(cnx, cursor, in\+Or\+Out)}{insert(cnx, cursor, inOrOut)}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+insert (
+\begin{DoxyParamCaption}
+\item[{}]{cnx, }
+\item[{}]{cursor, }
+\item[{}]{in\+Or\+Out}
+\end{DoxyParamCaption}
+)}\hypertarget{_counter_8py_file_a49e12affeadafd8435a97b06057e2dfe}{}\label{_counter_8py_file_a49e12affeadafd8435a97b06057e2dfe}
+\begin{DoxyVerb}This function inserts an entry into the database. Will insert the location (should
+be the Student Recreation Center but can be changed), a boolean value as to whether
+the subject exited or entered, the day of the week in number format (using the mysql
+dayofweek(now()) function) and a DateTime stamp (using mysql now() function)
+:param cnx:
+:param cursor:
+:param inOrOut: True=In, False=Out
+:return: Boolean
+\end{DoxyVerb}
+ \index{Counter.\+py@{Counter.\+py}!read\+In@{read\+In}}
+\index{read\+In@{read\+In}!Counter.\+py@{Counter.\+py}}
+\subsubsection[{\texorpdfstring{read\+In(pin)}{readIn(pin)}}]{\setlength{\rightskip}{0pt plus 5cm}def Counter.\+read\+In (
+\begin{DoxyParamCaption}
+\item[{}]{pin}
+\end{DoxyParamCaption}
+)}\hypertarget{_counter_8py_file_a38818986d0cfdea8141fbdce1992b039}{}\label{_counter_8py_file_a38818986d0cfdea8141fbdce1992b039}
+\begin{DoxyVerb}This function reads the data from the ultrasonic sensor associated with the passed-in
+Arduino pin for 1/10th of a second and calculates the average distance for those 
+measurements. This is to provide more accurate data to reconcile the slight inaccuracy
+of the sensors. Note: ~100k measurements are taken in 1/10th of a second.
+:param pin:
+:return:
+\end{DoxyVerb}
+ 

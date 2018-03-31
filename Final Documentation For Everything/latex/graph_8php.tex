@@ -1,0 +1,68 @@
+\hypertarget{graph_8php}{}\section{Webserver Code/graph.php File Reference}
+\label{graph_8php}\index{Webserver Code/graph.\+php@{Webserver Code/graph.\+php}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{graph_8php_a7af48d7091d5a774294eae9ab84a5057}{print\+\_\+array} (\$values)
+\item 
+\hyperlink{graph_8php_af55d8d11c9641c2dd1b0b29a790b0fe8}{display\+\_\+graph} (\$labels, \$values, \$date\+\_\+format)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \$this\+Common} = new \hyperlink{class_common}{Common}(true)\hypertarget{graph_8php_a2dc37683cec5a169d791007363950944}{}\label{graph_8php_a2dc37683cec5a169d791007363950944}
+
+\item 
+{\bfseries \$db} = new \hyperlink{class_d_b_a_p_i}{D\+B\+A\+PI}(\$this\+Common)\hypertarget{graph_8php_a1fa3127fc82f96b1436d871ef02be319}{}\label{graph_8php_a1fa3127fc82f96b1436d871ef02be319}
+
+\item 
+if(!isset(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})) elseif(strtolower(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})== \textquotesingle{}day\textquotesingle{}$\vert$$\vert$strtolower(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})== \textquotesingle{}month\textquotesingle{}$\vert$$\vert$strtolower(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})== \textquotesingle{}year\textquotesingle{}) {\bfseries else}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{graph.\+php@{graph.\+php}!display\+\_\+graph@{display\+\_\+graph}}
+\index{display\+\_\+graph@{display\+\_\+graph}!graph.\+php@{graph.\+php}}
+\subsubsection[{\texorpdfstring{display\+\_\+graph(\$labels, \$values, \$date\+\_\+format)}{display_graph($labels, $values, $date_format)}}]{\setlength{\rightskip}{0pt plus 5cm}display\+\_\+graph (
+\begin{DoxyParamCaption}
+\item[{}]{\$labels, }
+\item[{}]{\$values, }
+\item[{}]{\$date\+\_\+format}
+\end{DoxyParamCaption}
+)}\hypertarget{graph_8php_af55d8d11c9641c2dd1b0b29a790b0fe8}{}\label{graph_8php_af55d8d11c9641c2dd1b0b29a790b0fe8}
+
+\begin{DoxyParams}{Parameters}
+{\em \$labels} & \\
+\hline
+{\em \$values} & \\
+\hline
+{\em \$date\+\_\+format} & Displays a graph with the data given in \$values. \$date\+\_\+format is used for the title, and \$labels are used for the x-\/axis. \\
+\hline
+\end{DoxyParams}
+\index{graph.\+php@{graph.\+php}!print\+\_\+array@{print\+\_\+array}}
+\index{print\+\_\+array@{print\+\_\+array}!graph.\+php@{graph.\+php}}
+\subsubsection[{\texorpdfstring{print\+\_\+array(\$values)}{print_array($values)}}]{\setlength{\rightskip}{0pt plus 5cm}print\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{}]{\$values}
+\end{DoxyParamCaption}
+)}\hypertarget{graph_8php_a7af48d7091d5a774294eae9ab84a5057}{}\label{graph_8php_a7af48d7091d5a774294eae9ab84a5057}
+
+\begin{DoxyParams}{Parameters}
+{\em \$values} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+Returns a string representation of an array. 
+
+\subsection{Variable Documentation}
+\index{graph.\+php@{graph.\+php}!else@{else}}
+\index{else@{else}!graph.\+php@{graph.\+php}}
+\subsubsection[{\texorpdfstring{else}{else}}]{\setlength{\rightskip}{0pt plus 5cm}if (!isset(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})) elseif (strtolower(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})== \textquotesingle{}day\textquotesingle{}$\vert$$\vert$strtolower(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})== \textquotesingle{}month\textquotesingle{}$\vert$$\vert$strtolower(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]})== \textquotesingle{}year\textquotesingle{}) else}\hypertarget{graph_8php_aa98e5745136db21835880938c0eba666}{}\label{graph_8php_aa98e5745136db21835880938c0eba666}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+
+    echo \textcolor{stringliteral}{'<script>console.log("Could not load form with mode \(\backslash\)\(\backslash\)"'} . $\_GET[\textcolor{stringliteral}{'mode'}] . \textcolor{stringliteral}{'\(\backslash\)\(\backslash\)".");</script>'}
+\end{DoxyCode}

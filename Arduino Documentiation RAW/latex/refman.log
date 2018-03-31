@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 MAR 2018 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 MAR 2018 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1188,7 +1188,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 7.
+(Font)              scaled to size 6.29996pt on input line 4.
 )
 \tf@toc=\write5
 \openout5 = `refman.toc'.
@@ -1209,7 +1209,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 140.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 18.66588pt on input line 140.
-(./namespaces.tex
+(./files.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
@@ -1227,7 +1227,9 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 Chapter 2.
-(./namespace_counter.tex
+(./_counter_8py.tex
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
@@ -1241,31 +1243,28 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 46.
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 46.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 46.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 24.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 24.
+(Font)              scaled to size 7.19995pt on input line 47.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 47.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 39.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 39.
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 52.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 52.
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <7> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 52.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 6.29996pt on input line 52.
-
-Overfull \hbox (19.95619pt too wide) in paragraph at lines 54--54
-[]\T1/pcr/m/n/8 Recreation Center but can be changed), a boolean value as to wh
-ether the subject exited or entered,[] 
+Overfull \hbox (19.95619pt too wide) in paragraph at lines 47--47
+[]\T1/pcr/m/n/8 This function reads data from the sensors for a specified amoun
+t of time and then takes the average 
  []
 
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <7> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 58.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 6.29996pt on input line 58.
 [3]) [4] (./refman.ind [5
 
 
@@ -1278,27 +1277,42 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 7E75751D8A350809921A1CAB4D301C56;1763.
+(rerunfilecheck)             Checksum: AD29D2AD3D30486131D5968E4839C1FA;2033.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
  ) 
 Here is how much of TeX's memory you used:
- 14750 strings out of 493014
- 209910 string characters out of 6133351
- 302856 words of memory out of 5000000
- 18028 multiletter control sequences out of 15000+600000
+ 14769 strings out of 493014
+ 210723 string characters out of 6133351
+ 304203 words of memory out of 5000000
+ 18035 multiletter control sequences out of 15000+600000
  55126 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,11n,92p,381b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/local/texlive/2016/texmf-dist/fon
-ts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (9 pages, 54616 bytes).
+ 53i,12n,92p,739b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{_counter_8py_ad7840a08a69ebf4ff8d57fc9bacce0a3} h
+as been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_counter_8py_a38818986d0cfdea8141fbdce1992b039} has
+ been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_counter_8py_a756c3becf251d26d860226d280e44454} has
+ been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_counter_8py_a8e429790189b662dee33d000087cb1f8} has
+ been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_counter_8py_a49e12affeadafd8435a97b06057e2dfe} has
+ been referenced but does not exist, replaced by a fixed one
+
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/urw/helvetic/uhvr8a.pfb>
+Output written on refman.pdf (9 pages, 58490 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

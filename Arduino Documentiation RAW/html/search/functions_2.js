@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readfromarduino',['readfromArduino',['../namespace_counter.html#a27dffb0b62e84c35f52de71e22b3ee2f',1,'Counter']]]
+  ['insert',['insert',['../_counter_8py.html#a49e12affeadafd8435a97b06057e2dfe',1,'Counter']]]
 ];

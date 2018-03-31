@@ -1,7 +1,9 @@
 <?php
+/** @file CommonMethods.php
+*/
+
 /**
  * Created by PhpStorm.
- * User: JonathanWesterfield
  * Date: 2/8/18
  * Time: 4:20 PM
  *
@@ -21,9 +23,9 @@ class Common implements CommonInterface
     var $pass="root"; */
 
     var $db="database.cse.tamu.edu";
-    var $dbname="jgwesterfield-WalkerData";
-    var $user="jgwesterfield";
-    var $pass="Whoop19!";
+    var $dbname="XXXXX-WalkerData";
+    var $user="XXXXX";
+    var $pass="XXXXX";
 
     /**
      * Common constructor.

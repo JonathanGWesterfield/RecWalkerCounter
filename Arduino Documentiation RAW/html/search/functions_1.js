@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insert',['insert',['../namespace_counter.html#a49e12affeadafd8435a97b06057e2dfe',1,'Counter']]]
+  ['dbconnect',['dbConnect',['../_counter_8py.html#a8e429790189b662dee33d000087cb1f8',1,'Counter']]]
 ];
