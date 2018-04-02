@@ -55,7 +55,7 @@ def dbConnect():
         global cursor
 
         # make the connection
-        cnx = mysql.connector.connect(user='jgwesterfield', password='Whoop19!', host='database.cse.tamu.edu', database='jgwesterfield-WalkerData')
+        cnx = mysql.connector.connect(user='XXXXX', password='Whoop19!', host='database.cse.tamu.edu', database='XXXXX-WalkerData')
         cursor = cnx.cursor()
         print ("DB Connected")
         return

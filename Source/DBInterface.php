@@ -97,7 +97,7 @@ interface DBInterface
      *
      * Returns an array (24) containing total number of walkers for each hour
      *
-     * Usage: <var = getTrafficByDay(2018, 2, 15);> for Febraury 15, 2018
+     * Usage: <var = getTrafficByDay(2018, 2, 15);> for February 15, 2018
      */
     public function getTrafficByDay($year, $month, $day);
 
