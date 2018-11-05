@@ -1,6 +1,9 @@
 # RecWalkerCounter
 Contains all of the files for CSCE 315 Project 1 at Texas A&M University.
 
+# Finalized files can be found here
+[Project Deliverables](https://github.com/JonathanGWesterfield/RecWalkerCounter/tree/master/Final%20Project%201%20Deliverables)
+
 # Purpose - Walking Traffic Counter
 The Rec Center opened a new South Entrance not too long ago. The project costed millions 
 with all of the research, simulation and construction that went into the design. But anecdotally, 
